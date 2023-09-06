@@ -7,6 +7,16 @@
 	// const copy = getContext("copy");
 	// const data = getContext("data");
 	let dataForChart;
+
+
+	const getColor = d => {
+		let old = dataForChart[0].ranking.slice(0,40).map(d => d.genre);
+		if(old.indexOf(d.genre) == -1) {
+			return "red"
+		}
+		return "white";
+	}
+
 	onMount(() => {
 
 		let rankings = [];
@@ -33,20 +43,27 @@
 	})
 </script>
 
+<svelte:head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+</svelte:head>
+
 {#if dataForChart}
 <table>
 	<tbody>
 	<tr class="wrapper">
-		{#each dataForChart as item}
+		{#each dataForChart.filter((d,i) => i == 0 || i == dataForChart.length - 1) as item}
 			<td class="col">
-				<p>{item.date}</p>
+				<p class="date">{item.date}</p>
 				<!-- <div class="genre-ranking"> -->
-					{#each item.ranking.slice(0,500) as genre}
-						<div class="item">{genre.genre} ({genre.rank})</div>
+					{#each item.ranking as genre}
+						<div class="item" style="
+							color:{getColor(genre)};
+						">{genre.genre} ({genre.rank})</div>
 					{/each}
 				<!-- </div> -->
 			</td>
-			
 		{/each}
 	</tr>
 	</tbody>
@@ -54,6 +71,9 @@
 {/if}
 
 <style>
+	.date {
+		font-family: var(--font-display);
+	}
 	table {
 		width: auto;
     	overflow: scroll;
@@ -75,6 +95,7 @@
 
 .item {
 	white-space: nowrap;
+	font-family: var(--sans);
 	/* display: inline-block; */
 }
 
