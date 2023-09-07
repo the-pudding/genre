@@ -6,8 +6,9 @@
 /* colors defined in variables.css */
 :root {
 	/* font */
-	--sans: 'IBM Plex Mono', monospace, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-	--serif: 'Nanum Myeongjo', serif;
+	--sans: "IBM Plex Mono", monospace, -apple-system, BlinkMacSystemFont,
+		Helvetica, Arial, sans-serif;
+	--serif: "Nanum Myeongjo", serif;
 	--mono: Menlo, Consolas, Monaco, monospace;
 
 	/* z-index */
@@ -91,4 +92,11 @@ h5 {
 
 h6 {
 	font-size: var(--20px, 20px);
+}
+
+html,
+body,
+main {
+	height: 100%;
+	overflow: hidden;
 }
