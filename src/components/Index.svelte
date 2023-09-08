@@ -2,19 +2,32 @@
 	import Tap from "$components/helpers/Tap.svelte";
 	import Slider from "$components/helpers/Slider.svelte";
 	import Slide from "$components/helpers/Slider.Slide.svelte";
+	import Table from "$components/Table.svelte";
+	import copy from "$data/copy.json";
 
+	const slides = copy.slides;
 	let sliderEl;
 
 	const onTap = ({ detail }) => {
 		if (detail === "right") sliderEl.next();
 		else sliderEl.prev();
 	};
+
+	const components = { Table };
 </script>
 
 <Slider bind:this={sliderEl}>
-	{#each [1, 2, 3, 4, 5] as i}
+	{#each slides as slide}
 		<Slide>
-			<p>{i}: hello world</p>
+			{#each slide.content as { type, text, component, classname, ...props }}
+				<svelte:element this={type} class={classname}>
+					{#if text}
+						{@html text}
+					{:else}
+						<svelte:component this={components[component]} {props} />
+					{/if}
+				</svelte:element>
+			{/each}
 		</Slide>
 	{/each}
 </Slider>
