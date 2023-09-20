@@ -16,21 +16,23 @@
 	const components = { Table };
 </script>
 
-<Slider bind:this={sliderEl}>
-	{#each slides as slide}
-		<Slide>
-			{#each slide.content as { type, text, component, classname, ...props }}
-				<svelte:element this={type} class={classname}>
-					{#if text}
-						{@html text}
-					{:else}
-						<svelte:component this={components[component]} {props} />
-					{/if}
-				</svelte:element>
-			{/each}
-		</Slide>
-	{/each}
-</Slider>
+<article>
+	<Slider bind:this={sliderEl}>
+		{#each slides as slide}
+			<Slide>
+				{#each slide.content as { type, text, component, classname, ...props }}
+					<svelte:element this={type} class={classname}>
+						{#if text}
+							{@html text}
+						{:else}
+							<svelte:component this={components[component]} {props} />
+						{/if}
+					</svelte:element>
+				{/each}
+			</Slide>
+		{/each}
+	</Slider>
+</article>
 
 <Tap
 	debug={false}
@@ -40,3 +42,11 @@
 	marginTop={0}
 	on:tap={onTap}
 />
+
+<style>
+	article {
+		max-width: 60rem;
+		margin: auto;
+		padding: 1rem;
+	}
+</style>

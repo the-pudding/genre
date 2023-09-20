@@ -16,7 +16,7 @@
 </script>
 
 {#if title}
-	<div>{title}</div>
+	<strong>{title}</strong>
 {/if}
 {#each display as { genre, rank }}
 	<div class:highlight={highlight && highlight.includes(genre)}>
