@@ -7,5 +7,10 @@ export default [
 		id: "1vjzeoiMeS0UvIbjlzSav3-0ket_1EedlDXizdPginBE",
 		gid: "1114540706",
 		filepath: "src/data/rank.csv"
+	},
+	{
+		id: "1vjzeoiMeS0UvIbjlzSav3-0ket_1EedlDXizdPginBE",
+		gid: "831263878",
+		filepath: "src/data/geo.csv"
 	}
 ];

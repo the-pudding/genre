@@ -4,6 +4,7 @@
 	import Slide from "$components/helpers/Slider.Slide.svelte";
 	import Table from "$components/Table.svelte";
 	import copy from "$data/copy.json";
+	import pointer from "$svg/pointer.svg";
 
 	const slides = copy.slides;
 	let sliderEl;
@@ -18,8 +19,8 @@
 
 <article>
 	<Slider bind:this={sliderEl}>
-		{#each slides as slide}
-			<Slide>
+		{#each slides as slide, i}
+			<Slide index={i}>
 				{#each slide.content as { type, text, component, classname, ...props }}
 					<svelte:element this={type} class={classname}>
 						{#if text}
@@ -29,6 +30,13 @@
 						{/if}
 					</svelte:element>
 				{/each}
+
+				{#if i === 0}
+					<div class="tap">
+						<strong>Tap to continue</strong>
+						{@html pointer}
+					</div>
+				{/if}
 			</Slide>
 		{/each}
 	</Slider>
@@ -48,5 +56,12 @@
 		max-width: 60rem;
 		margin: auto;
 		padding: 1rem;
+	}
+	.tap {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		display: flex;
+		align-items: center;
 	}
 </style>
