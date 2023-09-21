@@ -33,7 +33,7 @@
 				{/each}
 
 				{#if i === 0}
-					<div class="tap">
+					<div class="tap" class:visible={current === 0}>
 						<strong>Tap to continue</strong>
 						{@html pointer}
 					</div>
@@ -56,13 +56,15 @@
 <style>
 	article {
 		max-width: 60rem;
+		max-height: 100vh;
+		overflow-y: hidden;
 		margin: auto;
 		padding: 1rem;
 	}
 	.tap {
 		position: absolute;
-		bottom: 0;
-		right: 0;
+		bottom: 1rem;
+		right: 0rem;
 		display: flex;
 		align-items: center;
 	}

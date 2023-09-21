@@ -123,6 +123,7 @@ Usage:
 		position: relative;
 		width: 100%;
 		height: 100%;
+		max-height: calc(100vh - 1rem);
 		margin: 0;
 		padding: 0;
 		z-index: 1;
