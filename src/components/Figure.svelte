@@ -1,6 +1,7 @@
 <script>
 	import { activeSlide, slideHeights } from "$stores/misc.js";
 	import Table from "$components/Table.svelte";
+	import Line from "$components/Line.svelte";
 	import pointer from "$svg/pointer.svg";
 
 	// TODO: use slideHeights to check if this will cause overlap with slide text
@@ -8,8 +9,10 @@
 </script>
 
 <figure style={`--offset: ${offset}`}>
-	{#if $activeSlide < 4}
+	{#if $activeSlide < 4 || $activeSlide === 5 || $activeSlide === 6}
 		<Table />
+	{:else if $activeSlide <= 9 && $activeSlide >= 7}
+		<Line />
 	{/if}
 
 	<div class="tap" class:visible={$activeSlide === 0}>

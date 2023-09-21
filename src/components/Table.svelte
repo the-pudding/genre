@@ -7,9 +7,12 @@
 	export let columns;
 
 	const title = "Genres, ranked by streams on Spotify";
-	const numToDisplay = 25;
 
-	$: columns = $activeSlide < 2 ? ["4/23/2016"] : ["4/23/2016", "8/9/2023"];
+	$: numToDisplay = $activeSlide === 5 || $activeSlide === 6 ? 295 : 25;
+	$: columns =
+		$activeSlide < 2 || $activeSlide === 5 || $activeSlide === 6
+			? ["4/23/2016"]
+			: ["4/23/2016", "8/9/2023"];
 	$: numColumns = columns.length;
 	$: highlightList =
 		$activeSlide === 3
@@ -20,8 +23,11 @@
 					{ genre: "filmi", highlight: "var(--color-secondary)" },
 					{ genre: "k-pop", highlight: "var(--color-secondary)" }
 			  ]
+			: $activeSlide === 6
+			? [{ genre: "k-pop", highlight: "var(--color-secondary)" }]
 			: [];
 	$: blurredColumn = $activeSlide === 2 ? 1 : null;
+	$: scrollDown = $activeSlide === 6;
 
 	// highlight
 	// 	? highlight
@@ -59,7 +65,7 @@
 		}, []);
 </script>
 
-<div class="table-wrapper">
+<div class="table-wrapper" class:scroll-down={scrollDown}>
 	{#if title}
 		<strong>{title}</strong>
 	{/if}
@@ -100,6 +106,11 @@
 <style>
 	.table-wrapper {
 		font-family: var(--sans);
+		transform: translate(0, 0);
+		transition: transform calc(var(--1s) * 2) ease-in-out;
+	}
+	.scroll-down {
+		transform: translate(0, -91%);
 	}
 	table {
 		max-width: 20rem;
