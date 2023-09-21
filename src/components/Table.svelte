@@ -4,7 +4,7 @@
 	import _ from "lodash";
 
 	export let props;
-	$: ({ title, columns, highlight, highlightBy } = props);
+	$: ({ title, columns, blur, highlight, highlightBy } = props);
 
 	const numToDisplay = 25;
 
@@ -65,7 +65,11 @@
 					{@const highlight = highlightList.find(
 						(d) => d.genre === genre
 					)?.highlight}
-					<td style:color={highlight}>
+					<td
+						style:color={highlight}
+						class:highlight
+						class:blur={+blur === col}
+					>
 						{#if col === 0}
 							<span class="number">{row + 1}</span>
 						{/if}
@@ -83,7 +87,7 @@
 		max-width: 50%;
 	}
 	table.full {
-		max-width: none;
+		max-width: 70%;
 	}
 	thead {
 		border-bottom: 2px solid var(--color-gray-800);
@@ -99,5 +103,11 @@
 		color: var(--color-gray-600);
 		font-size: 0.75rem;
 		margin-right: 0.5rem;
+	}
+	.highlight {
+		font-weight: bolder;
+	}
+	.blur {
+		filter: blur(3px);
 	}
 </style>

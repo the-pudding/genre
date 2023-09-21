@@ -1,4 +1,5 @@
 <script>
+	import Chapters from "$components/Chapters.svelte";
 	import Tap from "$components/helpers/Tap.svelte";
 	import Slider from "$components/helpers/Slider.svelte";
 	import Slide from "$components/helpers/Slider.Slide.svelte";
@@ -6,19 +7,19 @@
 	import copy from "$data/copy.json";
 	import pointer from "$svg/pointer.svg";
 
+	const components = { Table };
 	const slides = copy.slides;
+	let current = 0;
 	let sliderEl;
 
 	const onTap = ({ detail }) => {
 		if (detail === "right") sliderEl.next();
 		else sliderEl.prev();
 	};
-
-	const components = { Table };
 </script>
 
 <article>
-	<Slider bind:this={sliderEl}>
+	<Slider bind:this={sliderEl} bind:current>
 		{#each slides as slide, i}
 			<Slide index={i}>
 				{#each slide.content as { type, text, component, classname, ...props }}
@@ -50,6 +51,7 @@
 	marginTop={0}
 	on:tap={onTap}
 />
+<Chapters total={slides.length} {current} />
 
 <style>
 	article {
