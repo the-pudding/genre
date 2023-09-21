@@ -28,7 +28,7 @@
 			transform="translate({$xRange[0]}, {$yScale(tick)})"
 		>
 			{#if gridlines !== false}
-				<line class="gridline" x2="100%" y1={yTick} y2={yTick} />
+				<line class="gridline" x2={$xRange[1]} y1={yTick} y2={yTick} />
 			{/if}
 			{#if tickMarks === true}
 				<line class="tick-mark" x1="0" x2={6} y1={yTick} y2={yTick} />
@@ -47,14 +47,10 @@
 <style>
 	.tick {
 		font-size: 0.725em;
-		font-weight: 200;
 	}
 
 	.tick line {
 		stroke: var(--color-gray-300);
-	}
-	.tick .gridline {
-		stroke-dasharray: 4px 4px;
 	}
 
 	.tick text {
