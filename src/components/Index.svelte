@@ -3,41 +3,32 @@
 	import Tap from "$components/helpers/Tap.svelte";
 	import Slider from "$components/helpers/Slider.svelte";
 	import Slide from "$components/helpers/Slider.Slide.svelte";
-	import Table from "$components/Table.svelte";
+	import Figure from "$components/Figure.svelte";
 	import copy from "$data/copy.json";
-	import pointer from "$svg/pointer.svg";
+	import { activeSlide, dir } from "$stores/misc.js";
 
-	const components = { Table };
 	const slides = copy.slides;
-	let current = 0;
 	let sliderEl;
 
 	const onTap = ({ detail }) => {
 		if (detail === "right") sliderEl.next();
 		else sliderEl.prev();
+		$dir = detail;
 	};
 </script>
 
+<Chapters />
+
+<Figure />
 <article>
-	<Slider bind:this={sliderEl} bind:current>
+	<Slider bind:this={sliderEl} bind:current={$activeSlide} duration="0">
 		{#each slides as slide, i}
 			<Slide index={i}>
-				{#each slide.content as { type, text, component, classname, ...props }}
+				{#each slide.text as { type, text, classname }}
 					<svelte:element this={type} class={classname}>
-						{#if text}
-							{@html text}
-						{:else}
-							<svelte:component this={components[component]} {props} />
-						{/if}
+						{@html text}
 					</svelte:element>
 				{/each}
-
-				{#if i === 0}
-					<div class="tap" class:visible={current === 0}>
-						<strong>Tap to continue</strong>
-						{@html pointer}
-					</div>
-				{/if}
 			</Slide>
 		{/each}
 	</Slider>
@@ -51,21 +42,14 @@
 	marginTop={0}
 	on:tap={onTap}
 />
-<Chapters total={slides.length} {current} />
 
 <style>
 	article {
-		max-width: 60rem;
-		max-height: 100vh;
-		overflow-y: hidden;
-		margin: auto;
-		padding: 1rem;
-	}
-	.tap {
 		position: absolute;
-		bottom: 1rem;
-		right: 0rem;
-		display: flex;
-		align-items: center;
+		top: 2rem;
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: 100%;
+		max-width: 45rem;
 	}
 </style>

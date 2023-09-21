@@ -1,34 +1,48 @@
 <script>
 	import rank from "$data/rank.csv";
 	import geo from "$data/geo.csv";
+	import { activeSlide } from "$stores/misc.js";
 	import _ from "lodash";
 
-	export let props;
-	$: ({ title, columns, blur, highlight, highlightBy } = props);
+	export let columns;
 
+	const title = "Genres, ranked by streams on Spotify";
 	const numToDisplay = 25;
 
-	$: dates = columns.split(",").map((d) => d.trim());
-	$: numColumns = dates.length;
-	$: highlightList = highlight
-		? highlight
-				.split(",")
-				.map((d) => ({ genre: d.trim(), highlight: "var(--color-secondary)" }))
-		: highlightBy === "geography"
-		? genreList.map((d) => ({
-				genre: d,
-				highlight:
-					geo.find((g) => g.genre === d)["geo 2"] === "west/english"
-						? "var(--color-primary)"
-						: "var(--color-secondary)"
-		  }))
-		: [];
-	$: genreList = data.reduce((acc, current) => {
-		const genres = current.ranks.map((d) => d.genre);
-		return _.uniq([...acc, ...genres]);
-	}, []);
+	$: columns = $activeSlide < 2 ? ["4/23/2016"] : ["4/23/2016", "8/9/2023"];
+	$: numColumns = columns.length;
+	$: highlightList =
+		$activeSlide === 3
+			? [
+					{ genre: "urbano latino", highlight: "var(--color-secondary)" },
+					{ genre: "trap latino", highlight: "var(--color-secondary)" },
+					{ genre: "reggaeton", highlight: "var(--color-secondary)" },
+					{ genre: "filmi", highlight: "var(--color-secondary)" },
+					{ genre: "k-pop", highlight: "var(--color-secondary)" }
+			  ]
+			: [];
+	$: blurredColumn = $activeSlide === 2 ? 1 : null;
+
+	// highlight
+	// 	? highlight
+	// 			.split(",")
+	// 			.map((d) => ({ genre: d.trim(), highlight: "var(--color-secondary)" }))
+	// 	: highlightBy === "geography"
+	// 	? genreList.map((d) => ({
+	// 			genre: d,
+	// 			highlight:
+	// 				geo.find((g) => g.genre === d)["geo 2"] === "west/english"
+	// 					? "var(--color-primary)"
+	// 					: "var(--color-secondary)"
+	// 	  }))
+	// 	: [];
+	// $: genreList = data.reduce((acc, current) => {
+	// 	const genres = current.ranks.map((d) => d.genre);
+	// 	return _.uniq([...acc, ...genres]);
+	// }, []);
+
 	$: data = rank
-		.filter((d) => dates.includes(d.genre))
+		.filter((d) => columns.includes(d.genre))
 		.reduce((acc, current) => {
 			const ranks = Object.keys(current)
 				.filter((d) => d !== "genre" && current[d] && +current[d] > 0)
@@ -68,7 +82,7 @@
 					<td
 						style:color={highlight}
 						class:highlight
-						class:blur={+blur === col}
+						class:blur={blurredColumn === col}
 					>
 						{#if col === 0}
 							<span class="number">{row + 1}</span>

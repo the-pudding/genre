@@ -1,20 +1,19 @@
 <script>
+	import copy from "$data/copy.json";
+	import { activeSlide } from "$stores/misc.js";
 	import _ from "lodash";
-
-	export let total;
-	export let current;
 </script>
 
 <div class="chapters">
-	{#each _.range(total) as i}
-		<div class="block" class:active={i === current} />
+	{#each _.range(copy.slides.length) as i}
+		<div class="block" class:active={i === $activeSlide} />
 	{/each}
 </div>
 
 <style>
 	.chapters {
 		position: absolute;
-		top: 14px;
+		top: 0.75rem;
 		display: flex;
 		width: 100%;
 		justify-content: space-between;

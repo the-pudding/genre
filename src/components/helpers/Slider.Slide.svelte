@@ -29,6 +29,5 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
-		max-height: calc(100vh - 1rem);
 	}
 </style>
