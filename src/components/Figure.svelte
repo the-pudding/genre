@@ -1,10 +1,13 @@
 <script>
-	import { activeSlide } from "$stores/misc.js";
+	import { activeSlide, slideHeights } from "$stores/misc.js";
 	import Table from "$components/Table.svelte";
 	import pointer from "$svg/pointer.svg";
+
+	// TODO: use slideHeights to check if this will cause overlap with slide text
+	$: offset = $activeSlide === 0 ? "28%" : "15%";
 </script>
 
-<figure>
+<figure style={`--offset: ${offset}`}>
 	{#if $activeSlide < 4}
 		<Table />
 	{/if}
@@ -17,18 +20,18 @@
 
 <style>
 	figure {
-		--offset: 30%; /* this can change with screen sizes */
 		position: absolute;
-		top: var(--offset);
-		height: calc(100% - var(--offset));
+		top: calc(var(--offset) + 2rem);
+		height: calc(100% - 2rem - var(--offset));
 		left: 50%;
 		transform: translateX(-50%);
 		overflow: hidden;
 		width: 45rem;
 		padding: 1rem;
+		transition: top var(--1s) ease-in-out;
 	}
 	.tap {
-		position: absolute;
+		position: fixed;
 		bottom: 1rem;
 		right: 1rem;
 		display: flex;

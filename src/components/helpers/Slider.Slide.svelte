@@ -1,6 +1,7 @@
 <script>
 	import { getContext } from "svelte";
 	import canTab from "$actions/canTab.js";
+	import { slideHeights } from "$stores/misc.js";
 	const { dir, cur, w, h, count } = getContext("Slider");
 
 	export let index;
@@ -20,6 +21,7 @@
 	aria-label="slide {index + 1} of {$count}"
 	aria-current={visible}
 	use:canTab={{ disable }}
+	bind:clientHeight={$slideHeights[index]}
 >
 	<slot />
 </div>

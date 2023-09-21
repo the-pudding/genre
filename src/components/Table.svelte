@@ -59,49 +59,53 @@
 		}, []);
 </script>
 
-{#if title}
-	<strong>{title}</strong>
-{/if}
-<table class:full={numColumns > 1}>
-	<thead>
-		<tr>
-			{#each data as { date }}
-				<th>{date.slice(-4)}</th>
-			{/each}
-		</tr>
-	</thead>
-
-	<tbody>
-		{#each _.range(numToDisplay) as row}
+<div class="table-wrapper">
+	{#if title}
+		<strong>{title}</strong>
+	{/if}
+	<table class:full={numColumns > 1}>
+		<thead>
 			<tr>
-				{#each data as { ranks }, col}
-					{@const genre = ranks[row].genre}
-					{@const highlight = highlightList.find(
-						(d) => d.genre === genre
-					)?.highlight}
-					<td
-						style:color={highlight}
-						class:highlight
-						class:blur={blurredColumn === col}
-					>
-						{#if col === 0}
-							<span class="number">{row + 1}</span>
-						{/if}
-						{genre}
-					</td>
+				{#each data as { date }}
+					<th>{date.slice(-4)}</th>
 				{/each}
 			</tr>
-		{/each}
-	</tbody>
-</table>
+		</thead>
+
+		<tbody>
+			{#each _.range(numToDisplay) as row}
+				<tr>
+					{#each data as { ranks }, col}
+						{@const genre = ranks[row].genre}
+						{@const highlight = highlightList.find(
+							(d) => d.genre === genre
+						)?.highlight}
+						<td
+							style:color={highlight}
+							class:highlight
+							class:blur={blurredColumn === col}
+						>
+							{#if col === 0}
+								<span class="number">{row + 1}</span>
+							{/if}
+							{genre}
+						</td>
+					{/each}
+				</tr>
+			{/each}
+		</tbody>
+	</table>
+</div>
 
 <style>
-	table {
+	.table-wrapper {
 		font-family: var(--sans);
-		max-width: 50%;
+	}
+	table {
+		max-width: 20rem;
 	}
 	table.full {
-		max-width: 70%;
+		max-width: 40rem;
 	}
 	thead {
 		border-bottom: 2px solid var(--color-gray-800);

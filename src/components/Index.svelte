@@ -51,5 +51,9 @@
 		transform: translate(-50%, 0);
 		width: 100%;
 		max-width: 45rem;
+		padding: 1rem;
+	}
+	p {
+		font-size: 1.2rem;
 	}
 </style>
