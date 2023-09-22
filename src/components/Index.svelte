@@ -4,8 +4,10 @@
 	import Slider from "$components/helpers/Slider.svelte";
 	import Slide from "$components/helpers/Slider.Slide.svelte";
 	import Figure from "$components/Figure.svelte";
+	import Audio from "$components/Audio.svelte";
 	import copy from "$data/copy.json";
 	import { activeSlide, dir } from "$stores/misc.js";
+	import { onMount } from "svelte";
 
 	const slides = copy.slides;
 	let sliderEl;
@@ -15,6 +17,18 @@
 		else sliderEl.prev();
 		$dir = detail;
 	};
+
+	onMount(() => {
+		const audioSpan = document.querySelector("#bad-bunny-audio");
+		if (audioSpan) {
+			const parentElement = audioSpan.parentElement;
+			const placeholder = document.createElement("div");
+			parentElement.replaceChild(placeholder, audioSpan);
+			new Audio({
+				target: placeholder
+			});
+		}
+	});
 </script>
 
 <Chapters />
