@@ -1,4 +1,5 @@
 <script>
+	import Legend from "$components/Table.Legend.svelte";
 	import rank from "$data/rank.csv";
 	import geo from "$data/geo.csv";
 	import { activeSlide } from "$stores/misc.js";
@@ -25,28 +26,22 @@
 			  ]
 			: $activeSlide === 6
 			? [{ genre: "k-pop", highlight: "var(--color-secondary)" }]
+			: $activeSlide === 12
+			? genreList.map((d) => ({
+					genre: d,
+					highlight:
+						geo.find((g) => g.genre === d)["geo 2"] === "west/english"
+							? "var(--color-primary)"
+							: "var(--color-secondary)"
+			  }))
 			: [];
 	$: blurredColumn = $activeSlide === 2 ? 1 : null;
 	$: scrollDown = $activeSlide === 6;
-
-	// highlight
-	// 	? highlight
-	// 			.split(",")
-	// 			.map((d) => ({ genre: d.trim(), highlight: "var(--color-secondary)" }))
-	// 	: highlightBy === "geography"
-	// 	? genreList.map((d) => ({
-	// 			genre: d,
-	// 			highlight:
-	// 				geo.find((g) => g.genre === d)["geo 2"] === "west/english"
-	// 					? "var(--color-primary)"
-	// 					: "var(--color-secondary)"
-	// 	  }))
-	// 	: [];
-	// $: genreList = data.reduce((acc, current) => {
-	// 	const genres = current.ranks.map((d) => d.genre);
-	// 	return _.uniq([...acc, ...genres]);
-	// }, []);
-
+	$: legend = $activeSlide === 12;
+	$: genreList = data.reduce((acc, current) => {
+		const genres = current.ranks.map((d) => d.genre);
+		return _.uniq([...acc, ...genres]);
+	}, []);
 	$: data = rank
 		.filter((d) => columns.includes(d.genre))
 		.reduce((acc, current) => {
@@ -68,6 +63,9 @@
 <div class="table-wrapper" class:scroll-down={scrollDown}>
 	{#if title}
 		<strong>{title}</strong>
+	{/if}
+	{#if legend}
+		<Legend />
 	{/if}
 	<table class:full={numColumns > 1}>
 		<thead>

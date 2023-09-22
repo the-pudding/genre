@@ -9,7 +9,7 @@
 </script>
 
 <figure style={`--offset: ${offset}`}>
-	{#if $activeSlide < 4 || $activeSlide === 5 || $activeSlide === 6}
+	{#if $activeSlide < 4 || $activeSlide === 5 || $activeSlide === 6 || $activeSlide === 12}
 		<Table />
 	{:else if $activeSlide <= 9 && $activeSlide >= 7}
 		<Line />

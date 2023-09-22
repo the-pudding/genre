@@ -52,9 +52,10 @@
 			: [];
 </script>
 
+<strong class="title">Genre's Popularity Ranking on Spotify</strong>
 <div class="chart-container">
 	<LayerCake
-		padding={{ top: 5, right: 95, bottom: 20, left: 25 }}
+		padding={{ top: 20, right: 95, bottom: 20, left: 25 }}
 		x={xKey}
 		y={yKey}
 		z={zKey}
@@ -78,6 +79,7 @@
 
 <style>
 	.chart-container {
+		margin-top: 1rem;
 		font-family: var(--sans);
 		width: 100%;
 		height: 500px;

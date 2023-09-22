@@ -23,9 +23,15 @@
 		if (audioSpan) {
 			const parentElement = audioSpan.parentElement;
 			const placeholder = document.createElement("div");
+			placeholder.style.width = "fit-content";
+			placeholder.style.display = "inline";
 			parentElement.replaceChild(placeholder, audioSpan);
 			new Audio({
-				target: placeholder
+				target: placeholder,
+				props: {
+					label: "Bad Bunny",
+					url: "https://p.scdn.co/mp3-preview/5c80aedfe75d2bc15aa0e803993c43395d8054fe?cid=5e546a6e15b04d54985d7d3538e3d5d5"
+				}
 			});
 		}
 	});
