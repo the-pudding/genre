@@ -34,6 +34,7 @@
 	// - i'd like to define a % for the x value and a y offset
 	// - i'd like to define a rotation angle
 	// - do we have to position inside the table? or is that fine? can we do %?
+	// - do i have to make a fake table? maybe track those things on the real table
 </script>
 
 <div
