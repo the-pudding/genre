@@ -2,9 +2,10 @@
 	import { activeSlide, slideHeights } from "$stores/misc.js";
 	import Table from "$components/Table.svelte";
 	import Line from "$components/Line.svelte";
+	import Mountain from "$components/Mountain.svelte";
 	import pointer from "$svg/pointer.svg";
 
-	// TODO: use slideHeights to check if this will cause overlap with slide text
+	// TODO: use slideHeights to check if this will cause overlap with slide text or set breakpoints
 	$: offset = $activeSlide === 0 ? "28%" : "15%";
 </script>
 
@@ -13,6 +14,8 @@
 		<Table />
 	{:else if $activeSlide <= 9 && $activeSlide >= 7}
 		<Line />
+	{:else if $activeSlide === 13 || $activeSlide === 14}
+		<Mountain />
 	{/if}
 
 	<div class="tap" class:visible={$activeSlide === 0}>
@@ -22,6 +25,9 @@
 </figure>
 
 <style>
+	p {
+		position: absolute;
+	}
 	figure {
 		position: absolute;
 		top: calc(var(--offset) + 2rem);

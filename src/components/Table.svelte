@@ -7,8 +7,6 @@
 
 	export let columns;
 
-	const title = "Genres, ranked by streams on Spotify";
-
 	$: numToDisplay = $activeSlide === 5 || $activeSlide === 6 ? 295 : 25;
 	$: columns =
 		$activeSlide < 2 || $activeSlide === 5 || $activeSlide === 6
@@ -26,7 +24,7 @@
 			  ]
 			: $activeSlide === 6
 			? [{ genre: "k-pop", highlight: "var(--color-secondary)" }]
-			: $activeSlide === 12
+			: $activeSlide === 12 || $activeSlide === 13
 			? genreList.map((d) => ({
 					genre: d,
 					highlight:
@@ -61,9 +59,8 @@
 </script>
 
 <div class="table-wrapper" class:scroll-down={scrollDown}>
-	{#if title}
-		<strong>{title}</strong>
-	{/if}
+	<strong>Genres, ranked by streams on Spotify</strong>
+
 	{#if legend}
 		<Legend />
 	{/if}
@@ -125,6 +122,9 @@
 	}
 	tr {
 		border-bottom: 1px solid var(--color-gray-400);
+	}
+	td {
+		padding: 2px 0;
 	}
 	.number {
 		color: var(--color-gray-600);
