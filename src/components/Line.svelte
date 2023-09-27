@@ -37,17 +37,17 @@
 		valueTo: yKey
 	});
 
-	$: $yDomain = $activeSlide === 7 ? [1, 300] : [1, 75];
+	$: $yDomain = $activeSlide === 8 ? [1, 300] : [1, 75];
 	$: yTicks =
-		$activeSlide === 7
+		$activeSlide === 8
 			? [1, ..._.range(50, 350, 50)]
 			: [1, ..._.range(25, 100, 25)];
 	$: visible =
-		$activeSlide === 7
+		$activeSlide === 8
 			? ["k-pop"]
-			: $activeSlide === 8
-			? ["k-pop", "r&b", "edm"]
 			: $activeSlide === 9
+			? ["k-pop", "r&b", "edm"]
+			: $activeSlide === 10
 			? ["reggaeton", "r&b", "edm"]
 			: [];
 </script>
@@ -75,7 +75,7 @@
 	</LayerCake>
 </div>
 
-<div class="explode" class:visible={$activeSlide === 8}>🤯</div>
+<div class="explode" class:visible={$activeSlide === 9}>🤯</div>
 
 <style>
 	.chart-container {

@@ -6,15 +6,18 @@
 	import pointer from "$svg/pointer.svg";
 
 	// TODO: use slideHeights to check if this will cause overlap with slide text or set breakpoints
-	$: offset = $activeSlide === 0 ? "28%" : "15%";
+	$: offset = $activeSlide === 0 ? "28%" : $activeSlide === 12 ? "28%" : "15%";
+	$: table = $activeSlide <= 5;
+	$: line = $activeSlide >= 8 && $activeSlide <= 10;
+	$: mountain = $activeSlide === 11 || $activeSlide === 12;
 </script>
 
 <figure style={`--offset: ${offset}`}>
-	{#if $activeSlide < 4 || $activeSlide === 5 || $activeSlide === 6 || $activeSlide === 12}
+	{#if table}
 		<Table />
-	{:else if $activeSlide <= 9 && $activeSlide >= 7}
+	{:else if line}
 		<Line />
-	{:else if $activeSlide === 13 || $activeSlide === 14}
+	{:else if mountain}
 		<Mountain />
 	{/if}
 
@@ -25,9 +28,6 @@
 </figure>
 
 <style>
-	p {
-		position: absolute;
-	}
 	figure {
 		position: absolute;
 		top: calc(var(--offset) + 2rem);

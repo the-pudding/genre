@@ -7,14 +7,12 @@
 
 	export let columns;
 
-	$: numToDisplay = $activeSlide === 5 || $activeSlide === 6 ? 295 : 25;
-	$: columns =
-		$activeSlide < 2 || $activeSlide === 5 || $activeSlide === 6
-			? ["4/23/2016"]
-			: ["4/23/2016", "8/9/2023"];
+	const numToDisplay = 25;
+
+	$: columns = $activeSlide < 2 ? ["4/23/2016"] : ["4/23/2016", "8/9/2023"];
 	$: numColumns = columns.length;
 	$: highlightList =
-		$activeSlide === 3
+		$activeSlide === 3 || $activeSlide === 4
 			? [
 					{ genre: "urbano latino", highlight: "var(--color-secondary)" },
 					{ genre: "trap latino", highlight: "var(--color-secondary)" },
@@ -22,9 +20,7 @@
 					{ genre: "filmi", highlight: "var(--color-secondary)" },
 					{ genre: "k-pop", highlight: "var(--color-secondary)" }
 			  ]
-			: $activeSlide === 6
-			? [{ genre: "k-pop", highlight: "var(--color-secondary)" }]
-			: $activeSlide === 12 || $activeSlide === 13
+			: $activeSlide === 5
 			? genreList.map((d) => ({
 					genre: d,
 					highlight:
@@ -34,8 +30,7 @@
 			  }))
 			: [];
 	$: blurredColumn = $activeSlide === 2 ? 1 : null;
-	$: scrollDown = $activeSlide === 6;
-	$: legend = $activeSlide === 12;
+	$: legend = $activeSlide === 5;
 	$: genreList = data.reduce((acc, current) => {
 		const genres = current.ranks.map((d) => d.genre);
 		return _.uniq([...acc, ...genres]);
@@ -58,7 +53,7 @@
 		}, []);
 </script>
 
-<div class="table-wrapper" class:scroll-down={scrollDown}>
+<div class="table-wrapper">
 	<strong>Genres, ranked by streams on Spotify</strong>
 
 	{#if legend}
@@ -103,9 +98,6 @@
 		font-family: var(--sans);
 		transform: translate(0, 0);
 		transition: transform calc(var(--1s) * 2) ease-in-out;
-	}
-	.scroll-down {
-		transform: translate(0, -91%);
 	}
 	table {
 		max-width: 20rem;
