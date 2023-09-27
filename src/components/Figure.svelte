@@ -9,7 +9,7 @@
 	$: offset = $activeSlide === 0 ? "28%" : $activeSlide === 12 ? "28%" : "15%";
 	$: table = $activeSlide <= 5;
 	$: line = $activeSlide >= 8 && $activeSlide <= 10;
-	$: mountain = $activeSlide === 11 || $activeSlide === 12;
+	$: mountain = false; // $activeSlide === 11 || $activeSlide === 12;
 </script>
 
 <figure style={`--offset: ${offset}`}>

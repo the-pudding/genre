@@ -25,6 +25,7 @@
 			const placeholder = document.createElement("div");
 			placeholder.style.width = "fit-content";
 			placeholder.style.display = "inline";
+			//placeholder.style.position = "relative";
 			parentElement.replaceChild(placeholder, audioSpan);
 			new Audio({
 				target: placeholder,
