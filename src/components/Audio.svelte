@@ -42,6 +42,7 @@
 		padding: 4px;
 		position: relative;
 		z-index: 3;
+		font-weight: bold;
 	}
 	.progress {
 		position: absolute;

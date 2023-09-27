@@ -3,6 +3,7 @@
 	import Table from "$components/Table.svelte";
 	import Line from "$components/Line.svelte";
 	import Mountain from "$components/Mountain.svelte";
+	import Bubbles from "$components/Bubbles.svelte";
 	import pointer from "$svg/pointer.svg";
 
 	// TODO: use slideHeights to check if this will cause overlap with slide text or set breakpoints
@@ -10,6 +11,7 @@
 	$: table = $activeSlide <= 5;
 	$: line = $activeSlide >= 8 && $activeSlide <= 10;
 	$: mountain = false; // $activeSlide === 11 || $activeSlide === 12;
+	$: bubbles = $activeSlide >= 14 && $activeSlide <= 17;
 </script>
 
 <figure style={`--offset: ${offset}`}>
@@ -19,6 +21,8 @@
 		<Line />
 	{:else if mountain}
 		<Mountain />
+	{:else if bubbles}
+		<Bubbles />
 	{/if}
 
 	<div class="tap" class:visible={$activeSlide === 0}>

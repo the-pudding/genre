@@ -75,7 +75,22 @@
 	</LayerCake>
 </div>
 
-<div class="explode" class:visible={$activeSlide === 9}>🤯</div>
+{#each _.range(3) as i}
+	{@const positions = [
+		[10, 20, 10],
+		[50, 60, -10],
+		[70, 10, 10]
+	]}
+	<div
+		class="explode"
+		class:visible={$activeSlide === 9}
+		style={`--delay: ${_.random(800, 1500)}ms; --rotate: ${positions[i][2]}deg`}
+		style:left={`${positions[i][0]}%`}
+		style:top={`${positions[i][1]}%`}
+	>
+		🤯
+	</div>
+{/each}
 
 <style>
 	.chart-container {
@@ -87,30 +102,13 @@
 	.explode {
 		position: absolute;
 		font-size: 5rem;
-		top: 40%;
-		left: 50%;
 		opacity: 0;
-		transform: translate(-50%, -50%) scale(0);
+		transform: translate(-50%, -50%) scale(0) rotate(var(--rotate));
 		transition: all var(--1s) ease-in-out;
 	}
 	.explode.visible {
 		opacity: 1;
-		transform: translate(-50%, -50%) scale(1.5);
-		transition: all var(--1s) var(--1s) ease-in-out;
-		/* animation: shake calc(var(--1s) * 0.25) infinite; */
+		transform: translate(-50%, -50%) scale(1.3) rotate(var(--rotate));
+		transition: all var(--1s) var(--delay) ease-in-out;
 	}
-	/* @keyframes shake {
-		0% {
-			transform: scale(1.5) translate(-50%, -50%) rotate(0deg);
-		}
-		25% {
-			transform: scale(1.5) translate(-50%, -50%) rotate(-5deg);
-		}
-		75% {
-			transform: scale(1.5) translate(-50%, -50%) rotate(5deg);
-		}
-		100% {
-			transform: scale(1.5) translate(-50%, -50%) rotate(0deg);
-		}
-	} */
 </style>
