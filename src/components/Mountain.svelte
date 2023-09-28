@@ -1,98 +1,91 @@
 <script>
-	import WordCloud from "$components/Mountain.WordCloud.svelte";
-	import rank from "$data/rank.csv";
-	import _ from "lodash";
-	import { activeSlide } from "$stores/misc.js";
+	import tip from "$svg/tip.svg";
+	import { onMount } from "svelte";
 
-	const startWords = [
-		"hip-hop",
-		"filmi",
-		"sad-sierreno",
-		"urbano-latino",
-		"k-pop",
-		"reggaeton"
-	].join(" ");
-	const moreGenres = _.sampleSize(
-		Object.keys(rank.find((d) => d.genre === "8/9/2023")).map((d) =>
-			_.kebabCase(d)
-		),
-		200
-	).join(" ");
-	const allTogether = startWords + moreGenres;
+	const spaceToGrow = 260; // TODO: dynamic
 
-	$: up = $activeSlide === 12;
+	onMount(() => {
+		const tip = document.querySelector("#tip");
+		const viewBox = tip
+			.getAttribute("viewBox")
+			.split(" ")
+			.map((d) => +d);
+		const newViewBox = viewBox.map((d, i) => {
+			if (i === 1) return d - spaceToGrow;
+			else if (i === 3) return d + spaceToGrow;
+			return d;
+		});
+		tip.setAttribute("viewBox", newViewBox.join(" "));
 
-	//  688 x 109
-	// 	const words1 = [
-	//     {
-	//         "size": 20,
-	//         "x": 304,
-	//         "y": 62,
-	//         "rotate": 7,
-	//         "text": "hip-hop"
-	//     },
-	//     {
-	//         "size": 20,
-	//         "x": 382,
-	//         "y": 48,
-	//         "rotate": 18,
-	//         "text": "filmi"
-	//     },
-	//     {
-	//         "size": 20,
-	//         "x": 438,
-	//         "y": 27,
-	//         "rotate": 5,
-	//         "text": "sad-sierreno"
-	//     },
-	//     {
-	//         "size": 20,
-	//         "x": 194,
-	//         "y": 65,
-	//         "rotate": 13,
-	//         "text": "urbano-latino"
-	//     },
-	//     {
-	//         "size": 20,
-	//         "x": 244,
-	//         "y": 35,
-	//         "rotate": -15,
-	//         "text": "k-pop"
-	//     },
-	//     {
-	//         "size": 20,
-	//         "x": 84,
-	//         "y": 55,
-	//         "rotate": 2,
-	//         "text": "reggaeton"
-	//     }
-	// ]
+		const words = document.querySelectorAll("path.mountain");
+		setTimeout(() => {
+			words.forEach((word) => {
+				word.style.setProperty("--delay", `${Math.random() * 1000}ms`);
+				word.classList.add("dropped");
+			});
+		}, 0);
+	});
 </script>
 
-<div class="mountain" class:up>
-	<WordCloud
-		id="start"
-		text={startWords}
-		color={"var(--color-primary)"}
-		height={"15%"}
-	/>
-	<WordCloud
-		id="the-rest"
-		text={moreGenres}
-		color={"var(--color-primary)"}
-		height={"85%"}
-	/>
+<div class="mountain">
+	{@html tip}
 </div>
 
 <style>
 	.mountain {
-		height: 100%;
+		position: absolute;
+		bottom: 0;
 		width: 100%;
-		position: relative;
-		transform: translate(0, 0);
-		transition: transform calc(var(--1s) * 3) ease-in-out;
 	}
-	.up {
-		transform: translate(0, -85%);
+	:global(path.mountain) {
+		transform: translateY(-200px);
+		opacity: 0;
+		transition: all calc(var(--1s) * 1.5) var(--delay) ease-in-out;
+	}
+	:global(path.mountain.dropped) {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	@keyframes bounce {
+		0% {
+			transform: translateY(0%);
+		}
+
+		12% {
+			transform: translateY(-10.89%);
+		}
+
+		24% {
+			transform: translateY(-43.56%);
+		}
+
+		36% {
+			transform: translateY(-98.01%);
+		}
+
+		54% {
+			transform: translateY(-75.02%);
+		}
+
+		74% {
+			transform: translateY(-98.37%);
+		}
+
+		82% {
+			transform: translateY(-93.75%);
+		}
+
+		92% {
+			transform: translateY(-99.34%);
+		}
+
+		96% {
+			transform: translateY(-98.46%);
+		}
+
+		100% {
+			transform: translateY(-100%);
+		}
 	}
 </style>
