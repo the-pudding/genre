@@ -11,7 +11,7 @@
 	$: table = $activeSlide <= 5;
 	$: line = $activeSlide >= 8 && $activeSlide <= 10;
 	$: mountain = $activeSlide === 11 || $activeSlide === 12;
-	// $: bubbles = $activeSlide >= 14 && $activeSlide <= 17;
+	$: bubbles = $activeSlide >= 14 && $activeSlide <= 17;
 </script>
 
 <figure style={`--offset: ${offset}`}>
@@ -21,8 +21,8 @@
 		<Line />
 	{:else if mountain}
 		<Mountain />
-		<!-- {:else if bubbles}
-		<Bubbles /> -->
+	{:else if bubbles}
+		<Bubbles />
 	{/if}
 
 	<div class="tap" class:visible={$activeSlide === 0}>
