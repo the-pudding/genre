@@ -10,7 +10,7 @@
 		{@const sectionActive = copy.slides[$activeSlide].section === section}
 		<div class="block" class:active={i === $activeSlide}>
 			{#if sectionStarter}
-				<div class="title">
+				<div class="title" class:active={sectionActive}>
 					{section}<span class:visible={sectionActive}>
 						{" — "}{copy.sections[section]}</span
 					>
@@ -34,9 +34,8 @@
 		flex: 1;
 		height: 3px;
 		margin: 0 3px;
-		background: var(--color-black);
-		opacity: 0.3;
-		transition: opacity calc(var(--1s) * 0.4);
+		background: rgba(0, 0, 0, 0.3);
+		transition: background calc(var(--1s) * 0.4);
 	}
 	.block:first-child {
 		margin-left: 0;
@@ -44,8 +43,8 @@
 	.block:last-child {
 		margin-right: 0;
 	}
-	.active {
-		opacity: 1;
+	.block.active {
+		background: rgba(0, 0, 0, 1);
 	}
 	.title {
 		position: absolute;
@@ -53,6 +52,10 @@
 		left: 0;
 		font-size: 12px;
 		white-space: nowrap;
+		opacity: 0.3;
+	}
+	.title.active {
+		opacity: 1;
 	}
 	.title span {
 		visibility: hidden;

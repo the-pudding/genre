@@ -24,7 +24,7 @@
 			? genreList.map((d) => ({
 					genre: d,
 					highlight:
-						geo.find((g) => g.genre === d)["geo 2"] === "west/english"
+						geo.find((g) => g.genre === d).region === "west/english"
 							? "var(--color-primary)"
 							: "var(--color-secondary)"
 			  }))

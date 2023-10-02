@@ -23,6 +23,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		margin: 0.5rem 0;
+		font-family: var(--sans);
 	}
 	.item {
 		display: flex;
