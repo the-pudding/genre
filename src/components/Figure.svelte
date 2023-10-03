@@ -14,7 +14,11 @@
 	$: columns = $activeSlide === 7;
 	$: line = $activeSlide >= 8 && $activeSlide <= 10;
 	$: mountain = $activeSlide === 11 || $activeSlide === 12;
-	$: bubbles = $activeSlide >= 14 && $activeSlide <= 17;
+	$: bubbles =
+		($activeSlide >= 14 && $activeSlide <= 17) ||
+		$activeSlide === 20 ||
+		$activeSlide === 21 ||
+		$activeSlide === 24;
 	$: quote = $activeSlide === 19;
 </script>
 
