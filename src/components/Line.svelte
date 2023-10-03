@@ -6,7 +6,7 @@
 	import AxisY from "$components/layercake/AxisY.svg.svelte";
 	import { timeFormat } from "d3-time-format";
 	import { scaleOrdinal } from "d3-scale";
-	import { activeSlide } from "$stores/misc.js";
+	import { activeSlide, dir } from "$stores/misc.js";
 	import { tweened } from "svelte/motion";
 	import _ from "lodash";
 
@@ -21,7 +21,9 @@
 	const xKey = "date";
 	const yKey = "value";
 	const zKey = "genre";
-	const yDomain = tweened([1, 300], { duration: 1000 });
+	const yDomain = tweened($dir === "right" ? [1, 300] : [1, 75], {
+		duration: 1000
+	});
 	const formatTickX = timeFormat("%Y");
 	const formatTickY = (d) => `#${d}`;
 	const allGenres = Object.keys(data[0]).filter((d) => d !== xKey);
@@ -37,7 +39,7 @@
 		valueTo: yKey
 	});
 
-	$: $yDomain = $activeSlide === 8 ? [1, 300] : [1, 75];
+	$: $yDomain = $activeSlide <= 8 ? [1, 300] : [1, 75];
 	$: yTicks =
 		$activeSlide === 8
 			? [1, ..._.range(50, 350, 50)]

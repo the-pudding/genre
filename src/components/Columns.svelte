@@ -4,6 +4,8 @@
 	import Legend from "$components/Table.Legend.svelte";
 	import rank from "$data/rank.csv";
 	import geo from "$data/geo.csv";
+	import { activeSlide } from "$stores/misc.js";
+	import copy from "$data/copy.json";
 
 	const dates = ["4/23/2016", "3/30/2019", "6/15/2021", "8/9/2023"];
 	const data = rank
@@ -27,6 +29,10 @@
 			];
 		}, []);
 	const yTicks = [1, 11, 21, 31];
+
+	$: annotation = copy.slides.find(
+		(d) => +d.slide === $activeSlide + 1
+	).annotation;
 </script>
 
 <div class="chart-container">
@@ -42,8 +48,7 @@
 		</Html>
 
 		<div class="annotation">
-			The genre “Filmi” (music from Indian Cinema) is now the 8th most-streamed
-			genre on Spotify.
+			{annotation}
 		</div>
 	</LayerCake>
 </div>
