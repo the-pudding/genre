@@ -11,12 +11,8 @@
 	const enterExit = () => {
 		const circles = document.querySelectorAll("circle");
 		circles.forEach((circle) => {
-			const endR = circle.getAttribute("r");
-			circle.setAttribute("r", 0);
-			circle.style.transition = "r var(--1s) ease-in-out";
-			setTimeout(() => {
-				circle.setAttribute("r", endR);
-			}, 0);
+			circle.style.transformOrigin = "center";
+			circle.style.animation = "bounce-in var(--1s)";
 		});
 	};
 	const interactiveAudio = () => {
@@ -66,3 +62,38 @@
 {#each artistsWithAudio as { id, url }}
 	<audio {id} src={url || copy.artists["bad-bunny"]} />
 {/each}
+
+<style>
+	@keyframes -global-bounce-in {
+		0% {
+			opacity: 0;
+			transform: scale(0.3);
+		}
+		50% {
+			opacity: 1;
+			transform: scale(1.05);
+		}
+		70% {
+			transform: scale(0.9);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+	@keyframes -global-bounce-out {
+		0% {
+			transform: scale(1);
+		}
+		25% {
+			transform: scale(0.95);
+		}
+		50% {
+			opacity: 1;
+			transform: scale(1.1);
+		}
+		100% {
+			opacity: 0;
+			transform: scale(0.3);
+		}
+	}
+</style>
