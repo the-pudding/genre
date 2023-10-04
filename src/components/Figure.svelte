@@ -6,6 +6,7 @@
 	import Bubbles from "$components/Bubbles.svelte";
 	import Columns from "$components/Columns.svelte";
 	import Quote from "$components/Quote.svelte";
+	import Video from "$components/Video.svelte";
 	import pointer from "$svg/pointer.svg";
 
 	// TODO: use slideHeights to check if this will cause overlap with slide text or set breakpoints
@@ -20,6 +21,7 @@
 		$activeSlide === 21 ||
 		$activeSlide === 24;
 	$: quote = $activeSlide === 19;
+	$: video = $activeSlide === 26;
 </script>
 
 <figure style={`--offset: ${offset}`}>
@@ -35,6 +37,8 @@
 		<Bubbles />
 	{:else if quote}
 		<Quote />
+	{:else if video}
+		<Video />
 	{/if}
 
 	<div class="tap" class:visible={$activeSlide === 0}>

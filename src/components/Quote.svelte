@@ -51,6 +51,7 @@
 		bind:currentTime
 		src={"assets/sound/glenn.mp3"}
 	/>
+	<track kind="subtitles" src="glenn-transcript.vtt" srclang="en" />
 </div>
 
 <style>
