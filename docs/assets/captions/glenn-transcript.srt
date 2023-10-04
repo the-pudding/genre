@@ -1,0 +1,34 @@
+1
+00:00:00,049 --> 00:00:03,569
+We do recognize the existence
+of genres that are mainly driven
+
+2
+00:00:03,569 --> 00:00:07,360
+by listening patterns and not
+necessarily by the artists thinking
+
+3
+00:00:07,360 --> 00:00:09,207
+of themselves as being peers.
+
+4
+00:00:09,213 --> 00:00:13,410
+We can find clusters of listeners
+who share  fondness for the
+
+5
+00:00:13,410 --> 00:00:16,748
+same artists, even when it's not
+necessarily obvious that those
+
+6
+00:00:16,748 --> 00:00:21,785
+artists share a style, and they don't
+necessarily come from the same place.
+
+7
+00:00:22,205 --> 00:00:27,442
+But we can see that, yes, fans of these
+artists tend to be fans of the others.
+
