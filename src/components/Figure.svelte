@@ -1,5 +1,6 @@
 <script>
 	import { activeSlide, slideHeights } from "$stores/misc.js";
+	import Svg from "$components/Svg.svelte";
 	import Table from "$components/Table.svelte";
 	import Line from "$components/Line.svelte";
 	import Mountain from "$components/Mountain.svelte";
@@ -19,6 +20,7 @@
 			: `${$slideHeights[$activeSlide] + 50}px`;
 	$: slide = $activeSlide === 0 || $activeSlide === 1;
 	$: table = $activeSlide <= 5;
+	$: svg = $activeSlide === 6 || $activeSlide === 13;
 	$: columns = $activeSlide === 7;
 	$: line = $activeSlide >= 8 && $activeSlide <= 10;
 	$: mountain = $activeSlide === 11 || $activeSlide === 12;
@@ -34,6 +36,8 @@
 <figure style={`--offset: ${offset}`} class:slide>
 	{#if table}
 		<Table />
+	{:else if svg}
+		<Svg />
 	{:else if columns}
 		<Columns />
 	{:else if line}
