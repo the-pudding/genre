@@ -9,12 +9,12 @@
 	import Video from "$components/Video.svelte";
 	import pointer from "$svg/pointer.svg";
 
-	$: console.log($slideHeights);
-
 	$: offset =
 		$activeSlide === 0
 			? "28%"
 			: $activeSlide === 1 || $activeSlide === 2
+			? "18%"
+			: line
 			? "18%"
 			: `${$slideHeights[$activeSlide] + 50}px`;
 	$: slide = $activeSlide === 0 || $activeSlide === 1;
@@ -28,7 +28,8 @@
 		$activeSlide === 21 ||
 		$activeSlide === 24;
 	$: quote = $activeSlide === 19;
-	$: video = $activeSlide === 26;
+	$: video = $activeSlide === 26 || $activeSlide === 27;
+	$: videoId = $activeSlide === 26 ? "oates" : "tyler";
 </script>
 
 <figure style={`--offset: ${offset}`} class:slide>
@@ -45,7 +46,9 @@
 	{:else if quote}
 		<Quote />
 	{:else if video}
-		<Video />
+		{#key videoId}
+			<Video id={videoId} />
+		{/key}
 	{/if}
 
 	<div class="tap" class:visible={$activeSlide === 0}>

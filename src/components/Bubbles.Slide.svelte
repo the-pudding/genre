@@ -12,7 +12,8 @@
 		const circles = document.querySelectorAll("circle");
 		circles.forEach((circle) => {
 			circle.style.transformOrigin = "center";
-			circle.style.animation = "bounce-in var(--1s)";
+			const randomDelay = _.random(0, 800);
+			circle.style.animation = `bounce-in var(--1s) ${randomDelay}ms both`;
 		});
 	};
 	const interactiveAudio = () => {

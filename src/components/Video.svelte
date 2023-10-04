@@ -1,7 +1,9 @@
 <script>
 	import { onMount } from "svelte";
 
-	const src = "assets/video/yacht.mp4";
+	export let id;
+
+	const src = `assets/video/${id}.mp4`;
 
 	let videoEl;
 	let currentTime = 0;
@@ -69,7 +71,7 @@
 	>
 		<track
 			kind="captions"
-			src="assets/video/yacht-transcript.vtt"
+			src="assets/captions/oates-transcript.vtt"
 			srclang="en"
 		/>
 	</video>

@@ -10,7 +10,7 @@
 		if (paused) audioEl.play();
 		else audioEl.pause();
 	};
-	const restart = () => {
+	const onEnded = () => {
 		audioEl.currentTime = 0;
 	};
 	const beats = [
@@ -36,7 +36,6 @@
 <div class="quote">
 	<button on:click={playPause}>{paused ? "Play" : "Pause"} podcast audio</button
 	>
-	<button on:click={restart}>restart</button>
 
 	<strong class="words">
 		{#each words as word, i}
@@ -49,9 +48,10 @@
 		bind:this={audioEl}
 		bind:paused
 		bind:currentTime
+		on:ended={onEnded}
 		src={"assets/sound/glenn.mp3"}
 	/>
-	<track kind="subtitles" src="glenn-transcript.vtt" srclang="en" />
+	<!-- <track kind="subtitles" src="glenn-transcript.vtt" srclang="en" /> -->
 </div>
 
 <style>

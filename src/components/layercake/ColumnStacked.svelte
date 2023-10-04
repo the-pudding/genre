@@ -40,6 +40,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		max-width: 5rem;
 		margin-right: 1rem;
 	}
 	.column:last-of-type {
