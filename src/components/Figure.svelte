@@ -29,7 +29,6 @@
 		$activeSlide === 24;
 	$: quote = $activeSlide === 19;
 	$: video = $activeSlide === 26 || $activeSlide === 27;
-	$: videoId = $activeSlide === 26 ? "oates" : "tyler";
 </script>
 
 <figure style={`--offset: ${offset}`} class:slide>
@@ -46,9 +45,7 @@
 	{:else if quote}
 		<Quote />
 	{:else if video}
-		{#key videoId}
-			<Video id={videoId} />
-		{/key}
+		<Video />
 	{/if}
 
 	<div class="tap" class:visible={$activeSlide === 0}>
