@@ -9,8 +9,15 @@
 	import Video from "$components/Video.svelte";
 	import pointer from "$svg/pointer.svg";
 
-	// TODO: use slideHeights to check if this will cause overlap with slide text or set breakpoints
-	$: offset = $activeSlide === 0 ? "28%" : "18%";
+	$: console.log($slideHeights);
+
+	$: offset =
+		$activeSlide === 0
+			? "28%"
+			: $activeSlide === 1 || $activeSlide === 2
+			? "18%"
+			: `${$slideHeights[$activeSlide] + 50}px`;
+	$: slide = $activeSlide === 0 || $activeSlide === 1;
 	$: table = $activeSlide <= 5;
 	$: columns = $activeSlide === 7;
 	$: line = $activeSlide >= 8 && $activeSlide <= 10;
@@ -24,7 +31,7 @@
 	$: video = $activeSlide === 26;
 </script>
 
-<figure style={`--offset: ${offset}`}>
+<figure style={`--offset: ${offset}`} class:slide>
 	{#if table}
 		<Table />
 	{:else if columns}
@@ -57,8 +64,10 @@
 		overflow: hidden;
 		width: 45rem;
 		padding: 1rem;
-		transition: top var(--1s) ease-in-out;
 		z-index: 100;
+	}
+	.slide {
+		transition: all var(--1s) ease-in-out;
 	}
 	.tap {
 		position: fixed;
