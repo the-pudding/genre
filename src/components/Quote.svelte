@@ -51,7 +51,7 @@
 		on:ended={onEnded}
 		src={"assets/sound/glenn.mp3"}
 	/>
-	<!-- <track kind="subtitles" src="glenn-transcript.vtt" srclang="en" /> -->
+	<!-- <track kind="subtitles" src="glenn.vtt" srclang="en" /> -->
 </div>
 
 <style>

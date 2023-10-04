@@ -7,6 +7,7 @@
 
 	let videoEl;
 	let currentTime = 0;
+	let duration = 0;
 	let autoplay = true;
 	let paused = true;
 	let loaded = false;
@@ -38,6 +39,7 @@
 	$: muteText = muted ? "Unmute video" : "Mute video";
 	$: playPauseText = paused ? "Play video" : "Pause video";
 	$: playing = !paused;
+	$: percentRemaining = 100 - (currentTime / duration) * 100;
 	$: if (autoplay && currentTime === 0 && paused && loaded) {
 		autoplay = false;
 		videoEl.play();
@@ -65,17 +67,15 @@
 	<video
 		bind:this={videoEl}
 		bind:currentTime
+		bind:duration
 		on:pause={onPause}
 		on:play={onPlay}
 		on:ended={onEnded}
 	>
-		<track
-			kind="captions"
-			src="assets/captions/oates-transcript.vtt"
-			srclang="en"
-		/>
+		<track kind="captions" src={`assets/captions/${id}.vtt`} srclang="en" />
 	</video>
 
+	<div class="progress" style:width={`${percentRemaining}%`} />
 	<div class="controls">
 		<button
 			aria-label="Closed Captions"
@@ -109,7 +109,9 @@
 		visibility: hidden;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: start;
+		width: fit-content;
+		margin: auto;
 	}
 	.wrapper.loaded {
 		visibility: visible;
@@ -117,5 +119,9 @@
 	video::cue {
 		font-size: var(--18px);
 		font-family: var(--sans);
+	}
+	.progress {
+		background: var(--accent);
+		height: 20px;
 	}
 </style>

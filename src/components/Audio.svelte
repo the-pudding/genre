@@ -1,7 +1,7 @@
 <script>
 	export let label;
 	export let url;
-	export let color = "#45FE9A";
+	export let color = "var(--accent)";
 
 	let audioEl;
 	let paused = true;
