@@ -86,6 +86,8 @@
 				</tr>
 			{/each}
 		</tbody>
+
+		<div class="fade" />
 	</table>
 </div>
 
@@ -123,5 +125,16 @@
 	}
 	.blur {
 		filter: blur(3px);
+	}
+
+	.fade {
+		background: linear-gradient(
+			rgba(212, 212, 212, 0),
+			rgba(212, 212, 212, 0.8)
+		);
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 60%;
 	}
 </style>

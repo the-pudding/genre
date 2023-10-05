@@ -80,6 +80,7 @@
 		transition: all var(--1s) ease-in-out;
 	}
 	.tap {
+		font-size: 1.3rem;
 		position: fixed;
 		bottom: 1rem;
 		right: 1rem;
