@@ -36,7 +36,7 @@
 	--color-input-fg: var(--color-gray-900);
 	--color-placeholder: var(--color-gray-500);
 
-	--color-primary: #2473af;
+	--color-primary: #0000ff;
 	--color-secondary: red;
 	--accent: #45fe9a;
 	--accent-dark: #2b9e6d;
@@ -115,4 +115,7 @@ h4 {
 }
 .serif {
 	font-family: var(--serif);
+}
+a:hover {
+	color: var(--color-gray-600);
 }

@@ -14,7 +14,7 @@
 	$: offset =
 		$activeSlide === 0
 			? "28%"
-			: $activeSlide === 1 || $activeSlide === 2
+			: $activeSlide === 1 || $activeSlide === 2 || $activeSlide === 3
 			? "18%"
 			: line
 			? "18%"
