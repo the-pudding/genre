@@ -8,6 +8,7 @@
 	import Columns from "$components/Columns.svelte";
 	import Quote from "$components/Quote.svelte";
 	import Video from "$components/Video.svelte";
+	import Images from "$components/Images.svelte";
 	import pointer from "$svg/pointer.svg";
 
 	$: offset =
@@ -23,6 +24,7 @@
 	$: slide = $activeSlide === 0 || $activeSlide === 1;
 	$: table = $activeSlide <= 5;
 	$: svg = $activeSlide === 6 || $activeSlide === 13;
+	$: images = $activeSlide === 23;
 	$: columns = $activeSlide === 7;
 	$: line = $activeSlide >= 8 && $activeSlide <= 10;
 	$: mountain = $activeSlide === 11 || $activeSlide === 12;
@@ -40,6 +42,8 @@
 		<Table />
 	{:else if svg}
 		<Svg />
+	{:else if images}
+		<Images />
 	{:else if columns}
 		<Columns />
 	{:else if line}

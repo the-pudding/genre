@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from "svelte";
+	import Icon from "$components/helpers/Icon.svelte";
 
 	export let id;
 
@@ -64,6 +65,7 @@
 </script>
 
 <div class="wrapper" class:loaded>
+	<div class="progress" style:width={`${percentRemaining}%`} />
 	<video
 		bind:this={videoEl}
 		bind:currentTime
@@ -75,31 +77,31 @@
 		<track kind="captions" src={`assets/captions/${id}.vtt`} srclang="en" />
 	</video>
 
-	<div class="progress" style:width={`${percentRemaining}%`} />
-	<div class="controls">
+	<button
+		aria-label={playPauseText}
+		class="btn-playpause"
+		class:playing
+		on:click={onPlayPause}
+	>
+		<Icon name={playing ? "pause" : "play"} />
+	</button>
+
+	<div class="right">
+		<button
+			aria-label={muteText}
+			class="btn-mute"
+			class:active={!muted}
+			on:click={onMute}
+		>
+			<Icon name={muted ? "volume-x" : "volume-2"} />
+		</button>
+
 		<button
 			aria-label="Closed Captions"
 			class="btn-captions"
 			class:active={captioned}
 			on:click={onCaptions}
 			>CC
-		</button>
-
-		<button
-			aria-label={muteText}
-			class="btn-mute"
-			class:active={!muted}
-			on:click={onMute}
-			>{muteText}
-		</button>
-
-		<button
-			aria-label={playPauseText}
-			class="btn-playpause"
-			class:playing
-			on:click={onPlayPause}
-		>
-			{playPauseText}
 		</button>
 	</div>
 </div>
@@ -112,6 +114,7 @@
 		align-items: start;
 		width: fit-content;
 		margin: auto;
+		position: relative;
 	}
 	.wrapper.loaded {
 		visibility: visible;
@@ -123,5 +126,29 @@
 	.progress {
 		background: var(--accent);
 		height: 20px;
+	}
+	button {
+		font-size: 2rem;
+		display: flex;
+		background: var(--accent);
+		border-radius: 10px;
+	}
+	.btn-playpause {
+		position: absolute;
+		top: calc(20px + 1rem);
+		left: 1rem;
+	}
+	button:hover {
+		background: var(--accent-dark);
+	}
+	.right {
+		position: absolute;
+		top: calc(20px + 1rem);
+		right: 1rem;
+		display: flex;
+	}
+	.btn-captions {
+		font-size: 1.5rem;
+		margin-left: 0.5rem;
 	}
 </style>
