@@ -34,7 +34,7 @@
 </script>
 
 <div class="quote">
-	<button on:click={playPause}>{paused ? "Play" : "Pause"} podcast audio</button
+	<button on:click={playPause}>{paused ? "Play" : "Pause"} the interview</button
 	>
 
 	<strong class="words">
@@ -51,7 +51,7 @@
 		on:ended={onEnded}
 		src={"assets/sound/glenn.mp3"}
 	/>
-	<!-- <track kind="subtitles" src="glenn.vtt" srclang="en" /> -->
+	<track kind="subtitles" src="assets/captions/glenn.vtt" srclang="en" />
 </div>
 
 <style>
@@ -66,9 +66,17 @@
 	}
 	.words span {
 		transition: opacity calc(var(--1s) * 0.3);
-		opacity: 0.2;
+		opacity: 0.3;
 	}
 	.words span.dark {
 		opacity: 1;
+	}
+	button {
+		background: var(--accent);
+		font-family: var(--sans);
+		font-weight: bold;
+		margin-bottom: 2rem;
+		border-radius: 10px;
+		padding: 0.7rem;
 	}
 </style>
