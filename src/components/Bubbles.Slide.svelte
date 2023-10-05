@@ -5,17 +5,25 @@
 	import * as d3 from "d3";
 
 	export let svg;
+	export let special;
 
 	let artistsWithAudio = [];
 
-	const enterExit = () => {
-		const circles = document.querySelectorAll("circle");
-		circles.forEach((circle) => {
-			circle.style.transformOrigin = "center";
-			const randomDelay = _.random(0, 800);
-			circle.style.animation = `bounce-in var(--1s) ${randomDelay}ms both`;
-		});
+	const enterBubbles = () => {
+		const toEnter = Array.from(document.querySelectorAll("g")).filter(
+			(d) => d.id.includes("-bubble") || d.id.includes("-audio")
+		);
+
+		if (special) {
+		} else {
+			toEnter.forEach((el) => {
+				el.style.transformOrigin = "center";
+				const randomDelay = _.random(0, 800);
+				el.style.animation = `bounce-in calc(var(--1s) * 0.8) ${randomDelay}ms both`;
+			});
+		}
 	};
+
 	const interactiveAudio = () => {
 		const audioGroups = Array.from(document.querySelectorAll("g")).filter((d) =>
 			d.id.includes("-audio")
@@ -54,7 +62,7 @@
 	};
 
 	onMount(() => {
-		enterExit();
+		enterBubbles();
 		interactiveAudio();
 	});
 </script>

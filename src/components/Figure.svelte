@@ -17,6 +17,8 @@
 			? "18%"
 			: line
 			? "18%"
+			: $activeSlide === 16 || $activeSlide === 17
+			? "20%"
 			: `${$slideHeights[$activeSlide] + 50}px`;
 	$: slide = $activeSlide === 0 || $activeSlide === 1;
 	$: table = $activeSlide <= 5;

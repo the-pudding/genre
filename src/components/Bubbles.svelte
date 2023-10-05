@@ -1,6 +1,6 @@
 <script>
 	import Slide from "$components/Bubbles.Slide.svelte";
-	import { activeSlide } from "$stores/misc.js";
+	import { activeSlide, dir } from "$stores/misc.js";
 	import latin1 from "$svg/bubbles/latin1.svg";
 	import latin2 from "$svg/bubbles/latin2.svg";
 	import hiphop1 from "$svg/bubbles/hiphop1.svg";
@@ -19,8 +19,11 @@
 		24: stompAndHoller
 	};
 	$: currentSvg = svgs[$activeSlide];
+	$: special =
+		($activeSlide === 17 && $dir === "right") ||
+		($activeSlide === 16 && $dir === "left");
 </script>
 
 {#key currentSvg}
-	<Slide svg={currentSvg} />
+	<Slide svg={currentSvg} {special} />
 {/key}
