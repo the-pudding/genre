@@ -120,7 +120,7 @@
 		visibility: visible;
 	}
 	video::cue {
-		font-size: var(--18px);
+		font-size: 1.5rem;
 		font-family: var(--sans);
 	}
 	.progress {

@@ -22,8 +22,11 @@
 			: `${$slideHeights[$activeSlide] + 50}px`;
 	$: slide = $activeSlide === 0 || $activeSlide === 1;
 	$: table = $activeSlide <= 5;
-	$: svg = $activeSlide === 6 || $activeSlide === 13;
-	// $: images = $activeSlide === 23;
+	$: svg =
+		$activeSlide === 6 ||
+		$activeSlide === 13 ||
+		$activeSlide === 23 ||
+		$activeSlide === 25;
 	$: columns = $activeSlide === 7;
 	$: line = $activeSlide >= 8 && $activeSlide <= 10;
 	$: mountain = $activeSlide === 11 || $activeSlide === 12;
