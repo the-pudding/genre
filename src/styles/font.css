@@ -1,35 +1,65 @@
-/* National */
+/* NanumMyeongjo */
 @font-face {
-	font-family: "National 2 Web";
-	src: url("https://pudding.cool/assets/fonts/national/National2Web-Regular.woff2") format("woff2");
+	font-family: "NanumMyeongjo";
+	src: url("https://pudding.cool/assets/fonts/nanum/NanumMyeongjo-Regular.woff2")
+		format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-stretch: normal;
 	font-display: swap;
 }
-
 @font-face {
-	font-family: "National 2 Web";
-	src: url("https://pudding.cool/assets/fonts/national/National2Web-Bold.woff2") format("woff2");
+	font-family: "NanumMyeongjo";
+	src: url("https://pudding.cool/assets/fonts/nanum/NanumMyeongjo-Bold.woff2")
+		format("woff2");
 	font-weight: 700;
 	font-style: normal;
 	font-stretch: normal;
 	font-display: swap;
 }
-
-/* Tiempos Text */
 @font-face {
-	font-family: "Tiempos Text Web";
-	src: url("https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Regular.woff2") format("woff2");
+	font-family: "NanumMyeongjo";
+	src: url("https://pudding.cool/assets/fonts/nanum/NanumMyeongjo-ExtraBold.woff2")
+		format("woff2");
+	font-weight: 800;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+}
+
+/* IBM Plex Sans Condensed */
+@font-face {
+	font-family: "IBM Plex Sans Condensed";
+	src: url("https://pudding.cool/assets/fonts/ibm/IBMPlexSansCondensed-Regular.woff2")
+		format("woff2");
 	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "IBM Plex Sans Condensed";
+	src: url("https://pudding.cool/assets/fonts/ibm/IBMPlexSansCondensed-Medium.woff2")
+		format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "IBM Plex Sans Condensed";
+	src: url("https://pudding.cool/assets/fonts/ibm/IBMPlexSansCondensed-SemiBold.woff2")
+		format("woff2");
+	font-weight: 600;
 	font-style: normal;
 	font-stretch: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: "Tiempos Text Web";
-	src: url("https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Bold.woff2") format("woff2");
+	font-family: "IBM Plex Sans Condensed";
+	src: url("https://pudding.cool/assets/fonts/ibm/IBMPlexSansCondensed-Bold.woff2")
+		format("woff2");
 	font-weight: 700;
 	font-style: normal;
 	font-stretch: normal;

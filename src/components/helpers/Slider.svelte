@@ -112,6 +112,7 @@ Usage:
 	bind:this={sliderEl}
 	bind:clientWidth={width}
 	bind:clientHeight={height}
+	style={`height: ${!height ? "calc(100vh - 5rem)" : null}`}
 >
 	<div class="slides" bind:this={translateEl} style={customStyle}>
 		<slot />

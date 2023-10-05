@@ -149,6 +149,8 @@
 	}
 	.btn-captions {
 		font-size: 1.5rem;
+		font-family: var(--sans);
+		font-weight: 500;
 		margin-left: 0.5rem;
 	}
 </style>

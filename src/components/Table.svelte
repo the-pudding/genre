@@ -73,14 +73,10 @@
 				<tr>
 					{#each data as { ranks }, col}
 						{@const genre = ranks[row].genre}
-						{@const highlight = highlightList.find(
+						{@const color = highlightList.find(
 							(d) => d.genre === genre
 						)?.highlight}
-						<td
-							style:color={highlight}
-							class:highlight
-							class:blur={blurredColumn === col}
-						>
+						<td style:color class:blur={blurredColumn === col}>
 							{#if col === 0}
 								<span class="number">{row + 1}</span>
 							{/if}
@@ -108,6 +104,7 @@
 	thead {
 		border-bottom: 2px solid var(--color-gray-800);
 		color: var(--color-gray-600);
+		font-weight: 600;
 	}
 	th:first-child {
 		padding-left: 1.25rem;
@@ -117,14 +114,12 @@
 	}
 	td {
 		padding: 2px 0;
+		font-weight: 500;
 	}
 	.number {
 		color: var(--color-gray-600);
 		font-size: 0.75rem;
 		margin-right: 0.5rem;
-	}
-	.highlight {
-		font-weight: bolder;
 	}
 	.blur {
 		filter: blur(3px);

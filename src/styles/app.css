@@ -97,6 +97,11 @@ h5 {
 h6 {
 	font-size: var(--20px, 20px);
 }
+h1,
+h2,
+h3 {
+	font-weight: 700;
+}
 
 .primary {
 	color: var(--color-primary);
@@ -107,14 +112,9 @@ h6 {
 strong {
 	font-family: var(--sans);
 }
-h1,
-h2,
-h3,
-h4 {
+.pudding {
 	font-family: var(--serif);
-}
-.serif {
-	font-family: var(--serif);
+	font-weight: 800;
 }
 a:hover {
 	color: var(--color-gray-600);

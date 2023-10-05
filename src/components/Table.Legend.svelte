@@ -1,6 +1,6 @@
 <script>
 	const items = [
-		{ color: "var(--color-gray-500)", label: "Global Genres" },
+		{ color: "var(--color-gray-600)", label: "Global Genres" },
 		{ color: "var(--color-primary", label: "English-speaking or European" },
 		{
 			color: "var(--color-secondary)",
@@ -37,5 +37,8 @@
 		height: 18px;
 		width: 18px;
 		margin-right: 0.3rem;
+	}
+	.label {
+		font-weight: 600;
 	}
 </style>
