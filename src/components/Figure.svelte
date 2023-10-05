@@ -5,6 +5,7 @@
 	import Line from "$components/Line.svelte";
 	import Mountain from "$components/Mountain.svelte";
 	import Bubbles from "$components/Bubbles.svelte";
+	import Explore from "$components/Explore.svelte";
 	import Columns from "$components/Columns.svelte";
 	import Quote from "$components/Quote.svelte";
 	import Video from "$components/Video.svelte";
@@ -27,6 +28,7 @@
 		$activeSlide === 13 ||
 		$activeSlide === 23 ||
 		$activeSlide === 25;
+	$: explore = $activeSlide === 22;
 	$: columns = $activeSlide === 7;
 	$: line = $activeSlide >= 8 && $activeSlide <= 10;
 	$: mountain = $activeSlide === 11 || $activeSlide === 12;
@@ -52,6 +54,8 @@
 		<Mountain />
 	{:else if bubbles}
 		<Bubbles />
+	{:else if explore}
+		<Explore />
 	{:else if quote}
 		<Quote />
 	{:else if video}
