@@ -109,7 +109,8 @@
 		font-weight: 600;
 	}
 	th:first-child {
-		padding-left: 1.25rem;
+		padding-left: 1.10rem;
+		font-weight: 500;
 	}
 	tr {
 		border-bottom: 1px solid var(--color-gray-400);

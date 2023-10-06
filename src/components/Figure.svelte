@@ -82,6 +82,7 @@
 	}
 	.slide {
 		transition: all var(--1s) ease-in-out;
+		transition: top .5s ease-in-out;
 	}
 	.tap {
 		font-size: 1.3rem;

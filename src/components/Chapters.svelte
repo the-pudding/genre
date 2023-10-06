@@ -53,6 +53,9 @@
 		font-size: 12px;
 		white-space: nowrap;
 		opacity: 0.3;
+		font-family: var(--sans);
+		font-weight: 600;
+		text-transform: uppercase;
 	}
 	.title.active {
 		opacity: 1;
