@@ -1,4 +1,5 @@
 <script>
+	import Button from "$components/Button.svelte";
 	import { activeSlide } from "$stores/misc.js";
 	import copy from "$data/copy.json";
 
@@ -28,14 +29,14 @@
 		25.812001, 26.078082, 26.378616, 26.62883
 	];
 
+	$: buttonText = `${paused ? "Play" : "Pause"} the interview`;
 	$: words = copy.slides
 		.find((d) => +d.slide === $activeSlide + 1)
 		.quote.split(" ");
 </script>
 
 <div class="quote">
-	<button on:click={playPause}>{paused ? "Play" : "Pause"} the interview</button
-	>
+	<Button onClick={playPause} ariaLabel={buttonText}>{buttonText}</Button>
 
 	<strong class="words">
 		{#each words as word, i}
@@ -63,6 +64,7 @@
 	.words {
 		font-size: 2rem;
 		font-family: var(--sans);
+		margin-top: 2rem;
 	}
 	.words span {
 		transition: opacity calc(var(--1s) * 0.3);
@@ -70,13 +72,5 @@
 	}
 	.words span.dark {
 		opacity: 1;
-	}
-	button {
-		background: var(--accent);
-		font-family: var(--sans);
-		font-weight: bold;
-		margin-bottom: 2rem;
-		border-radius: 10px;
-		padding: 0.7rem;
 	}
 </style>
