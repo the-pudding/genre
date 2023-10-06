@@ -29,6 +29,7 @@
 							: "var(--color-secondary)"
 			  }))
 			: [];
+	$: bottomFade = $activeSlide === 0;
 	$: blurredColumn = $activeSlide === 2 ? 1 : null;
 	$: legend = $activeSlide === 5;
 	$: genreList = data.reduce((acc, current) => {
@@ -87,7 +88,9 @@
 			{/each}
 		</tbody>
 
-		<div class="fade" />
+		{#if bottomFade}
+			<div class="fade" />
+		{/if}
 	</table>
 </div>
 
@@ -126,7 +129,6 @@
 	.blur {
 		filter: blur(3px);
 	}
-
 	.fade {
 		background: linear-gradient(
 			rgba(212, 212, 212, 0),
