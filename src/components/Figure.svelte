@@ -77,7 +77,7 @@
 		transform: translateX(-50%);
 		overflow: hidden;
 		width: 45rem;
-		padding: 1rem;
+		padding: 0rem;
 		z-index: 100;
 	}
 	.slide {

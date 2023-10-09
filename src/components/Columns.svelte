@@ -51,7 +51,9 @@
 <style>
 	.chart-container {
 		font-family: var(--sans);
-		width: 100%;
+		width: calc(100% - 2rem);
+		margin: 0 auto;
 		height: 100%;
+
 	}
 </style>

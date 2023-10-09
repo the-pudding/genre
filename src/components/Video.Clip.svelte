@@ -12,7 +12,7 @@
 	let autoplay = true;
 	let paused = true;
 	let loaded = false;
-	let muted = false;
+	let muted = true;
 	let captioned = true;
 
 	const onCaptions = () => {
@@ -65,11 +65,13 @@
 </script>
 
 <div class="wrapper" class:loaded>
-	<div class="progress" style:width={`${percentRemaining}%`} />
+	<div class="progress" style:width={`${100-percentRemaining}%`} />
 	<video
 		bind:this={videoEl}
 		bind:currentTime
 		bind:duration
+		muted
+		loop
 		on:pause={onPause}
 		on:play={onPlay}
 		on:ended={onEnded}
@@ -83,7 +85,7 @@
 		class:playing
 		on:click={onPlayPause}
 	>
-		<Icon name={playing ? "pause" : "play"} />
+		<Icon height={'32px'} name={playing ? "pause" : "play"} />
 	</button>
 
 	<div class="right">
@@ -93,16 +95,16 @@
 			class:active={!muted}
 			on:click={onMute}
 		>
-			<Icon name={muted ? "volume-x" : "volume-2"} />
+			<Icon strokeWidth={'1.5px'} height={'32px'} name={muted ? "volume-x" : "volume-2"} />
 		</button>
 
-		<button
+		<!-- <button
 			aria-label="Closed Captions"
 			class="btn-captions"
 			class:active={captioned}
 			on:click={onCaptions}
 			>CC
-		</button>
+		</button> -->
 	</div>
 </div>
 
@@ -120,12 +122,12 @@
 		visibility: visible;
 	}
 	video::cue {
-		font-size: 1.5rem;
+		font-size: 1.3rem;
 		font-family: var(--sans);
 	}
 	.progress {
 		background: var(--accent);
-		height: 20px;
+		height: 10px;
 	}
 	button {
 		font-size: 2rem;
@@ -137,6 +139,13 @@
 		position: absolute;
 		top: calc(20px + 1rem);
 		left: 1rem;
+		width: 50px;
+		height: 50px;
+		font-size: 24px;
+		text-align: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 	}
 	button:hover {
 		background: var(--accent-dark);
@@ -152,5 +161,14 @@
 		font-family: var(--sans);
 		font-weight: 500;
 		margin-left: 0.5rem;
+	}
+	.btn-mute {
+		font-size: 28px;
+		width: 50px;
+		height: 50px;
+		text-align: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 	}
 </style>

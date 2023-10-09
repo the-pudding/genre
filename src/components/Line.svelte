@@ -95,10 +95,16 @@
 {/each}
 
 <style>
+	.title {
+		margin: 0 auto;
+		width: calc(100% - 2rem);
+		display: block;
+	}
 	.chart-container {
+		margin: 0 auto;
 		margin-top: 1rem;
 		font-family: var(--sans);
-		width: 100%;
+		width: calc(100% - 2rem);
 		height: 500px;
 	}
 	.explode {

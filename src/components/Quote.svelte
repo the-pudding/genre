@@ -59,14 +59,17 @@
 		display: flex;
 		flex-direction: column;
 		align-items: start;
+		width: calc(100% - 2rem);
+		margin: 0 auto;
 	}
 	.words {
-		font-size: 2rem;
+		font-size: 24px;
 		font-family: var(--sans);
+		line-height: 1.1;
 	}
 	.words span {
-		transition: opacity calc(var(--1s) * 0.3);
-		opacity: 0.3;
+		transition: opacity calc(var(--1s) * 0.5);
+		opacity: 0.5;
 	}
 	.words span.dark {
 		opacity: 1;
@@ -75,7 +78,7 @@
 		background: var(--accent);
 		font-family: var(--sans);
 		font-weight: bold;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 		border-radius: 10px;
 		padding: 0.7rem;
 	}

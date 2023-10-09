@@ -51,6 +51,7 @@
 				}
 			];
 		}, []);
+	$: console.log($activeSlide)
 </script>
 
 <div class="table-wrapper">
@@ -86,8 +87,9 @@
 				</tr>
 			{/each}
 		</tbody>
-
-		<div class="fade" />
+		{#if $activeSlide < 1}
+			<div class="fade" />
+		{/if}
 	</table>
 </div>
 
@@ -95,6 +97,8 @@
 	.table-wrapper {
 		font-family: var(--sans);
 		transform: translate(0, 0);
+		width: calc(100% - 2rem);
+		margin: 0 auto;
 		transition: transform calc(var(--1s) * 2) ease-in-out;
 	}
 	table {
@@ -104,13 +108,14 @@
 		max-width: 40rem;
 	}
 	thead {
-		border-bottom: 2px solid var(--color-gray-800);
 		color: var(--color-gray-600);
 		font-weight: 600;
 	}
+	thead tr {
+		border-bottom: 1px solid black;
+	}
 	th:first-child {
-		padding-left: 1.10rem;
-		font-weight: 500;
+		padding-left: .7rem;
 	}
 	tr {
 		border-bottom: 1px solid var(--color-gray-400);
@@ -118,11 +123,20 @@
 	td {
 		padding: 2px 0;
 		font-weight: 500;
+		line-height: 1;
 	}
+
+	th {
+		padding: 4px 0px;
+		padding-top: 10px;
+		padding-bottom: 0;
+		font-weight: 500;
+	}
+
 	.number {
 		color: var(--color-gray-600);
 		font-size: 0.75rem;
-		margin-right: 0.5rem;
+		margin-right: 0.1rem;
 	}
 	.blur {
 		filter: blur(3px);

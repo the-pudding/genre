@@ -9,7 +9,7 @@
 	let currentTime;
 
 	$: percentLeft =
-		duration && currentTime ? ((duration - currentTime) / duration) * 100 : 100;
+		duration && currentTime ? ((duration - currentTime) / duration) * 100 : 0;
 
 	const toggle = () => {
 		if (paused) audioEl.play();
@@ -23,7 +23,7 @@
 	<div
 		class="progress"
 		style={`--color: ${color}`}
-		style:width={`${percentLeft}%`}
+		style:width={`${100-percentLeft}%`}
 	/>
 	<div class="bg" />
 </button>
@@ -43,6 +43,7 @@
 		position: relative;
 		z-index: 3;
 		font-weight: bold;
+		font-size: 16px;
 	}
 	.progress {
 		position: absolute;
@@ -53,7 +54,6 @@
 		background: var(--color);
 		height: 100%;
 		z-index: -1;
-		transition: width 0.1s ease-in-out;
 	}
 	.bg {
 		background: var(--color-gray-100);

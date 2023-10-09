@@ -4,7 +4,10 @@
 
 <div class="explore">
 	<strong>Explore the data</strong>
-	<img src={"assets/img/explore.png"} alt="Explore the data" />
+	<div class="img-wrapper">
+		<img src={"assets/img/explore.png"} alt="Explore the data" />
+	</div>
+	
 	<button
 		>Go to the Google Sheet
 		<span class="icon">
@@ -14,25 +17,35 @@
 </div>
 
 <style>
+	.img-wrapper {
+		width: 100%;
+		position: absolute;
+		aspect-ratio: .5;
+		overflow: visible;
+		top: 80px;
+		left: 1rem;
+	}
 	.explore {
 		padding-top: 10%;
 		overflow: hidden;
 	}
 	strong {
-		font-size: 1.3rem;
-	}
-	img {
-		margin-top: 1.5rem;
-		width: 100%;
+		font-size: 18px;
+		width: calc(100% - 2rem);
+		margin: 0 auto;
+		display: block;
 	}
 	button {
 		background: black;
 		color: white;
-		font-weight: 700;
-		font-size: 1.3rem;
+		font-weight: 500;
+		width: 100%;
+		max-width: 240px;
+		font-size: 18px;
 		border-radius: 20px;
 		padding: 0.5rem 1rem;
 		display: flex;
+		justify-content: center;
 		align-items: center;
 		position: absolute;
 		bottom: 4rem;
