@@ -25,8 +25,7 @@
 	onClick={toggle}
 	style={`position: relative; display: inline; padding: 4px 6px; background: ${color}`}
 >
-	<div class="label">{label}</div>
-	<div class="note">🎵</div>
+	{label} 🎵
 </Button>
 
 <audio
@@ -38,12 +37,4 @@
 />
 
 <style>
-	div {
-		display: inline-block;
-	}
-	.note {
-		margin-left: 2px;
-		padding-left: 4px;
-		border-left: 2px solid black;
-	}
 </style>

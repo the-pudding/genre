@@ -86,24 +86,24 @@
 	</video>
 
 	<div class="controls" style:top={`${progressH + 10}px`}>
-		<Button
+		<!-- <Button
 			style={"font-size: 1.5rem"}
 			onClick={onPlayPause}
 			ariaLabel={playPauseText}
 		>
 			<Icon name={playing ? "pause" : "play"} />
-		</Button>
+		</Button> -->
 
 		<div class="right">
 			<Button style={"font-size: 1.5rem"} onClick={onMute} ariaLabel={muteText}>
 				<Icon name={muted ? "volume-x" : "volume-2"} />
 			</Button>
 
-			<Button
+			<!-- <Button
 				style={"font-size: 1.5rem; line-height: 1; margin-left: 4px; font-weight: 500"}
 				onClick={onCaptions}
 				ariaLabel={"Closed Captions"}>CC</Button
-			>
+			> -->
 		</div>
 	</div>
 </div>
