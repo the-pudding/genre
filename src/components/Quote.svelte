@@ -1,4 +1,5 @@
 <script>
+	import Button from "$components/Button.svelte";
 	import { activeSlide } from "$stores/misc.js";
 	import copy from "$data/copy.json";
 	import Icon from "$components/helpers/Icon.svelte";
@@ -29,20 +30,14 @@
 		25.812001, 26.078082, 26.378616, 26.62883
 	];
 
+	$: buttonText = `${paused ? "Play" : "Pause"} the interview`;
 	$: words = copy.slides
 		.find((d) => +d.slide === $activeSlide + 1)
 		.quote.split(" ");
 </script>
 
 <div class="quote">
-	<button on:click={playPause}>
-		<span class="icon">
-			<Icon width={'24px'} height={'24px'} name={paused ? "play-circle" : "pause-circle"} />
-		</span>
-		<span class="play-pause">
-		{paused ? "Play" : "Pause"} the interview
-		</span>
-	</button>
+	<Button onClick={playPause} ariaLabel={buttonText}>{buttonText}</Button>
 
 	<strong class="words">
 		{#each words as word, i}
@@ -72,7 +67,7 @@
 	.words {
 		font-size: 24px;
 		font-family: var(--sans);
-		line-height: 1.1;
+		margin-top: 2rem;
 	}
 	.words span {
 		transition: opacity calc(var(--1s) * 0.5);
@@ -80,35 +75,5 @@
 	}
 	.words span.dark {
 		opacity: 1;
-	}
-	button {
-		background: var(--accent);
-		font-family: var(--sans);
-		font-weight: bold;
-		margin-bottom: 1rem;
-		border-radius: 10px;
-		padding: .3rem 0.4rem;
-		display: flex;
-		width: 180px;
-		align-items: center;
-		justify-content: flex-start;
-	}
-	span {
-		font-size: 24px;
-	}
-
-	.play-pause, .icon {
-		font-size: 1rem;
-	}
-	.icon {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-	.play-pause {
-		margin-top: 0px;
-		letter-spacing: -.04em;
-		font-weight: 700;
-		margin-left: 5px;
 	}
 </style>

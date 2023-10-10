@@ -1,11 +1,9 @@
 <script>
 	import { LayerCake, Html } from "layercake";
 	import ColumnStacked from "$components/layercake/ColumnStacked.svelte";
-	import Legend from "$components/Table.Legend.svelte";
+	import Legend from "$components/Ranks.Legend.svelte";
 	import rank from "$data/rank.csv";
 	import geo from "$data/geo.csv";
-	import { activeSlide } from "$stores/misc.js";
-	import copy from "$data/copy.json";
 	import viewport from "$stores/viewport.js";
 
 	const dates = ["4/23/2016", "3/30/2019", "6/15/2021", "8/9/2023"];

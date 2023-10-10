@@ -1,6 +1,7 @@
 <script>
 	import { activeSlide, slideHeights } from "$stores/misc.js";
 	import Svg from "$components/Svg.svelte";
+	import Ranks from "$components/Ranks.svelte";
 	import Table from "$components/Table.svelte";
 	import Line from "$components/Line.svelte";
 	import Mountain from "$components/Mountain.svelte";
@@ -22,7 +23,8 @@
 			? "20%"
 			: `${$slideHeights[$activeSlide] + 50}px`;
 	$: slide = $activeSlide === 0 || $activeSlide === 1;
-	$: table = $activeSlide <= 5;
+	$: ranks = $activeSlide <= 5;
+	$: table = $activeSlide === 18 || $activeSlide === 28;
 	$: svg =
 		$activeSlide === 6 ||
 		$activeSlide === 13 ||
@@ -42,7 +44,9 @@
 </script>
 
 <figure style={`--offset: ${offset}`} class:slide>
-	{#if table}
+	{#if ranks}
+		<Ranks />
+	{:else if table}
 		<Table />
 	{:else if svg}
 		<Svg />

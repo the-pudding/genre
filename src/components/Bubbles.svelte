@@ -19,11 +19,8 @@
 		24: stompAndHoller
 	};
 	$: currentSvg = svgs[$activeSlide];
-	$: special =
-		($activeSlide === 17 && $dir === "right") ||
-		($activeSlide === 16 && $dir === "left");
 </script>
 
 {#key currentSvg}
-	<Slide svg={currentSvg} {special} />
+	<Slide svg={currentSvg} />
 {/key}

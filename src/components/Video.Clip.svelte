@@ -1,10 +1,12 @@
 <script>
-	import { onMount } from "svelte";
+	import Button from "$components/Button.svelte";
 	import Icon from "$components/helpers/Icon.svelte";
+	import { onMount } from "svelte";
 
 	export let id;
 
 	const src = `assets/video/${id}.mp4`;
+	const progressH = 20;
 
 	let videoEl;
 	let currentTime = 0;
@@ -65,7 +67,11 @@
 </script>
 
 <div class="wrapper" class:loaded>
-	<div class="progress" style:width={`${100-percentRemaining}%`} />
+	<div
+		class="progress"
+		style:width={`${percentRemaining}%`}
+		style:height={`${progressH}px`}
+	/>
 	<video
 		bind:this={videoEl}
 		bind:currentTime
@@ -79,32 +85,26 @@
 		<track kind="captions" src={`assets/captions/${id}.vtt`} srclang="en" />
 	</video>
 
-	<button
-		aria-label={playPauseText}
-		class="btn-playpause"
-		class:playing
-		on:click={onPlayPause}
-	>
-		<Icon height={'32px'} name={playing ? "pause" : "play"} />
-	</button>
-
-	<div class="right">
-		<button
-			aria-label={muteText}
-			class="btn-mute"
-			class:active={!muted}
-			on:click={onMute}
+	<div class="controls" style:top={`${progressH + 10}px`}>
+		<Button
+			style={"font-size: 1.5rem"}
+			onClick={onPlayPause}
+			ariaLabel={playPauseText}
 		>
-			<Icon strokeWidth={'1.5px'} height={'32px'} name={muted ? "volume-x" : "volume-2"} />
-		</button>
+			<Icon name={playing ? "pause" : "play"} />
+		</Button>
 
-		<!-- <button
-			aria-label="Closed Captions"
-			class="btn-captions"
-			class:active={captioned}
-			on:click={onCaptions}
-			>CC
-		</button> -->
+		<div class="right">
+			<Button style={"font-size: 1.5rem"} onClick={onMute} ariaLabel={muteText}>
+				<Icon name={muted ? "volume-x" : "volume-2"} />
+			</Button>
+
+			<Button
+				style={"font-size: 1.5rem; line-height: 1; margin-left: 4px; font-weight: 500"}
+				onClick={onCaptions}
+				ariaLabel={"Closed Captions"}>CC</Button
+			>
+		</div>
 	</div>
 </div>
 
@@ -127,40 +127,18 @@
 	}
 	.progress {
 		background: var(--accent);
-		height: 10px;
 	}
-	button {
-		font-size: 2rem;
-		display: flex;
-		background: var(--accent);
-		border-radius: 10px;
-	}
-	.btn-playpause {
+	.controls {
+		width: 100%;
 		position: absolute;
-		top: calc(20px + 1rem);
-		left: 1rem;
-		width: 50px;
-		height: 50px;
-		font-size: 24px;
-		text-align: center;
 		display: flex;
-		flex-direction: row;
-		justify-content: center;
-	}
-	button:hover {
-		background: var(--accent-dark);
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 1rem;
 	}
 	.right {
-		position: absolute;
-		top: calc(20px + 1rem);
-		right: 1rem;
 		display: flex;
-	}
-	.btn-captions {
-		font-size: 1.5rem;
-		font-family: var(--sans);
-		font-weight: 500;
-		margin-left: 0.5rem;
+		align-items: center;
 	}
 	.btn-mute {
 		font-size: 28px;
