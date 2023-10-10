@@ -1,27 +1,42 @@
 <script>
 	import { onMount } from "svelte";
 	import copy from "$data/copy.json";
+	import { activeSlide, dir } from "$stores/misc.js";
 	import _ from "lodash";
 	import * as d3 from "d3";
 
 	export let svg;
-	export let special;
 
 	let artistsWithAudio = [];
+	$: special =
+		($activeSlide === 17 && $dir === "right") ||
+		($activeSlide === 16 && $dir === "left");
 
 	const enterBubbles = () => {
-		const toEnter = Array.from(document.querySelectorAll("g")).filter(
-			(d) => d.id.includes("-bubble") || d.id.includes("-audio")
-		);
-
+		let ignore = [];
 		if (special) {
-		} else {
-			toEnter.forEach((el) => {
-				el.style.transformOrigin = "center";
-				const randomDelay = _.random(0, 800);
-				el.style.animation = `bounce-in calc(var(--1s) * 0.8) ${randomDelay}ms both`;
-			});
+			const audioEls = Array.from(document.querySelectorAll("g")).filter((d) =>
+				d.id.includes("-audio")
+			);
+			ignore = [document.querySelector("#hip-hop-bubble"), ...audioEls];
+
+			// move audio elements from the invisible spot to where they are
+			const origins = Array.from(document.querySelectorAll("g")).filter((d) =>
+				d.id.includes("-origin")
+			);
+			console.log({ origins });
 		}
+
+		const toEnter = Array.from(document.querySelectorAll("g"))
+			.filter((d) => d.id.includes("-bubble") || d.id.includes("-audio"))
+			.filter((d) => !ignore.includes(d));
+		toEnter.forEach((el) => {
+			el.style.transformOrigin = "center";
+			const randomDelay = _.random(0, 800);
+			const opacityDestination = el.getAttribute("opacity") || 1;
+			el.style.setProperty("--opacity-destination", opacityDestination);
+			el.style.animation = `bounce-in calc(var(--1s) * 0.8) ${randomDelay}ms both`;
+		});
 	};
 
 	const interactiveAudio = () => {
@@ -79,7 +94,7 @@
 			transform: scale(0.3);
 		}
 		50% {
-			opacity: 1;
+			opacity: var(--opacity-destination);
 			transform: scale(1.05);
 		}
 		70% {
@@ -97,7 +112,7 @@
 			transform: scale(0.95);
 		}
 		50% {
-			opacity: 1;
+			opacity: var(--opacity-destination);
 			transform: scale(1.1);
 		}
 		100% {

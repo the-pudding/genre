@@ -12,5 +12,15 @@ export default [
 		id: "1vjzeoiMeS0UvIbjlzSav3-0ket_1EedlDXizdPginBE",
 		gid: "831263878",
 		filepath: "src/data/geo.csv"
+	},
+	{
+		id: "1vjzeoiMeS0UvIbjlzSav3-0ket_1EedlDXizdPginBE",
+		gid: "1741265153",
+		filepath: "src/data/table1.csv"
+	},
+	{
+		id: "1vjzeoiMeS0UvIbjlzSav3-0ket_1EedlDXizdPginBE",
+		gid: "486917983",
+		filepath: "src/data/table2.csv"
 	}
 ];
