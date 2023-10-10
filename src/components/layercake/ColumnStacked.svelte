@@ -10,7 +10,7 @@
 	const formatLabel = timeFormat("%Y");
 
 	const colors = {
-		"west/english": "var(--color-primary)",
+		"west/english": "#7676ff",
 		latin: "var(--color-secondary)",
 		asia: "var(--color-secondary)",
 		africa: "var(--color-secondary)"
@@ -25,13 +25,19 @@
 <div class="wrapper">
 	{#each $data as { date, genres }, i}
 		<div class="column">
-			<strong class="year">{formatLabel(new Date(date))}</strong>
+			<span class="year">{formatLabel(new Date(date))}</span>
 			{#each genres as genre}
-				{@const color = colors[genre.region] || "var(--color-gray-600)"}
+				{@const color = colors[genre.region] || "#494949"}
 				{@const highlight = genre.genre === "filmi" && date === "8/9/2023"}
-				<div class="block" style:background={color} class:highlight>
+				<div class="block" style:background={color}
+					style="margin-top:{genre.rank % 10 === 1 && genre.rank > 2 ? '7px' : ''};"
+				>
+					{#if highlight}
+					<div class:highlight>
+					</div>
+					{/if}
 					{#if i === 0 && genre.rank % 10 === 1}
-						<strong class="tick">#{genre.rank}</strong>
+						<span class="tick">#{genre.rank}</span>
 					{/if}
 				</div>
 			{/each}
@@ -60,22 +66,43 @@
 		margin-right: 0;
 	}
 	.block {
-		height: 4px;
+		height: 3px;
 		width: 100%;
 		background: black;
-		margin: 1px 0;
+		margin: 1px 0 0 0;
 		position: relative;
 	}
 	.highlight {
-		outline: 3px solid black;
-		transform: scale(1.05);
+		outline: 3px solid #6e0909;
+		transform: 1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		z-index: 1000;
 	}
 	.tick {
-		font-size: 0.9rem;
+		font-size: 12px;
 		position: absolute;
 		line-height: 1;
 		top: 0;
-		left: -2rem;
+		left: -.7rem;
+		font-weight: 500;
+		transform: translate(-100%,-50%);
+		text-align: right;
+		width: 40px;
+	}
+
+	.tick:after {
+		content: '';
+		position: absolute;
+		width: 5px;
+		height: 1px;
+		background: black;
+		top: 50%;
+		right: -2px;
+		transform: translate(100%,50%);
 	}
 	.annotation {
 		color: black;
@@ -83,6 +110,7 @@
 		right: 0;
 		top: 1.5rem;
 		transform: translate(110%, 0);
+		letter-spacing: -.04em;
 	}
 	.arrow {
 		position: absolute;
@@ -90,6 +118,12 @@
 		top: 2px;
 		transform: translate(-110%, 0);
 	}
+
+	.year {
+		font-weight: 500;
+	}
+
+
 
 	@media (max-width: 600px) {
 		.year {

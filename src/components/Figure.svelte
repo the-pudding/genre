@@ -81,11 +81,12 @@
 		transform: translateX(-50%);
 		overflow: hidden;
 		width: 45rem;
-		padding: 1rem;
+		padding: 0rem;
 		z-index: 100;
 	}
 	.slide {
 		transition: all var(--1s) ease-in-out;
+		transition: top .5s ease-in-out;
 	}
 	.tap {
 		font-size: 1.3rem;

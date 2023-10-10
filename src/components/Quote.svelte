@@ -2,6 +2,7 @@
 	import Button from "$components/Button.svelte";
 	import { activeSlide } from "$stores/misc.js";
 	import copy from "$data/copy.json";
+	import Icon from "$components/helpers/Icon.svelte";
 
 	let audioEl;
 	let currentTime;
@@ -60,15 +61,17 @@
 		display: flex;
 		flex-direction: column;
 		align-items: start;
+		width: calc(100% - 2rem);
+		margin: 0 auto;
 	}
 	.words {
-		font-size: 2rem;
+		font-size: 24px;
 		font-family: var(--sans);
 		margin-top: 2rem;
 	}
 	.words span {
-		transition: opacity calc(var(--1s) * 0.3);
-		opacity: 0.3;
+		transition: opacity calc(var(--1s) * 0.5);
+		opacity: 0.5;
 	}
 	.words span.dark {
 		opacity: 1;

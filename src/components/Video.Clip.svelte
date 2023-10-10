@@ -14,7 +14,7 @@
 	let autoplay = true;
 	let paused = true;
 	let loaded = false;
-	let muted = false;
+	let muted = true;
 	let captioned = true;
 
 	const onCaptions = () => {
@@ -76,6 +76,8 @@
 		bind:this={videoEl}
 		bind:currentTime
 		bind:duration
+		muted
+		loop
 		on:pause={onPause}
 		on:play={onPlay}
 		on:ended={onEnded}
@@ -120,7 +122,7 @@
 		visibility: visible;
 	}
 	video::cue {
-		font-size: 1.5rem;
+		font-size: 1.3rem;
 		font-family: var(--sans);
 	}
 	.progress {
@@ -137,5 +139,14 @@
 	.right {
 		display: flex;
 		align-items: center;
+	}
+	.btn-mute {
+		font-size: 28px;
+		width: 50px;
+		height: 50px;
+		text-align: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 	}
 </style>

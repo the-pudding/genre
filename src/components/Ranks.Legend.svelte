@@ -29,13 +29,14 @@
 		display: flex;
 		align-items: center;
 		margin-right: 1.25rem;
+		font-size: 14px;
 	}
 	.item:last-child {
 		margin-right: 0;
 	}
 	.square {
-		height: 18px;
-		width: 18px;
+		height: 10px;
+		width: 10px;
 		margin-right: 0.3rem;
 	}
 	.label {

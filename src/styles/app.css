@@ -74,6 +74,8 @@
 	}
 }
 
+
+
 h1 {
 	font-size: var(--48px, 48px);
 }
@@ -83,7 +85,7 @@ h2 {
 }
 
 h3 {
-	font-size: var(--28px, 28px);
+	font-size: var(--18px, 18px);
 }
 
 h4 {
@@ -112,10 +114,23 @@ h3 {
 strong {
 	font-family: var(--sans);
 }
+
 .pudding {
 	font-family: var(--serif);
 	font-weight: 800;
 }
 a:hover {
 	color: var(--color-gray-600);
+}
+
+h1, h2, h3 {
+	letter-spacing: -.05em;
+	line-height: 100%;
+	font-weight: 700;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+h3 {
+	letter-spacing: initial;
 }

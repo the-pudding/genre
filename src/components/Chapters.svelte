@@ -81,6 +81,26 @@
 	.block.active {
 		background: rgba(0, 0, 0, 1);
 	}
+	.title {
+		position: absolute;
+		bottom: 0.5rem;
+		left: 0;
+		font-size: 12px;
+		white-space: nowrap;
+		opacity: 0.3;
+		font-family: var(--sans);
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+	.title.active {
+		opacity: 1;
+	}
+	.title span {
+		visibility: hidden;
+	}
+	span.visible {
+		visibility: visible;
+	}
 
 	@media (max-width: 600px) {
 		.title {

@@ -71,7 +71,7 @@
 			<text
 				x={$xGet(_.last(group.values)) + 10}
 				y={includeNumber
-					? $yGet(_.last(group.values)) + 24
+					? $yGet(_.last(group.values)) + 16
 					: $yGet(_.last(group.values))}
 				class="label-genre"
 				fill={$zGet(group)}>{$z(group)}</text
@@ -91,7 +91,7 @@
 		stroke-width: 3px;
 	}
 	.label-rank {
-		font-size: 0.8rem;
+		font-size: 14px;
 		alignment-baseline: middle;
 	}
 	.label-genre {

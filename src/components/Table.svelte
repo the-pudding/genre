@@ -7,8 +7,6 @@
 	$: header = copy.slides.find((d) => +d.slide === $activeSlide + 1).header;
 	$: footer = copy.slides.find((d) => +d.slide === $activeSlide + 1).footer;
 	$: data = $activeSlide === 18 ? table1 : table2;
-
-	$: console.log(data);
 </script>
 
 <div class="table-wrapper">
@@ -33,6 +31,13 @@
 <style>
 	.table-wrapper {
 		font-family: var(--sans);
+		transform: translate(0, 0);
+		width: calc(100% - 2rem);
+		margin: 0 auto;
+		transition: transform calc(var(--1s) * 2) ease-in-out;
+	}
+	table {
+		max-width: 20rem;
 	}
 	table.full {
 		max-width: 40rem;

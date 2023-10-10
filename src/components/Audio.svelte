@@ -11,9 +11,10 @@
 	let currentTime;
 
 	$: percentLeft =
-		duration && currentTime ? ((duration - currentTime) / duration) * 100 : 100;
+		duration && currentTime ? ((duration - currentTime) / duration) * 100 : 0;
 
 	const toggle = () => {
+		audioEl.volume = 0.05;
 		if (paused) audioEl.play();
 		else audioEl.pause();
 		paused = !paused;
