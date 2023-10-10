@@ -1,6 +1,7 @@
 <script>
 	import { activeSlide } from "$stores/misc.js";
 	import copy from "$data/copy.json";
+	import Icon from "$components/helpers/Icon.svelte";
 
 	let audioEl;
 	let currentTime;
@@ -34,8 +35,14 @@
 </script>
 
 <div class="quote">
-	<button on:click={playPause}>{paused ? "Play" : "Pause"} the interview</button
-	>
+	<button on:click={playPause}>
+		<span class="icon">
+			<Icon width={'24px'} height={'24px'} name={paused ? "play-circle" : "pause-circle"} />
+		</span>
+		<span class="play-pause">
+		{paused ? "Play" : "Pause"} the interview
+		</span>
+	</button>
 
 	<strong class="words">
 		{#each words as word, i}
@@ -80,6 +87,28 @@
 		font-weight: bold;
 		margin-bottom: 1rem;
 		border-radius: 10px;
-		padding: 0.7rem;
+		padding: .3rem 0.4rem;
+		display: flex;
+		width: 180px;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	span {
+		font-size: 24px;
+	}
+
+	.play-pause, .icon {
+		font-size: 1rem;
+	}
+	.icon {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.play-pause {
+		margin-top: 0px;
+		letter-spacing: -.04em;
+		font-weight: 700;
+		margin-left: 5px;
 	}
 </style>

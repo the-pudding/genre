@@ -12,6 +12,7 @@
 		duration && currentTime ? ((duration - currentTime) / duration) * 100 : 0;
 
 	const toggle = () => {
+		audioEl.volume = .05;
 		if (paused) audioEl.play();
 		else audioEl.pause();
 		paused = !paused;

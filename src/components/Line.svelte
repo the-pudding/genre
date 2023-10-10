@@ -31,7 +31,7 @@
 		"var(--color-secondary)",
 		"var(--color-primary)",
 		"var(--color-black)",
-		"var(--color-black)"
+		"#666"
 	];
 
 	const groupedData = groupLonger(data, allGenres, {

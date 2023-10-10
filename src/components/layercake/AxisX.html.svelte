@@ -54,8 +54,8 @@
 	}
 
 	.tick {
-		font-size: 0.725em;
-		font-weight: 200;
+		font-size: 14px;
+		font-weight: 500;
 	}
 
 	.gridline {
