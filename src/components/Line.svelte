@@ -105,7 +105,7 @@
 		margin-top: 1rem;
 		font-family: var(--sans);
 		width: 100%;
-		height: 500px;
+		height: 85%;
 	}
 	.explode {
 		position: absolute;

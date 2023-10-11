@@ -14,12 +14,15 @@
 	import pointer from "$svg/pointer.svg";
 
 	$: bleed =
+		$activeSlide === 11 ||
+		$activeSlide === 12 ||
 		($activeSlide >= 14 && $activeSlide <= 17) ||
 		$activeSlide === 20 ||
 		$activeSlide === 21 ||
 		$activeSlide === 24 ||
 		$activeSlide === 26 ||
 		$activeSlide === 27 ||
+		$activeSlide === 29 ||
 		($activeSlide >= 30 && $activeSlide <= 34);
 	$: offset =
 		$activeSlide === 0
@@ -32,53 +35,42 @@
 			? "20%"
 			: `${$slideHeights[$activeSlide] + 50}px`;
 	$: slide = $activeSlide === 0 || $activeSlide === 1;
-	$: ranks = $activeSlide <= 5;
-	$: table = $activeSlide === 18 || $activeSlide === 28;
-	$: svg =
-		$activeSlide === 6 ||
-		$activeSlide === 13 ||
-		$activeSlide === 23 ||
-		$activeSlide === 25 ||
-		$activeSlide === 31;
-	$: columns = $activeSlide === 7;
-	$: line = $activeSlide >= 8 && $activeSlide <= 10;
-	$: mountain = $activeSlide === 11 || $activeSlide === 12;
-	$: bubbles =
-		($activeSlide >= 14 && $activeSlide <= 17) ||
-		$activeSlide === 20 ||
-		$activeSlide === 21 ||
-		$activeSlide === 24;
-	$: quote = $activeSlide === 19;
-	$: video =
-		$activeSlide === 26 ||
-		$activeSlide === 27 ||
-		($activeSlide >= 32 && $activeSlide <= 34);
-	$: image = $activeSlide === 30 || $activeSlide === 36;
-	$: sample = $activeSlide === 35;
+
+	const ranks = [0, 1, 2, 3, 4, 5];
+	const table = [18, 28];
+	const svg = [6, 13, 23, 25, 31];
+	const columns = [7];
+	const line = [8, 9, 10];
+	const mountain = [11, 12, 29];
+	const bubbles = [14, 15, 16, 17, 20, 21, 24];
+	const quote = [19];
+	const video = [26, 27, 32, 33, 34];
+	const image = [30, 36];
+	const sample = [35];
 </script>
 
 <figure style={`--offset: ${offset}`} class:slide class:bleed>
-	{#if ranks}
+	{#if ranks.includes($activeSlide)}
 		<Ranks />
-	{:else if table}
+	{:else if table.includes($activeSlide)}
 		<Table />
-	{:else if svg}
+	{:else if svg.includes($activeSlide)}
 		<Svg />
-	{:else if columns}
+	{:else if columns.includes($activeSlide)}
 		<Columns />
-	{:else if line}
+	{:else if line.includes($activeSlide)}
 		<Line />
-	{:else if mountain}
+	{:else if mountain.includes($activeSlide)}
 		<Mountain />
-	{:else if bubbles}
+	{:else if bubbles.includes($activeSlide)}
 		<Bubbles />
-	{:else if image}
+	{:else if image.includes($activeSlide)}
 		<Image />
-	{:else if quote}
+	{:else if quote.includes($activeSlide)}
 		<Quote />
-	{:else if video}
+	{:else if video.includes($activeSlide)}
 		<Video />
-	{:else if sample}
+	{:else if sample.includes($activeSlide)}
 		<Sample />
 	{/if}
 
@@ -92,7 +84,7 @@
 	figure {
 		position: absolute;
 		top: calc(var(--offset) + 2rem);
-		height: calc(100% - 2rem - var(--offset));
+		height: calc(100% - 3rem - var(--offset));
 		left: 50%;
 		transform: translateX(-50%);
 		overflow: hidden;
@@ -102,6 +94,7 @@
 		margin-top: 1rem;
 	}
 	.bleed {
+		overflow: visible;
 		padding: 0;
 	}
 	.slide {
