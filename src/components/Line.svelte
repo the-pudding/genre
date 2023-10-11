@@ -97,14 +97,14 @@
 <style>
 	h4 {
 		margin: 0 auto;
-		width: calc(100% - 2rem);
+		width: 100%;
 		display: block;
 	}
 	.chart-container {
 		margin: 0 auto;
 		margin-top: 1rem;
 		font-family: var(--sans);
-		width: calc(100% - 2rem);
+		width: 100%;
 		height: 500px;
 	}
 	.explode {

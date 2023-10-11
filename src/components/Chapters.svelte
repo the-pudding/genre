@@ -70,8 +70,9 @@
 	.block {
 		position: relative;
 		flex: 1;
-		height: 3px;
-		margin: 0 3px;
+		height: 2px;
+		border-radius: 1px;
+		margin: 0 1px;
 		background: rgba(0, 0, 0, 0.3);
 		transition: background calc(var(--1s) * 0.4);
 	}

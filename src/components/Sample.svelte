@@ -46,9 +46,11 @@
 		font-family: var(--sans);
 		font-weight: 500;
 		font-size: 14px;
+		padding-left: 15px;
+		margin-bottom: 2px;
 	}
 	.group {
-		margin-right: 1rem;
-		margin-top: 1rem;
+		margin-right: .5rem;
+		margin-top: .5rem;
 	}
 </style>

@@ -61,17 +61,18 @@
 		display: flex;
 		flex-direction: column;
 		align-items: start;
-		width: calc(100% - 2rem);
+		width: 100%;
 		margin: 0 auto;
 	}
 	.words {
 		font-size: 24px;
 		font-family: var(--sans);
-		margin-top: 2rem;
+		margin-top: 1rem;
+		line-height: 1.2;
 	}
 	.words span {
-		transition: opacity calc(var(--1s) * 0.5);
-		opacity: 0.5;
+		transition: opacity calc(var(--1s) * 0.6);
+		opacity: 0.6;
 	}
 	.words span.dark {
 		opacity: 1;

@@ -120,6 +120,7 @@
 	td {
 		padding: 2px 0;
 		font-weight: 500;
+		line-height: 1;
 	}
 	.number {
 		color: var(--color-gray-600);

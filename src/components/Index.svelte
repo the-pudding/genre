@@ -68,7 +68,7 @@
 <style>
 	article {
 		position: absolute;
-		top: 3rem;
+		top: 2rem;
 		left: 50%;
 		transform: translate(-50%, 0);
 		width: 100%;
