@@ -18,23 +18,9 @@
 	let muted = true;
 	let captioned = true;
 
-	const onCaptions = () => {
-		captioned = !captioned;
-		videoEl.textTracks[0].mode = captioned ? "showing" : "hidden";
-	};
 	const onMute = () => {
 		muted = !muted;
 		videoEl.muted = muted;
-	};
-	const onPause = () => {
-		paused = true;
-	};
-	const onPlay = () => {
-		paused = false;
-	};
-	const onPlayPause = () => {
-		if (paused) videoEl.play();
-		else videoEl.pause();
 	};
 	const onEnded = () => {
 		currentTime = 0;
@@ -42,9 +28,7 @@
 
 	$: hasCC = id === "oates" || id === "tyler";
 	$: muteText = muted ? "Unmute video" : "Mute video";
-	$: playPauseText = paused ? "Play video" : "Pause video";
-	$: playing = !paused;
-	$: percentRemaining = 100 - (currentTime / duration) * 100;
+	$: percentComplete = (currentTime / duration) * 100;
 	$: if (autoplay && currentTime === 0 && paused && loaded) {
 		autoplay = false;
 		videoEl.play();
@@ -72,7 +56,7 @@
 <div class="wrapper" class:loaded>
 	<div
 		class="progress"
-		style:width={`${percentRemaining}%`}
+		style:width={`${percentComplete}%`}
 		style:height={`${progressH}px`}
 	/>
 	<video
@@ -81,8 +65,6 @@
 		bind:duration
 		muted
 		loop
-		on:pause={onPause}
-		on:play={onPlay}
 		on:ended={onEnded}
 	>
 		{#if hasCC}
@@ -97,25 +79,9 @@
 	{/if}
 
 	<div class="controls" style:top={`${progressH + 10}px`}>
-		<!-- <Button
-			style={"font-size: 1.5rem"}
-			onClick={onPlayPause}
-			ariaLabel={playPauseText}
-		>
-			<Icon name={playing ? "pause" : "play"} />
-		</Button> -->
-
-		<div class="right">
-			<Button style={"font-size: 1.5rem"} onClick={onMute} ariaLabel={muteText}>
-				<Icon name={muted ? "volume-x" : "volume-2"} />
-			</Button>
-
-			<!-- <Button
-				style={"font-size: 1.5rem; line-height: 1; margin-left: 4px; font-weight: 500"}
-				onClick={onCaptions}
-				ariaLabel={"Closed Captions"}>CC</Button
-			> -->
-		</div>
+		<Button style={"font-size: 1.5rem"} onClick={onMute} ariaLabel={muteText}>
+			<Icon name={muted ? "volume-x" : "volume-2"} />
+		</Button>
 	</div>
 </div>
 
@@ -147,19 +113,6 @@
 		justify-content: space-between;
 		padding: 0 1rem;
 	}
-	.right {
-		display: flex;
-		align-items: center;
-	}
-	.btn-mute {
-		font-size: 28px;
-		width: 50px;
-		height: 50px;
-		text-align: center;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-	}
 	.gradient {
 		background: linear-gradient(
 			180deg,
@@ -185,7 +138,6 @@
 		font-size: 18px;
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
-
 	}
 	:global(.overlay span.sub) {
 		font-size: 16px;

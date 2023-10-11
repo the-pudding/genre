@@ -13,29 +13,21 @@
 	import Sample from "$components/Sample.svelte";
 	import pointer from "$svg/pointer.svg";
 
-	$: bleed =
-		$activeSlide === 11 ||
-		$activeSlide === 12 ||
-		($activeSlide >= 14 && $activeSlide <= 17) ||
-		$activeSlide === 20 ||
-		$activeSlide === 21 ||
-		$activeSlide === 24 ||
-		$activeSlide === 26 ||
-		$activeSlide === 27 ||
-		$activeSlide === 29 ||
-		($activeSlide >= 30 && $activeSlide <= 34);
 	$: offset =
 		$activeSlide === 0
 			? "28%"
 			: $activeSlide === 1 || $activeSlide === 2 || $activeSlide === 3
 			? "18%"
-			: line
+			: line.includes($activeSlide)
 			? "18%"
 			: $activeSlide === 16 || $activeSlide === 17
 			? "20%"
 			: `${$slideHeights[$activeSlide] + 50}px`;
 	$: slide = $activeSlide === 0 || $activeSlide === 1;
 
+	const bleed = [
+		11, 12, 14, 15, 16, 17, 20, 21, 24, 26, 27, 29, 30, 31, 32, 33, 34
+	];
 	const ranks = [0, 1, 2, 3, 4, 5];
 	const table = [18, 28];
 	const svg = [6, 13, 23, 25, 31];
@@ -49,7 +41,11 @@
 	const sample = [35];
 </script>
 
-<figure style={`--offset: ${offset}`} class:slide class:bleed>
+<figure
+	style={`--offset: ${offset}`}
+	class:slide
+	class:bleed={bleed.includes($activeSlide)}
+>
 	{#if ranks.includes($activeSlide)}
 		<Ranks />
 	{:else if table.includes($activeSlide)}
