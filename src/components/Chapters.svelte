@@ -10,8 +10,8 @@
 	{#each Object.keys(chapters) as chapter}
 		{@const chapterActive = copy.slides[$activeSlide].section === chapter}
 		<div class="chapter" class:active={chapterActive}>
-			<span class="title">
-				{chapter} - {copy.sections[chapter]}
+			<span class="text">
+				{chapter}<span class="title"> — {copy.sections[chapter]}</span>
 			</span>
 			{#if chapterActive}
 				{#each chapters[chapter] as slide}
@@ -48,10 +48,7 @@
 	.chapter.active {
 		flex: 5;
 	}
-	.chapter.active .title {
-		opacity: 1;
-	}
-	.title {
+	.text {
 		position: absolute;
 		top: -1.2rem;
 		font-size: 12px;
@@ -61,10 +58,13 @@
 		font-weight: 600;
 		text-transform: uppercase;
 	}
-	.title span {
+	.chapter.active .text {
+		opacity: 1;
+	}
+	.title {
 		visibility: hidden;
 	}
-	span.visible {
+	.chapter.active .title {
 		visibility: visible;
 	}
 	.block {
@@ -85,12 +85,9 @@
 	.block.active {
 		background: rgba(0, 0, 0, 1);
 	}
-	.title.active {
-		opacity: 1;
-	}
 
 	@media (max-width: 600px) {
-		.title {
+		.text {
 			font-size: 10px;
 		}
 	}
