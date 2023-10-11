@@ -3,11 +3,13 @@
 	import { activeSlide, dir } from "$stores/misc.js";
 	import { onMount } from "svelte";
 	import { tweened } from "svelte/motion";
+	import { quintInOut } from "svelte/easing";
 
 	let svgElement;
 	let originalVB;
+	let viewBox;
 	const zoom = 4;
-	const viewBox = tweened(originalVB);
+	const duration = 3000;
 
 	$: zoomedVB = originalVB
 		? [
@@ -20,12 +22,16 @@
 	$: animate =
 		($activeSlide === 12 && $dir === "right") ||
 		($activeSlide === 11 && $dir === "left");
-	$: if ($activeSlide === 11) {
+	$: if ($activeSlide === 11 && viewBox) {
 		viewBox.set(zoomedVB, {
-			duration: animate ? 2000 : 0
+			duration: animate ? duration : 0,
+			easing: quintInOut
 		});
-	} else {
-		viewBox.set(originalVB, { duration: animate ? 2000 : 0 });
+	} else if (viewBox) {
+		viewBox.set(originalVB, {
+			duration: animate ? duration : 0,
+			easing: quintInOut
+		});
 	}
 
 	$: if (svgElement) {
@@ -36,6 +42,7 @@
 		svgElement = document.querySelector("svg#mountain");
 		const vb = svgElement.getAttribute("viewBox");
 		originalVB = vb.split(" ").map((d) => +d);
+		viewBox = tweened(originalVB);
 	});
 </script>
 
@@ -50,5 +57,6 @@
 		left: 50%;
 		transform: translate(-50%, 0);
 		width: 100vw;
+		min-width: 1000px;
 	}
 </style>

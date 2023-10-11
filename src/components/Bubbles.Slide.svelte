@@ -61,6 +61,7 @@
 			});
 			group.addEventListener("click", () => {
 				const id = group.id.split("-").slice(0, -1).join("-");
+				console.log({ id });
 				const audioEl = document.querySelector(`audio#${id}`);
 				if (audioEl) {
 					if (audioEl.paused) audioEl.play();

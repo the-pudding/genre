@@ -1,5 +1,6 @@
 <script>
 	import { LayerCake, Svg, groupLonger, flatten } from "layercake";
+	import ExplodingHead from "$components/Line.ExplodingHead.svelte";
 	import rank from "$data/rank.csv";
 	import MultiLine from "$components/layercake/todo/MultiLine.svelte";
 	import AxisX from "$components/layercake/AxisX.svg.svelte";
@@ -77,22 +78,20 @@
 	</LayerCake>
 </div>
 
-{#each _.range(3) as i}
-	{@const positions = [
-		[10, 20, 10],
-		[50, 60, -10],
-		[70, 10, 10]
-	]}
-	<div
-		class="explode"
-		class:visible={$activeSlide === 9}
-		style={`--delay: ${_.random(800, 1500)}ms; --rotate: ${positions[i][2]}deg`}
-		style:left={`${positions[i][0]}%`}
-		style:top={`${positions[i][1]}%`}
-	>
-		🤯
-	</div>
-{/each}
+{#if $activeSlide === 9}
+	{#each _.range(3) as i}
+		{@const positions = [
+			[10, 20, 10],
+			[50, 60, -10],
+			[70, 10, 10]
+		]}
+		<ExplodingHead
+			x={positions[i][0]}
+			y={positions[i][1]}
+			deg={positions[i][2]}
+		/>
+	{/each}
+{/if}
 
 <style>
 	h4 {
@@ -106,17 +105,5 @@
 		font-family: var(--sans);
 		width: 100%;
 		height: 85%;
-	}
-	.explode {
-		position: absolute;
-		font-size: 5rem;
-		opacity: 0;
-		transform: translate(-50%, -50%) scale(0) rotate(var(--rotate));
-		transition: all var(--1s) ease-in-out;
-	}
-	.explode.visible {
-		opacity: 1;
-		transform: translate(-50%, -50%) scale(1.3) rotate(var(--rotate));
-		transition: all var(--1s) var(--delay) ease-in-out;
 	}
 </style>
