@@ -39,9 +39,6 @@
 	});
 </script>
 
-<p style="position: fixed: top: 0; left: 0">
-	active slide: {$activeSlide}
-</p>
 <Chapters />
 
 <Figure />
