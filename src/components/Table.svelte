@@ -7,9 +7,11 @@
 	$: title = copy.slides.find((d) => +d.slide === $activeSlide + 1).title;
 	$: footer = copy.slides.find((d) => +d.slide === $activeSlide + 1).footer;
 	$: data = $activeSlide === 18 ? table1 : table2;
+
+	console.log($activeSlide)
 </script>
 
-<div class="table-wrapper">
+<div class="table-wrapper {$activeSlide == 28 ? "taxonomy-table" : ''} {$activeSlide == 18 ? 'latest-table' : ''}">
 	<table class:top-border={!title}>
 		{#if title}
 			<tr>
@@ -52,7 +54,14 @@
 	td {
 		padding: 2px 0;
 		padding-left: 1rem;
+		line-height: .9;
 	}
+
+	.taxonomy-table td, .latest-table td {
+		line-height: 1.2;
+	}
+
+
 	td:first-of-type {
 		font-family: var(--sans);
 		font-weight: 500;

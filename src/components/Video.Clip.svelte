@@ -92,7 +92,7 @@
 
 	{#if overlay}
 		<div class="gradient">
-			<div class="overlay">{@html overlay}</div>
+			<p class="overlay">{@html overlay}</p>
 		</div>
 	{/if}
 
@@ -172,7 +172,10 @@
 		bottom: 0;
 	}
 	.overlay {
-		width: 100%;
+		width: calc(100% - 2rem);
+		margin: 0 auto;
+		left: 0;
+		right: 0;
 		position: absolute;
 		bottom: 1.5rem;
 		text-align: center;
@@ -180,6 +183,9 @@
 		font-family: var(--sans);
 		font-weight: 700;
 		font-size: 18px;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+
 	}
 	:global(.overlay span.sub) {
 		font-size: 16px;

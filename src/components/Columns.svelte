@@ -49,7 +49,7 @@
 <style>
 	.chart-container {
 		font-family: var(--sans);
-		width: calc(100% - 2rem);
+		width: 100%;
 		margin: 0 auto;
 		height: 100%;
 	}

@@ -99,6 +99,7 @@
 		width: 45rem;
 		padding: 1rem;
 		z-index: 100;
+		margin-top: 1rem;
 	}
 	.bleed {
 		padding: 0;
