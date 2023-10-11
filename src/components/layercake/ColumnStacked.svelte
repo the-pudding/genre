@@ -18,23 +18,24 @@
 	$: annotation = copy.slides.find(
 		(d) => +d.slide === $activeSlide + 1
 	).annotation;
-
-	$: console.log($data);
 </script>
 
 <div class="wrapper">
 	{#each $data as { date, genres }, i}
 		<div class="column">
 			<span class="year">{formatLabel(new Date(date))}</span>
-			{#each genres as genre}
+			{#each genres as genre, j}
 				{@const color = colors[genre.region] || "#494949"}
 				{@const highlight = genre.genre === "filmi" && date === "8/9/2023"}
-				<div class="block" style:background={color}
-					style="margin-top:{genre.rank % 10 === 1 && genre.rank > 2 ? '7px' : ''};"
+				<div
+					class="block"
+					style:background={color}
+					style="margin-top:{genre.rank % 10 === 1 && genre.rank > 2
+						? '7px'
+						: ''};"
 				>
 					{#if highlight}
-					<div class:highlight>
-					</div>
+						<div class:highlight />
 					{/if}
 					{#if i === 0 && genre.rank % 10 === 1}
 						<span class="tick">#{genre.rank}</span>
@@ -44,7 +45,7 @@
 		</div>
 	{/each}
 
-	<div class="annotation" style={`max-width: ${$padding.right - 10}px`}>
+	<div class="annotation" style:max-width={`${$padding.right - 10}px`}>
 		<span class="arrow"><Icon name="arrow-left" /></span>
 		{annotation}
 	</div>
@@ -87,30 +88,30 @@
 		position: absolute;
 		line-height: 1;
 		top: 0;
-		left: -.7rem;
+		left: -0.7rem;
 		font-weight: 500;
-		transform: translate(-100%,-50%);
+		transform: translate(-100%, -50%);
 		text-align: right;
 		width: 40px;
 	}
 
 	.tick:after {
-		content: '';
+		content: "";
 		position: absolute;
 		width: 5px;
 		height: 1px;
 		background: black;
 		top: 50%;
 		right: -2px;
-		transform: translate(100%,50%);
+		transform: translate(100%, 50%);
 	}
 	.annotation {
 		color: black;
 		position: absolute;
 		right: 0;
-		top: 1.5rem;
+		top: 40px;
 		transform: translate(110%, 0);
-		letter-spacing: -.04em;
+		letter-spacing: -0.04em;
 	}
 	.arrow {
 		position: absolute;
@@ -122,8 +123,6 @@
 	.year {
 		font-weight: 500;
 	}
-
-
 
 	@media (max-width: 600px) {
 		.year {

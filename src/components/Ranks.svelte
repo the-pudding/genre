@@ -55,7 +55,7 @@
 </script>
 
 <div class="table-wrapper">
-	<strong>Genres, ranked by streams on Spotify</strong>
+	<h4>Genres, ranked by streams on Spotify</h4>
 
 	{#if legend}
 		<Legend />

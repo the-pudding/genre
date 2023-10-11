@@ -6,12 +6,21 @@
 	import Line from "$components/Line.svelte";
 	import Mountain from "$components/Mountain.svelte";
 	import Bubbles from "$components/Bubbles.svelte";
-	import Explore from "$components/Explore.svelte";
+	import Image from "$components/Image.svelte";
 	import Columns from "$components/Columns.svelte";
 	import Quote from "$components/Quote.svelte";
 	import Video from "$components/Video.svelte";
+	import Sample from "$components/Sample.svelte";
 	import pointer from "$svg/pointer.svg";
 
+	$: bleed =
+		($activeSlide >= 14 && $activeSlide <= 17) ||
+		$activeSlide === 20 ||
+		$activeSlide === 21 ||
+		$activeSlide === 24 ||
+		$activeSlide === 26 ||
+		$activeSlide === 27 ||
+		($activeSlide >= 30 && $activeSlide <= 34);
 	$: offset =
 		$activeSlide === 0
 			? "28%"
@@ -29,8 +38,8 @@
 		$activeSlide === 6 ||
 		$activeSlide === 13 ||
 		$activeSlide === 23 ||
-		$activeSlide === 25;
-	$: explore = $activeSlide === 22;
+		$activeSlide === 25 ||
+		$activeSlide === 31;
 	$: columns = $activeSlide === 7;
 	$: line = $activeSlide >= 8 && $activeSlide <= 10;
 	$: mountain = $activeSlide === 11 || $activeSlide === 12;
@@ -40,10 +49,15 @@
 		$activeSlide === 21 ||
 		$activeSlide === 24;
 	$: quote = $activeSlide === 19;
-	$: video = $activeSlide === 26 || $activeSlide === 27;
+	$: video =
+		$activeSlide === 26 ||
+		$activeSlide === 27 ||
+		($activeSlide >= 32 && $activeSlide <= 34);
+	$: image = $activeSlide === 30 || $activeSlide === 36;
+	$: sample = $activeSlide === 35;
 </script>
 
-<figure style={`--offset: ${offset}`} class:slide>
+<figure style={`--offset: ${offset}`} class:slide class:bleed>
 	{#if ranks}
 		<Ranks />
 	{:else if table}
@@ -58,12 +72,14 @@
 		<Mountain />
 	{:else if bubbles}
 		<Bubbles />
-	{:else if explore}
-		<Explore />
+	{:else if image}
+		<Image />
 	{:else if quote}
 		<Quote />
 	{:else if video}
 		<Video />
+	{:else if sample}
+		<Sample />
 	{/if}
 
 	<div class="tap" class:visible={$activeSlide === 0}>
@@ -83,6 +99,9 @@
 		width: 45rem;
 		padding: 1rem;
 		z-index: 100;
+	}
+	.bleed {
+		padding: 0;
 	}
 	.slide {
 		transition: all var(--1s) ease-in-out;

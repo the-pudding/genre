@@ -54,7 +54,7 @@
 			: [];
 </script>
 
-<strong class="title">Genre's Popularity Ranking on Spotify</strong>
+<h4>Genres, ranked by streams on Spotify</h4>
 <div class="chart-container">
 	<LayerCake
 		padding={{ top: 20, right: 95, bottom: 20, left: 25 }}
@@ -95,7 +95,7 @@
 {/each}
 
 <style>
-	.title {
+	h4 {
 		margin: 0 auto;
 		width: calc(100% - 2rem);
 		display: block;

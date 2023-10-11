@@ -4,6 +4,7 @@
 	import { onMount } from "svelte";
 
 	export let id;
+	export let overlay;
 
 	const src = `assets/video/${id}.mp4`;
 	const progressH = 20;
@@ -39,6 +40,7 @@
 		currentTime = 0;
 	};
 
+	$: hasCC = id === "oates" || id === "tyler";
 	$: muteText = muted ? "Unmute video" : "Mute video";
 	$: playPauseText = paused ? "Play video" : "Pause video";
 	$: playing = !paused;
@@ -58,7 +60,8 @@
 				const videoBlob = this.response;
 				const videoUrl = URL.createObjectURL(videoBlob);
 				videoEl.src = videoUrl;
-				videoEl.textTracks[0].mode = captioned ? "showing" : "hidden";
+				if (hasCC)
+					videoEl.textTracks[0].mode = captioned ? "showing" : "hidden";
 				loaded = true;
 			}
 		};
@@ -82,8 +85,16 @@
 		on:play={onPlay}
 		on:ended={onEnded}
 	>
-		<track kind="captions" src={`assets/captions/${id}.vtt`} srclang="en" />
+		{#if hasCC}
+			<track kind="captions" src={`assets/captions/${id}.vtt`} srclang="en" />
+		{/if}
 	</video>
+
+	{#if overlay}
+		<div class="gradient">
+			<div class="overlay">{@html overlay}</div>
+		</div>
+	{/if}
 
 	<div class="controls" style:top={`${progressH + 10}px`}>
 		<!-- <Button
@@ -148,5 +159,30 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+	}
+	.gradient {
+		background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 1) 100%
+		);
+		width: 100%;
+		height: 200px;
+		position: absolute;
+		bottom: 0;
+	}
+	.overlay {
+		width: 100%;
+		position: absolute;
+		bottom: 1.5rem;
+		text-align: center;
+		color: white;
+		font-family: var(--sans);
+		font-weight: 700;
+		font-size: 18px;
+	}
+	:global(.overlay span.sub) {
+		font-size: 16px;
+		display: block;
 	}
 </style>

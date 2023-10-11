@@ -33,7 +33,7 @@
 </script>
 
 <div class="chart-container">
-	<strong>Genre's Popularity Ranking on Spotify</strong>
+	<h4>Genres, ranked by streams on Spotify</h4>
 	<Legend />
 	<LayerCake
 		padding={{ top: 0, right: rightPadding, bottom: 0, left: 30 }}
@@ -52,6 +52,5 @@
 		width: calc(100% - 2rem);
 		margin: 0 auto;
 		height: 100%;
-
 	}
 </style>

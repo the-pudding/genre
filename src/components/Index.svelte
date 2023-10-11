@@ -30,13 +30,18 @@
 				target: placeholder,
 				props: {
 					label: "Bad Bunny",
-					url: copy.artists["bad-bunny"]
+					id: "bad-bunny",
+					slide: 10,
+					inline: true
 				}
 			});
 		}
 	});
 </script>
 
+<p style="position: fixed: top: 0; left: 0">
+	active slide: {$activeSlide}
+</p>
 <Chapters />
 
 <Figure />

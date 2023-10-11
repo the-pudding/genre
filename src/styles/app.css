@@ -74,8 +74,6 @@
 	}
 }
 
-
-
 h1 {
 	font-size: var(--48px, 48px);
 }
@@ -89,19 +87,13 @@ h3 {
 }
 
 h4 {
-	font-size: var(--24px, 24px);
+	font-size: var(--18px, 18px);
 }
 
-h5 {
-	font-size: var(--22px, 22px);
-}
-
-h6 {
-	font-size: var(--20px, 20px);
-}
 h1,
 h2,
-h3 {
+h3,
+h4 {
 	font-weight: 700;
 }
 
@@ -123,8 +115,10 @@ a:hover {
 	color: var(--color-gray-600);
 }
 
-h1, h2, h3 {
-	letter-spacing: -.05em;
+h1,
+h2,
+h3 {
+	letter-spacing: -0.05em;
 	line-height: 100%;
 	font-weight: 700;
 	text-rendering: optimizeLegibility;
@@ -133,4 +127,8 @@ h1, h2, h3 {
 
 h3 {
 	letter-spacing: initial;
+}
+
+h4 {
+	font-family: var(--sans);
 }
