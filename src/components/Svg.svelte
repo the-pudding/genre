@@ -43,5 +43,8 @@
 		width: 100%;
 		left: 50%;
 		transform: translate(-50%);
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 	}
 </style>
