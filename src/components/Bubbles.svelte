@@ -1,6 +1,6 @@
 <script>
 	import Slide from "$components/Bubbles.Slide.svelte";
-	import { activeSlide, dir } from "$stores/misc.js";
+	import { activeSlide } from "$stores/misc.js";
 	import latin1 from "$svg/bubbles/latin1.svg";
 	import latin2 from "$svg/bubbles/latin2.svg";
 	import hiphop1 from "$svg/bubbles/hiphop1.svg";
@@ -16,7 +16,7 @@
 		17: hiphop2,
 		20: escapeRoom,
 		21: rock,
-		24: stompAndHoller
+		23: stompAndHoller
 	};
 	$: currentSvg = svgs[$activeSlide];
 </script>

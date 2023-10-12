@@ -15,9 +15,7 @@
 		asia: "var(--color-secondary)",
 		africa: "var(--color-secondary)"
 	};
-	$: annotation = copy.slides.find(
-		(d) => +d.slide === $activeSlide + 1
-	).annotation;
+	$: annotation = copy.slides.find((d) => +d.slide === $activeSlide).annotation;
 </script>
 
 <div class="wrapper">

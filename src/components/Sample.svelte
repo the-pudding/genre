@@ -4,7 +4,7 @@
 	import { activeSlide } from "$stores/misc.js";
 	import _ from "lodash";
 
-	$: title = copy.slides.find((d) => +d.slide === $activeSlide + 1).title;
+	$: title = copy.slides.find((d) => +d.slide === $activeSlide).title;
 
 	const samples = [
 		{ genre: "Bedroom Pop", artist: "Omar Apollo" },
@@ -50,7 +50,7 @@
 		margin-bottom: 2px;
 	}
 	.group {
-		margin-right: .5rem;
-		margin-top: .5rem;
+		margin-right: 0.5rem;
+		margin-top: 0.5rem;
 	}
 </style>

@@ -2,10 +2,10 @@
 	import Icon from "$components/helpers/Icon.svelte";
 	import { activeSlide } from "$stores/misc.js";
 
-	$: explore = $activeSlide === 36;
+	$: explore = $activeSlide === 35;
 	$: src =
-		$activeSlide === 30 ? "assets/img/birds.png" : "assets/img/explore.png";
-	$: alt = $activeSlide === 30 ? "Birds" : "Explore the data";
+		$activeSlide === 29 ? "assets/img/birds.png" : "assets/img/explore.png";
+	$: alt = $activeSlide === 29 ? "Birds" : "Explore the data";
 </script>
 
 <div class="img-wrapper" class:explore>

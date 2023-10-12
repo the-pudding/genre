@@ -4,14 +4,18 @@
 	import table1 from "$data/table1.csv";
 	import table2 from "$data/table2.csv";
 
-	$: title = copy.slides.find((d) => +d.slide === $activeSlide + 1).title;
-	$: footer = copy.slides.find((d) => +d.slide === $activeSlide + 1).footer;
+	$: title = copy.slides.find((d) => +d.slide === $activeSlide).title;
+	$: footer = copy.slides.find((d) => +d.slide === $activeSlide).footer;
 	$: data = $activeSlide === 18 ? table1 : table2;
 
-	console.log($activeSlide)
+	console.log($activeSlide);
 </script>
 
-<div class="table-wrapper {$activeSlide == 28 ? "taxonomy-table" : ''} {$activeSlide == 18 ? 'latest-table' : ''}">
+<div
+	class="table-wrapper {$activeSlide == 28
+		? 'taxonomy-table'
+		: ''} {$activeSlide == 18 ? 'latest-table' : ''}"
+>
 	<table class:top-border={!title}>
 		{#if title}
 			<tr>
@@ -54,15 +58,13 @@
 	td {
 		padding: 2px 0;
 		padding-left: 1rem;
-		line-height: .9;
+		line-height: 0.9;
 	}
 
-	.taxonomy-table td, .latest-table td {
+	.taxonomy-table td,
+	.latest-table td {
 		line-height: 1.2;
 	}
-
-	
-
 
 	td:first-of-type {
 		font-family: var(--sans);
@@ -80,9 +82,8 @@
 
 	.latest-table td {
 		font-size: 14px;
-		letter-spacing: -.04em;
+		letter-spacing: -0.04em;
 		line-height: 1;
-		
 	}
 
 	.latest-table td:first-of-type {

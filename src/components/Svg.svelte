@@ -12,16 +12,18 @@
 			? regions
 			: $activeSlide === 13
 			? latin
-			: $activeSlide === 23
+			: $activeSlide === 22
 			? madeUp
-			: $activeSlide === 25
+			: $activeSlide === 24
 			? hyperpop
-			: $activeSlide === 31
+			: $activeSlide === 30
 			? indie
 			: null;
-	$: title = copy.slides.find((d) => +d.slide === $activeSlide + 1)?.title;
-	$: bottom = $activeSlide === 31;
-	$: fullWidth = $activeSlide === 31;
+	$: title = copy.slides.find((d) => +d.slide === $activeSlide)?.title;
+	$: bottom = $activeSlide === 30;
+	$: fullWidth = $activeSlide === 30;
+
+	// max-width: 300px;
 </script>
 
 <div class:bottom class:full-width={fullWidth}>
@@ -46,5 +48,10 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
+	}
+	h4 {
+		width: 43rem;
+		margin: auto;
+		padding: 0 1rem;
 	}
 </style>

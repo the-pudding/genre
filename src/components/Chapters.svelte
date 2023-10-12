@@ -15,7 +15,7 @@
 			</span>
 			{#if chapterActive}
 				{#each chapters[chapter] as slide}
-					<div class="block" class:active={$activeSlide + 1 === +slide.slide} />
+					<div class="block" class:active={$activeSlide === +slide.slide} />
 				{/each}
 			{:else}
 				<div class="block" />

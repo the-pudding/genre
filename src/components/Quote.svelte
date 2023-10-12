@@ -32,7 +32,7 @@
 
 	$: buttonText = `${paused ? "Play" : "Pause"} the interview`;
 	$: words = copy.slides
-		.find((d) => +d.slide === $activeSlide + 1)
+		.find((d) => +d.slide === $activeSlide)
 		.quote.split(" ");
 </script>
 
@@ -70,7 +70,7 @@
 		margin-top: 1rem;
 		font-weight: 500;
 		line-height: 1.2;
-		letter-spacing: -.02em;;
+		letter-spacing: -0.02em;
 	}
 	.words span {
 		transition: opacity calc(var(--1s) * 0.6);
