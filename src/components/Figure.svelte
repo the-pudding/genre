@@ -1,5 +1,6 @@
 <script>
-	import { activeSlide, slideHeights } from "$stores/misc.js";
+	import { activeSlide, dir } from "$stores/misc.js";
+	import viewport from "$stores/viewport.js";
 	import Svg from "$components/Svg.svelte";
 	import Ranks from "$components/Ranks.svelte";
 	import Table from "$components/Table.svelte";
@@ -12,22 +13,11 @@
 	import Video from "$components/Video.svelte";
 	import Sample from "$components/Sample.svelte";
 	import pointer from "$svg/pointer.svg";
+	import { onMount, tick } from "svelte";
+	import _ from "lodash";
 
-	$: pxFromText = $slideHeights[$activeSlide] + 50;
-	$: offset =
-		$activeSlide === 0
-			? `260px`
-			: $activeSlide === 1 ||
-			  $activeSlide === 2 ||
-			  $activeSlide === 3 ||
-			  $activeSlide === 4
-			? `${Math.max(160, pxFromText)}px`
-			: line.includes($activeSlide)
-			? `${Math.max(180, pxFromText)}px`
-			: $activeSlide === 16 || $activeSlide === 17
-			? `${Math.max(190, pxFromText)}px`
-			: `${pxFromText}px`;
-	$: slide = $activeSlide === 0 || $activeSlide === 1;
+	let mounted = false;
+	let offset;
 
 	const bleed = [
 		11, 12, 14, 15, 16, 17, 20, 21, 23, 25, 26, 28, 29, 30, 31, 32, 33
@@ -43,12 +33,84 @@
 	const video = [25, 26, 31, 32, 33];
 	const image = [29, 35];
 	const sample = [34];
+
+	$: $activeSlide, $viewport.width, getSlideHeight();
+	$: previousSlide =
+		$activeSlide === 0
+			? undefined
+			: $dir === "left"
+			? $activeSlide + 1
+			: $activeSlide - 1;
+
+	const lookup = {
+		ranks: ranks,
+		table: table,
+		svg: svg,
+		columns: columns,
+		line: line,
+		mountain: mountain,
+		bubbles: bubbles,
+		quote: quote,
+		video: video,
+		image: image,
+		sample: sample
+	};
+	const getSlidesArr = (slideNumber) => {
+		for (const [key, list] of Object.entries(lookup)) {
+			if (list.includes(slideNumber)) {
+				return list;
+			}
+		}
+		return null;
+	};
+	const arraysAreEqual = (arr1, arr2) => {
+		if (!arr1 || !arr2) return false;
+		if (arr1.length !== arr2.length) return false;
+		return arr1.every((value, index) => value === arr2[index]);
+	};
+	const filterConsecutive = (arr, x) => {
+		return arr.filter((d, i, a) => {
+			if (d === x) return true;
+			if (i === 0) return a[i + 1] - d === 1 && d <= x;
+			if (i === a.length - 1) return d - a[i - 1] === 1 && d >= x;
+			return (
+				(a[i + 1] - d === 1 || d - a[i - 1] === 1) &&
+				(d >= x || a[i + 1] >= x || a[i - 1] >= x)
+			);
+		});
+	};
+
+	const getSlideHeight = async () => {
+		if (mounted) {
+			await tick();
+
+			const newFigure = !arraysAreEqual(
+				getSlidesArr($activeSlide),
+				getSlidesArr(previousSlide)
+			);
+
+			if (newFigure) {
+				const slides = getSlidesArr($activeSlide);
+				const filtered = filterConsecutive(slides, $activeSlide);
+				const slideEls = filtered.map((d) =>
+					document.getElementById(`slide-${d}`)
+				);
+				const maxHeight = Math.max(...slideEls.map((d) => d.clientHeight));
+				offset = maxHeight + 0;
+			}
+		}
+	};
+
+	onMount(() => {
+		mounted = true;
+		getSlideHeight();
+	});
 </script>
 
 <figure
-	style={`--offset: ${offset}; --buffer: 2rem`}
-	class:slide
+	style={`--offset: ${offset}px; --buffer: 2rem`}
 	class:bleed={bleed.includes($activeSlide)}
+	class:visible={offset}
 >
 	{#if ranks.includes($activeSlide)}
 		<Ranks />
@@ -92,15 +154,16 @@
 		padding: 1rem;
 		z-index: 3;
 		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.5s ease-in-out;
+	}
+	figure.visible {
+		opacity: 1;
 	}
 	.bleed {
 		overflow: visible;
 		padding: 0;
 		width: 100%;
-	}
-	.slide {
-		transition: all var(--1s) ease-in-out;
-		transition: top 0.5s ease-in-out;
 	}
 	.tap {
 		font-size: 1.3rem;
@@ -111,7 +174,7 @@
 		align-items: center;
 		opacity: 0;
 	}
-	.visible {
+	.tap.visible {
 		opacity: 1;
 	}
 </style>

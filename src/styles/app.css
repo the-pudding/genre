@@ -21,7 +21,7 @@
 	--border-radius: 2px;
 	--font-body: var(--serif);
 	--font-form: var(--sans);
-	--color-bg: #d4d4d4;
+	--color-bg: rgb(240, 240, 240);
 	--color-fg: var(--color-gray-900);
 	--color-primary: var(--color-black);
 	--color-link: var(--color-black);
@@ -36,8 +36,8 @@
 	--color-input-fg: var(--color-gray-900);
 	--color-placeholder: var(--color-gray-500);
 
-	--color-primary: #0000ff;
-	--color-secondary: red;
+	--color-primary: #0000c7;
+	--color-secondary: #7a0000;
 	--accent: #45fe9a;
 	--accent-dark: #2b9e6d;
 

@@ -54,7 +54,7 @@
 		}, []);
 </script>
 
-<div class="table-wrapper">
+<div class="table-wrapper" class:slide={$activeSlide === 0}>
 	<h4>Genres, ranked by streams on Spotify</h4>
 
 	{#if legend}
@@ -98,7 +98,10 @@
 	.table-wrapper {
 		font-family: var(--sans);
 		transform: translate(0, 0);
-		transition: transform calc(var(--1s) * 2) ease-in-out;
+		transition: transform calc(var(--1s) * 0.5) ease-in-out;
+	}
+	.slide {
+		transform: translate(0, 30%);
 	}
 	table {
 		max-width: 20rem;
@@ -117,7 +120,7 @@
 
 	thead th {
 		font-weight: 500;
-		padding-bottom: .1rem;
+		padding-bottom: 0.1rem;
 	}
 	tr {
 		border-bottom: 1px solid var(--color-gray-400);
@@ -137,8 +140,8 @@
 	}
 	.fade {
 		background: linear-gradient(
-			rgba(212, 212, 212, 0),
-			rgba(212, 212, 212, 0.8)
+			rgba(240, 240, 240, 0),
+			rgba(240, 240, 240, 0.8)
 		);
 		position: absolute;
 		bottom: 0;
