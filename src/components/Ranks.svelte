@@ -101,7 +101,7 @@
 		transition: transform calc(var(--1s) * 0.5) ease-in-out;
 	}
 	.slide {
-		transform: translate(0, 30%);
+		transform: translate(0, 0%);
 	}
 	table {
 		max-width: 20rem;
@@ -128,7 +128,6 @@
 	td {
 		padding: 2px 0;
 		font-weight: 500;
-		line-height: 1;
 	}
 	.number {
 		color: var(--color-gray-600);
@@ -140,12 +139,18 @@
 	}
 	.fade {
 		background: linear-gradient(
-			rgba(240, 240, 240, 0),
-			rgba(240, 240, 240, 0.8)
+			rgba(212, 212, 212, 0),
+			rgba(212, 212, 212, 0.8)
 		);
 		position: absolute;
 		bottom: 0;
 		width: 100%;
 		height: 60%;
+	}
+
+	@media (max-width: 600px) {
+		td {
+			line-height: 1;
+		}
 	}
 </style>

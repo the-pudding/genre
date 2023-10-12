@@ -4,13 +4,17 @@
 	import { onMount } from "svelte";
 	import { tweened } from "svelte/motion";
 	import { quintInOut } from "svelte/easing";
+	import { fly } from "svelte/transition";
+	import viewport from "$stores/viewport.js";
 
+	let wrapperEl;
 	let svgElement;
 	let originalVB;
 	let viewBox;
-	const zoom = 4;
 	const duration = 3000;
 
+	$: zoom = mobile ? 3 : 4;
+	$: mobile = $viewport.width < 600;
 	$: zoomedVB = originalVB
 		? [
 				(originalVB[2] - originalVB[2] / zoom) / 2,
@@ -33,12 +37,12 @@
 			easing: quintInOut
 		});
 	}
-
 	$: if (svgElement) {
 		svgElement.setAttribute("viewBox", $viewBox.join(" "));
 	}
 
-	onMount(() => {
+	let mounted = false;
+	onMount(async () => {
 		svgElement = document.querySelector("svg#mountain");
 		const vb = svgElement.getAttribute("viewBox");
 		originalVB = vb.split(" ").map((d) => +d);
@@ -46,7 +50,7 @@
 	});
 </script>
 
-<div class="wrapper">
+<div class="wrapper" bind:this={wrapperEl} in:fly={{ y: 1000, duration: 1500 }}>
 	{@html full}
 </div>
 
@@ -57,7 +61,8 @@
 		left: 50%;
 		transform: translate(-50%, 0);
 		width: 100vw;
-		min-width: 1000px;
+		min-width: 1200px;
 		max-width: 1500px;
+		max-height: 90%;
 	}
 </style>

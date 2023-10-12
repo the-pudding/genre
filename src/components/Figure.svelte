@@ -180,7 +180,7 @@
 	.tap {
 		font-size: 1.3rem;
 		position: fixed;
-		bottom: 1rem;
+		bottom: 2rem;
 		right: 1rem;
 		display: flex;
 		flex-direction: column;
