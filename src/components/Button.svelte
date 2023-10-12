@@ -17,7 +17,6 @@
 		border-radius: 10px;
 		padding: 0.7rem;
 		pointer-events: auto;
-		font-size: 1rem;
 	}
 	button:hover {
 		background: var(--accent-dark);

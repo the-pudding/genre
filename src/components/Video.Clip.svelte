@@ -7,7 +7,7 @@
 	export let overlay;
 
 	const src = `assets/video/${id}.mp4`;
-	const progressH = 10;
+	const progressH = 20;
 
 	let videoEl;
 	let currentTime = 0;
@@ -95,17 +95,12 @@
 		width: fit-content;
 		margin: auto;
 		position: relative;
-		height: 100%;
-		background-color: black;
 	}
 	.wrapper.loaded {
 		visibility: visible;
 	}
 	video {
 		width: 600px;
-		height: 100%;
-		object-fit: cover;
-		object-position: top;
 	}
 	video.has-captions {
 		width: 500px;
@@ -116,8 +111,6 @@
 	}
 	.progress {
 		background: var(--accent);
-		position: absolute;
-		top: -10px;
 	}
 	.controls {
 		width: 100%;
@@ -149,8 +142,6 @@
 		color: white;
 		font-family: var(--sans);
 		font-weight: 700;
-		letter-spacing: -.02em;
-		line-height: 1;
 		font-size: 18px;
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
@@ -158,7 +149,5 @@
 	:global(.overlay span.sub) {
 		font-size: 16px;
 		display: block;
-		margin-top: .5rem;
-		line-height: 130%;
 	}
 </style>

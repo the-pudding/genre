@@ -78,7 +78,7 @@
 		pointer-events: none;
 	}
 	p {
-		font-size: 1.125rem;
+		font-size: 1.2rem;
 		font-weight: 700;
 		line-height: 120%;
 		letter-spacing: -0.02em;

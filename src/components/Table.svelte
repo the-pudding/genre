@@ -38,7 +38,7 @@
 		width: 100%;
 	}
 	.top-border {
-		border-top: 1px solid black;
+		border-top: 2px solid black;
 	}
 	.top-border tr:first-child td {
 		padding-top: 0.5rem;
@@ -61,8 +61,6 @@
 		line-height: 1.2;
 	}
 
-	
-
 
 	td:first-of-type {
 		font-family: var(--sans);
@@ -77,19 +75,6 @@
 		text-align: left;
 		width: 100%;
 	}
-
-	.latest-table td {
-		font-size: 14px;
-		letter-spacing: -.04em;
-		line-height: 1;
-		
-	}
-
-	.latest-table td:first-of-type {
-		font-size: 15px;
-		color: black;
-	}
-
 	tr {
 		border-bottom: 1px dashed var(--color-gray-600);
 	}

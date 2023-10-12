@@ -112,12 +112,7 @@
 		font-weight: 600;
 	}
 	th:first-child {
-		padding-left: 1rem;
-	}
-
-	thead th {
-		font-weight: 500;
-		padding-bottom: .1rem;
+		padding-left: 1.25rem;
 	}
 	tr {
 		border-bottom: 1px solid var(--color-gray-400);

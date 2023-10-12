@@ -37,7 +37,7 @@
 <style>
 	.explode {
 		position: absolute;
-		font-size: 3rem;
+		font-size: 5rem;
 		opacity: 0;
 		transform: translate(-50%, -50%) scale(0) rotate(var(--rotate));
 		transition: all var(--1s) ease-in-out;

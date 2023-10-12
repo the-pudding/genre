@@ -112,7 +112,6 @@
 		top: 40px;
 		transform: translate(110%, 0);
 		letter-spacing: -0.04em;
-		line-height: 1.2;
 	}
 	.arrow {
 		position: absolute;

@@ -65,12 +65,10 @@
 		margin: 0 auto;
 	}
 	.words {
-		font-size: 20px;
+		font-size: 24px;
 		font-family: var(--sans);
 		margin-top: 1rem;
-		font-weight: 500;
 		line-height: 1.2;
-		letter-spacing: -.02em;;
 	}
 	.words span {
 		transition: opacity calc(var(--1s) * 0.6);
