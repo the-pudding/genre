@@ -24,7 +24,6 @@
 			const origins = Array.from(document.querySelectorAll("g")).filter((d) =>
 				d.id.includes("-origin")
 			);
-			console.log({ origins });
 		}
 
 		const toEnter = Array.from(document.querySelectorAll("g"))
@@ -48,6 +47,7 @@
 			url: copy.artists[d.id.split("-").slice(0, -1).join("-")]
 		}));
 		audioGroups.forEach((group) => {
+			group.style.pointerEvents = "auto";
 			group.addEventListener("mouseenter", () => {
 				group.style.cursor = "pointer";
 				const rect = group.querySelector("rect");

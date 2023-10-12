@@ -66,6 +66,7 @@
 		muted
 		loop
 		on:ended={onEnded}
+		class:has-captions={hasCC}
 	>
 		{#if hasCC}
 			<track kind="captions" src={`assets/captions/${id}.vtt`} srclang="en" />
@@ -97,6 +98,12 @@
 	}
 	.wrapper.loaded {
 		visibility: visible;
+	}
+	video {
+		width: 600px;
+	}
+	video.has-captions {
+		width: 500px;
 	}
 	video::cue {
 		font-size: 1.3rem;

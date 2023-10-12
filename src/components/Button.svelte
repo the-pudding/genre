@@ -16,6 +16,7 @@
 		font-weight: 700;
 		border-radius: 10px;
 		padding: 0.7rem;
+		pointer-events: auto;
 	}
 	button:hover {
 		background: var(--accent-dark);

@@ -13,16 +13,20 @@
 	import Sample from "$components/Sample.svelte";
 	import pointer from "$svg/pointer.svg";
 
+	$: pxFromText = $slideHeights[$activeSlide] + 50;
 	$: offset =
 		$activeSlide === 0
-			? "28%"
-			: $activeSlide === 1 || $activeSlide === 2 || $activeSlide === 3
-			? "18%"
+			? `260px`
+			: $activeSlide === 1 ||
+			  $activeSlide === 2 ||
+			  $activeSlide === 3 ||
+			  $activeSlide === 4
+			? `${Math.max(160, pxFromText)}px`
 			: line.includes($activeSlide)
-			? "18%"
+			? `${Math.max(180, pxFromText)}px`
 			: $activeSlide === 16 || $activeSlide === 17
-			? "20%"
-			: `${$slideHeights[$activeSlide] + 50}px`;
+			? `${Math.max(190, pxFromText)}px`
+			: `${pxFromText}px`;
 	$: slide = $activeSlide === 0 || $activeSlide === 1;
 
 	const bleed = [
@@ -42,7 +46,7 @@
 </script>
 
 <figure
-	style={`--offset: ${offset}`}
+	style={`--offset: ${offset}; --buffer: 2rem`}
 	class:slide
 	class:bleed={bleed.includes($activeSlide)}
 >
@@ -79,15 +83,15 @@
 <style>
 	figure {
 		position: absolute;
-		top: calc(var(--offset) + 2rem);
-		height: calc(100% - 3rem - var(--offset));
+		top: calc(var(--offset) + var(--buffer));
+		height: calc(100% - var(--offset) - var(--buffer));
 		left: 50%;
 		transform: translateX(-50%);
 		overflow: hidden;
 		width: 45rem;
 		padding: 1rem;
-		/* z-index: 100; */
-		margin-top: 1rem;
+		z-index: 3;
+		pointer-events: none;
 	}
 	.bleed {
 		overflow: visible;

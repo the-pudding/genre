@@ -5,7 +5,6 @@
 
 	export let id;
 	export let label;
-	export let color;
 	export let slide;
 	export let inline = false;
 
@@ -41,7 +40,7 @@
 
 <Button
 	onClick={toggle}
-	style={`position: relative; display: inline; padding: ${padding}; background: ${color}`}
+	style={`position: relative; display: inline; padding: ${padding};`}
 >
 	{label} 🎵
 </Button>

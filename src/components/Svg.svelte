@@ -21,9 +21,10 @@
 			: null;
 	$: title = copy.slides.find((d) => +d.slide === $activeSlide + 1)?.title;
 	$: bottom = $activeSlide === 31;
+	$: fullWidth = $activeSlide === 31;
 </script>
 
-<div class:bottom>
+<div class:bottom class:full-width={fullWidth}>
 	{#if title}<h4>{title}</h4>{/if}
 	{@html currentSvg}
 </div>
@@ -32,6 +33,9 @@
 	div {
 		max-width: 500px;
 		margin: auto;
+	}
+	div.full-width {
+		max-width: none;
 	}
 	.bottom {
 		position: absolute;

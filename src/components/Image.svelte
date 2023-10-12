@@ -61,6 +61,7 @@
 		bottom: 4rem;
 		left: 50%;
 		transform: translate(-50%, 0);
+		pointer-events: auto;
 	}
 	button:hover {
 		background: #333;
