@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from "svelte";
-	import inView from "$actions/inView.js";
 	import wordmark from "$svg/wordmark.svg";
+	import copy from "$data/copy.json";
 
 	let localURL;
 	let stories = [];
@@ -49,7 +49,7 @@
 		{/each}
 	</section>
 
-	<section class="about">
+	<!-- <section class="about">
 		<div class="wordmark">
 			{@html wordmark}
 		</div>
@@ -58,7 +58,7 @@
 			is a digital publication that explains ideas debated in culture with visual
 			essays.
 		</p>
-	</section>
+	</section> -->
 
 	<section class="links">
 		<ul>
@@ -75,17 +75,17 @@
 
 <style>
 	footer {
-		background-color: var(--color-fg);
-		color: var(--color-bg);
+		color: var(--color-fg);
 		font-family: var(--sans);
 		padding: 3em 1em;
 		margin-top: 3em;
+		pointer-events: auto;
 	}
 
 	a,
 	a:visited,
 	a:hover {
-		color: var(--color-bg);
+		color: var(--color-fg);
 	}
 
 	.stories {

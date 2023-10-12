@@ -41,7 +41,6 @@
 		svgElement.setAttribute("viewBox", $viewBox.join(" "));
 	}
 
-	let mounted = false;
 	onMount(async () => {
 		svgElement = document.querySelector("svg#mountain");
 		const vb = svgElement.getAttribute("viewBox");

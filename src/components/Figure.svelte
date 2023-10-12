@@ -15,6 +15,7 @@
 	import Sample from "$components/Sample.svelte";
 	import pointer from "$svg/pointer.svg";
 	import Icon from "$components/helpers/Icon.svelte";
+	import Footer from "$components/Footer.svelte";
 	import { onMount, tick } from "svelte";
 	import _ from "lodash";
 
@@ -35,6 +36,7 @@
 	const video = [25, 26, 31, 32, 33];
 	const image = [29, 35];
 	const sample = [34];
+	const footer = [36];
 
 	$: $activeSlide, $viewport.width, getSlideHeight();
 	$: previousSlide =
@@ -55,7 +57,8 @@
 		quote: quote,
 		video: video,
 		image: image,
-		sample: sample
+		sample: sample,
+		footer: footer
 	};
 	const getSlidesArr = (slideNumber) => {
 		for (const [key, list] of Object.entries(lookup)) {
@@ -136,6 +139,8 @@
 		<Video />
 	{:else if sample.includes($activeSlide)}
 		<Sample />
+	{:else if footer.includes($activeSlide)}
+		<Footer />
 	{/if}
 
 	<div class="tap" class:visible={$activeSlide === 0}>

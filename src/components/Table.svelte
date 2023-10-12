@@ -7,8 +7,6 @@
 	$: title = copy.slides.find((d) => +d.slide === $activeSlide).title;
 	$: footer = copy.slides.find((d) => +d.slide === $activeSlide).footer;
 	$: data = $activeSlide === 18 ? table1 : table2;
-
-	console.log($activeSlide);
 </script>
 
 <div
@@ -58,12 +56,6 @@
 	td {
 		padding: 2px 0;
 		padding-left: 1rem;
-		line-height: 0.9;
-	}
-
-	.taxonomy-table td,
-	.latest-table td {
-		line-height: 1.2;
 	}
 
 	td:first-of-type {
@@ -83,7 +75,6 @@
 	.latest-table td {
 		font-size: 14px;
 		letter-spacing: -0.04em;
-		line-height: 1;
 	}
 
 	.latest-table td:first-of-type {
@@ -97,5 +88,18 @@
 	.footer {
 		margin-top: 1rem;
 		font-family: var(--sans);
+	}
+
+	@media (max-width: 600px) {
+		td {
+			line-height: 0.9;
+		}
+		.taxonomy-table td,
+		.latest-table td {
+			line-height: 1.2;
+		}
+		.latest-table td {
+			line-height: 1;
+		}
 	}
 </style>
