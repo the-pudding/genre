@@ -86,7 +86,7 @@
 		overflow: hidden;
 		width: 45rem;
 		padding: 1rem;
-		z-index: 100;
+		/* z-index: 100; */
 		margin-top: 1rem;
 	}
 	.bleed {

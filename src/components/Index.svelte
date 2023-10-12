@@ -46,8 +46,8 @@
 	<Slider bind:this={sliderEl} bind:current={$activeSlide} duration="0">
 		{#each slides as slide, i}
 			<Slide index={i}>
-				{#each slide.text as { type, text, classname }}
-					<svelte:element this={type} class={classname}>
+				{#each slide.text as { type, text }}
+					<svelte:element this={type} class="slide-content">
 						{@html text}
 					</svelte:element>
 				{/each}
@@ -74,11 +74,16 @@
 		width: 100%;
 		max-width: 45rem;
 		padding: 1rem;
+		z-index: 3;
+		pointer-events: none;
 	}
 	p {
 		font-size: 1.2rem;
 		font-weight: 700;
 		line-height: 120%;
 		letter-spacing: -0.02em;
+	}
+	.slide-content {
+		pointer-events: auto;
 	}
 </style>
