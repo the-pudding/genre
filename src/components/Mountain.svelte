@@ -58,5 +58,6 @@
 		transform: translate(-50%, 0);
 		width: 100vw;
 		min-width: 1000px;
+		max-width: 1500px;
 	}
 </style>
