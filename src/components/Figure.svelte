@@ -96,7 +96,7 @@
 					document.getElementById(`slide-${d}`)
 				);
 				const maxHeight = Math.max(...slideEls.map((d) => d.clientHeight));
-				offset = maxHeight + 0;
+				offset = maxHeight + 50;
 			}
 		}
 	};

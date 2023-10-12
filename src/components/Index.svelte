@@ -31,6 +31,7 @@
 				props: {
 					label: "Bad Bunny",
 					id: "bad-bunny",
+					color: "#AED8FF",
 					slide: 10,
 					inline: true
 				}
