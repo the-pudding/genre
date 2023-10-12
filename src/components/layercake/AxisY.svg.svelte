@@ -51,7 +51,8 @@
 	}
 
 	.tick line {
-		stroke: var(--color-gray-300);
+		stroke: var(--color-gray-500);
+		stroke-dasharray: 4px 2px;
 	}
 
 	.tick text {
