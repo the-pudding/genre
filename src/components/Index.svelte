@@ -60,7 +60,8 @@
 <Tap
 	debug={false}
 	full={true}
-	size="50%"
+	directions={$activeSlide === 0 ? ["right"] : ["left", "right"]}
+	size={$activeSlide === 0 ? "100%" : "50%"}
 	enableKeyboard={true}
 	marginTop={0}
 	on:tap={onTap}
