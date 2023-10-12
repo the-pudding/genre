@@ -96,29 +96,13 @@
 		}
 		50% {
 			opacity: var(--opacity-destination);
-			transform: scale(1.05);
+			transform: scale(1);
 		}
 		70% {
-			transform: scale(0.9);
+			transform: scale(0.85);
 		}
 		100% {
 			transform: scale(1);
-		}
-	}
-	@keyframes -global-bounce-out {
-		0% {
-			transform: scale(1);
-		}
-		25% {
-			transform: scale(0.95);
-		}
-		50% {
-			opacity: var(--opacity-destination);
-			transform: scale(1.1);
-		}
-		100% {
-			opacity: 0;
-			transform: scale(0.3);
 		}
 	}
 </style>
