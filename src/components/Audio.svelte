@@ -17,7 +17,7 @@
 	$: url = copy.artists[id];
 	$: percentLeft =
 		duration && currentTime ? ((duration - currentTime) / duration) * 100 : 0;
-	$: padding = inline ? "4px 6px" : "10px 14px";
+	$: padding = inline ? "4px 8px" : "10px 14px";
 	$: if (slide && !onScreen && audioEl) {
 		audioEl.pause();
 		currentTime = 0;
