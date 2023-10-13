@@ -85,7 +85,11 @@
 		line-height: 120%;
 		letter-spacing: -0.02em;
 	}
-	.slide-content {
+	:global(.slide a) {
 		pointer-events: auto;
+	}
+	:global(.slide:last-of-type) {
+		margin-top: 3rem;
+		text-align: center;
 	}
 </style>

@@ -1,5 +1,8 @@
 {
 	"color": {
+		"primary": { "value": "#0000ff" },
+		"secondary": { "value": "#ff0000" },
+		"accent": { "value": "#45fe9a" },
 		"black": {
 			"value": "#000000"
 		},

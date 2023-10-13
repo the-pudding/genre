@@ -32,7 +32,7 @@
 		"var(--color-secondary)",
 		"var(--color-primary)",
 		"var(--color-black)",
-		"#666"
+		"var(--color-black)"
 	];
 
 	const groupedData = groupLonger(data, allGenres, {
@@ -51,7 +51,7 @@
 			: $activeSlide === 9
 			? ["k-pop", "r&b", "edm"]
 			: $activeSlide === 10
-			? ["reggaeton", "r&b", "edm"]
+			? ["k-pop", "reggaeton", "r&b", "edm"]
 			: [];
 </script>
 

@@ -37,7 +37,7 @@
 <style>
 	.explode {
 		position: absolute;
-		font-size: 3rem;
+		font-size: 5rem;
 		opacity: 0;
 		transform: translate(-50%, -50%) scale(0) rotate(var(--rotate));
 		transition: all var(--1s) ease-in-out;
@@ -49,5 +49,11 @@
 	.explode.exited {
 		opacity: 0;
 		transform: translate(-50%, 75vh) scale(1.3) rotate(var(--rotate));
+	}
+
+	@media (max-width: 600px) {
+		.explode {
+			font-size: 3rem;
+		}
 	}
 </style>

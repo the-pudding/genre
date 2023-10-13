@@ -5,7 +5,9 @@
 <script>
 	import { onMount, getContext } from "svelte";
 	import { draw, fade } from "svelte/transition";
+	import { activeSlide, dir } from "$stores/misc.js";
 	import _ from "lodash";
+	import mq from "$stores/mq.js";
 
 	const { data, xGet, yGet, zGet, z, y } = getContext("LayerCake");
 
@@ -13,6 +15,8 @@
 
 	let mounted = false;
 
+	$: animateDraw =
+		!$mq.reducedMotion && (!$activeSlide || (10 && $dir !== "left"));
 	$: path = (values) => {
 		return (
 			"M" +
@@ -33,13 +37,15 @@
 	{#each $data as group}
 		{@const isVisible = visible.includes($z(group))}
 		{@const includeNumber = $z(group) === "k-pop" || $z(group) === "reggaeton"}
+		{@const faded = $z(group) === "k-pop" && $activeSlide === 10}
 
 		{#if isVisible && mounted}
 			<path
 				class="path-line"
+				class:faded
 				d={path(group.values)}
 				stroke={$zGet(group)}
-				in:draw={{ duration: 1500 }}
+				in:draw={{ duration: animateDraw ? 1500 : 0 }}
 				out:fade={{ duration: 500 }}
 			/>
 			<circle
@@ -47,24 +53,28 @@
 				cy={$yGet(_.first(group.values))}
 				r="5"
 				fill={$zGet(group)}
+				class:faded
 			/>
 			<circle
 				cx={$xGet(_.last(group.values))}
 				cy={$yGet(_.last(group.values))}
 				r="5"
 				fill={$zGet(group)}
+				class:faded
 			/>
 			{#if includeNumber}
 				<text
 					x={$xGet(_.first(group.values)) + 10}
 					y={$yGet(_.first(group.values))}
 					class="label-rank"
+					class:faded
 					fill={$zGet(group)}>#{$y(_.first(group.values))}</text
 				>
 				<text
 					x={$xGet(_.last(group.values)) + 10}
 					y={$yGet(_.last(group.values))}
 					class="label-rank"
+					class:faded
 					fill={$zGet(group)}>#{$y(_.last(group.values))}</text
 				>
 			{/if}
@@ -74,7 +84,8 @@
 					? $yGet(_.last(group.values)) + 16
 					: $yGet(_.last(group.values))}
 				class="label-genre"
-				fill={$zGet(group)}>{$z(group)}</text
+				class:faded
+				fill={$zGet(group)}>{$z(group) === "k-pop" ? "K-pop" : $z(group)}</text
 			>
 		{/if}
 	{/each}
@@ -89,6 +100,21 @@
 		stroke-linejoin: round;
 		stroke-linecap: round;
 		stroke-width: 3px;
+	}
+	path,
+	circle,
+	text {
+		transition: opacity var(--1s), stroke var(--1s), fill var(--1s);
+	}
+	path.faded {
+		opacity: 0.5;
+		stroke: var(--color-gray-400);
+	}
+	circle.faded {
+		fill: var(--color-gray-400);
+	}
+	text.faded {
+		fill: var(--color-gray-400);
 	}
 	.label-rank {
 		font-size: 14px;

@@ -6,7 +6,6 @@
 	export let id;
 	export let label;
 	export let slide;
-	export let color = "var(--accent)";
 	export let inline = false;
 
 	let audioEl;
@@ -41,7 +40,7 @@
 
 <Button
 	onClick={toggle}
-	style={`background: ${color}; position: relative; display: inline; padding: ${padding};`}
+	style={`position: relative; display: inline; padding: ${padding};`}
 >
 	{label} 🎵
 </Button>

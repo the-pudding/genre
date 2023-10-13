@@ -115,7 +115,7 @@
 		font-family: var(--sans);
 	}
 	.progress {
-		background: var(--accent);
+		background: var(--color-accent);
 		position: absolute;
 		top: -10px;
 	}
@@ -149,7 +149,7 @@
 		color: white;
 		font-family: var(--sans);
 		font-weight: 700;
-		letter-spacing: -.02em;
+		letter-spacing: -0.02em;
 		line-height: 1;
 		font-size: 18px;
 		text-rendering: optimizeLegibility;
@@ -158,7 +158,7 @@
 	:global(.overlay span.sub) {
 		font-size: 16px;
 		display: block;
-		margin-top: .5rem;
+		margin-top: 0.5rem;
 		line-height: 130%;
 	}
 </style>

@@ -178,7 +178,6 @@
 		opacity: 1;
 	}
 	.bleed {
-		overflow: visible;
 		padding: 0;
 		width: 100%;
 	}

@@ -23,7 +23,6 @@
 	--font-form: var(--sans);
 	--color-bg: rgb(212, 212, 212);
 	--color-fg: var(--color-gray-900);
-	--color-primary: var(--color-black);
 	--color-link: var(--color-black);
 	--color-focus: var(--color-red);
 	--color-mark: var(--color-yellow);
@@ -35,11 +34,6 @@
 	--color-input-bg: var(--color-gray-50);
 	--color-input-fg: var(--color-gray-900);
 	--color-placeholder: var(--color-gray-500);
-
-	--color-primary: #0000ff;
-	--color-secondary: #ff0000;
-	--accent: #45fe9a;
-	--accent-dark: #2b9e6d;
 
 	/* "1" second duration */
 	--1s: 1ms;
