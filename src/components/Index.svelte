@@ -61,7 +61,7 @@
 	debug={false}
 	full={true}
 	directions={$activeSlide === 0 ? ["right"] : ["left", "right"]}
-	size={$activeSlide === 0 ? "100%" : "50%"}
+	size={$activeSlide === 0 ? "100%" : ["33%", "67%"]}
 	enableKeyboard={true}
 	marginTop={0}
 	on:tap={onTap}
