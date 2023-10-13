@@ -1,116 +1,68 @@
-<svg width="100%" height="100%" viewBox="0 0 292 421" fill="none" xmlns="http://www.w3.org/2000/svg">
-<line x1="30" y1="29.5" x2="74" y2="29.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="235.5" x2="74" y2="235.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="29.5" x2="127" y2="29.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="235.5" x2="127" y2="235.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="29.5" x2="183" y2="29.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="235.5" x2="183" y2="235.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="29.5" x2="236" y2="29.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="235.5" x2="236" y2="235.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="29.5" x2="292" y2="29.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="235.5" x2="292" y2="235.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="69.5" x2="74" y2="69.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="275.5" x2="74" y2="275.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="69.5" x2="127" y2="69.5" stroke="#FF0000" stroke-width="11"/>
-<line x1="83" y1="275.5" x2="127" y2="275.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="69.5" x2="183" y2="69.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="275.5" x2="183" y2="275.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="69.5" x2="236" y2="69.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="275.5" x2="236" y2="275.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="69.5" x2="292" y2="69.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="275.5" x2="292" y2="275.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="89.5" x2="74" y2="89.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="295.5" x2="74" y2="295.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="89.5" x2="127" y2="89.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="295.5" x2="127" y2="295.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="89.5" x2="183" y2="89.5" stroke="#FF0000" stroke-width="11"/>
-<line x1="139" y1="295.5" x2="183" y2="295.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="89.5" x2="236" y2="89.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="295.5" x2="236" y2="295.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="89.5" x2="292" y2="89.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="295.5" x2="292" y2="295.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="109.5" x2="74" y2="109.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="315.5" x2="74" y2="315.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="109.5" x2="127" y2="109.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="315.5" x2="127" y2="315.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="109.5" x2="183" y2="109.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="315.5" x2="183" y2="315.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="109.5" x2="236" y2="109.5" stroke="#888888" stroke-width="11"/>
-<line x1="192" y1="315.5" x2="236" y2="315.5" stroke="#888888" stroke-width="11"/>
-<line x1="192" y1="109.5" x2="236" y2="109.5" stroke="#FF0000" stroke-width="11"/>
-<line x1="192" y1="315.5" x2="236" y2="315.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="109.5" x2="292" y2="109.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="315.5" x2="292" y2="315.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="129.5" x2="74" y2="129.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="335.5" x2="74" y2="335.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="129.5" x2="127" y2="129.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="335.5" x2="127" y2="335.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="129.5" x2="183" y2="129.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="335.5" x2="183" y2="335.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="129.5" x2="236" y2="129.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="335.5" x2="236" y2="335.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="129.5" x2="292" y2="129.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="335.5" x2="292" y2="335.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="149.5" x2="74" y2="149.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="355.5" x2="74" y2="355.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="149.5" x2="127" y2="149.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="355.5" x2="127" y2="355.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="149.5" x2="183" y2="149.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="355.5" x2="183" y2="355.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="149.5" x2="236" y2="149.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="355.5" x2="236" y2="355.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="149.5" x2="292" y2="149.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="355.5" x2="292" y2="355.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="169.5" x2="74" y2="169.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="375.5" x2="74" y2="375.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="169.5" x2="127" y2="169.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="375.5" x2="127" y2="375.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="169.5" x2="183" y2="169.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="375.5" x2="183" y2="375.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="169.5" x2="236" y2="169.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="375.5" x2="236" y2="375.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="169.5" x2="292" y2="169.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="375.5" x2="292" y2="375.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="189.5" x2="74" y2="189.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="395.5" x2="74" y2="395.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="189.5" x2="127" y2="189.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="395.5" x2="127" y2="395.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="189.5" x2="183" y2="189.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="395.5" x2="183" y2="395.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="189.5" x2="236" y2="189.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="395.5" x2="236" y2="395.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="189.5" x2="292" y2="189.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="395.5" x2="292" y2="395.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="209.5" x2="74" y2="209.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="415.5" x2="74" y2="415.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="209.5" x2="127" y2="209.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="415.5" x2="127" y2="415.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="209.5" x2="183" y2="209.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="415.5" x2="183" y2="415.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="209.5" x2="236" y2="209.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="415.5" x2="236" y2="415.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="209.5" x2="292" y2="209.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="415.5" x2="292" y2="415.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="30" y1="49.5" x2="74" y2="49.5" stroke="#FF0000" stroke-width="11"/>
-<line x1="30" y1="255.5" x2="74" y2="255.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="49.5" x2="127" y2="49.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="83" y1="255.5" x2="127" y2="255.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="49.5" x2="183" y2="49.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="139" y1="255.5" x2="183" y2="255.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="49.5" x2="236" y2="49.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="192" y1="255.5" x2="236" y2="255.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="49.5" x2="292" y2="49.5" stroke="#AFAFAF" stroke-width="11"/>
-<line x1="248" y1="255.5" x2="292" y2="255.5" stroke="#AFAFAF" stroke-width="11"/>
-<text fill="#FF0000" stroke="#FF0000" stroke-width="2" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="bold" letter-spacing="-0.04em"><tspan x="35" y="55.75">Latin</tspan></text>
-<text fill="white" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="bold" letter-spacing="-0.04em"><tspan x="35" y="55.75">Latin</tspan></text>
-<text fill="#FF0000" stroke="#FF0000" stroke-width="2" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="bold" letter-spacing="-0.04em"><tspan x="196" y="115.75">Latin</tspan></text>
-<text fill="white" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="bold" letter-spacing="-0.04em"><tspan x="196" y="115.75">Latin</tspan></text>
-<path d="M214.707 129.293C214.317 128.902 213.683 128.902 213.293 129.293L206.929 135.657C206.538 136.047 206.538 136.681 206.929 137.071C207.319 137.462 207.953 137.462 208.343 137.071L214 131.414L219.657 137.071C220.047 137.462 220.681 137.462 221.071 137.071C221.462 136.681 221.462 136.047 221.071 135.657L214.707 129.293ZM215 175L215 130L213 130L213 175L215 175Z" fill="black"/>
-<text fill="black" fill-opacity="0.8" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="600" letter-spacing="0em"><tspan x="36" y="12.75">2016</tspan></text>
-<text fill="black" fill-opacity="0.8" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="600" letter-spacing="0em"><tspan x="146" y="12.75">2020</tspan></text>
-<text fill="black" fill-opacity="0.8" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="600" letter-spacing="0em"><tspan x="254" y="12.75">2023</tspan></text>
-<text fill="black" fill-opacity="0.8" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="600" letter-spacing="0em"><tspan x="10" y="32.75">#1</tspan></text>
-<text fill="black" fill-opacity="0.8" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="600" letter-spacing="0em"><tspan x="0" y="239.75">#11</tspan></text>
-<text fill="#D4D4D4" stroke="#D4D4D4" stroke-width="2" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="15" font-weight="500" letter-spacing="-0.04em"><tspan x="177" y="196.625">Latin drops from </tspan><tspan x="177" y="214.625">Spotify&#x2019;s genre </tspan><tspan x="177" y="232.625">classifications</tspan></text>
-<text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="15" font-weight="500" letter-spacing="-0.04em"><tspan x="177" y="196.625">Latin drops from </tspan><tspan x="177" y="214.625">Spotify&#x2019;s genre </tspan><tspan x="177" y="232.625">classifications</tspan></text>
+<svg width="100%" height="100%" viewBox="0 0 283 222" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 46">
+<line id="Line 8" x1="27" y1="29.5" x2="71" y2="29.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 18" x1="80" y1="29.5" x2="124" y2="29.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 28" x1="133" y1="29.5" x2="177" y2="29.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 38" x1="186" y1="29.5" x2="230" y2="29.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 48" x1="239" y1="29.5" x2="283" y2="29.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 10" x1="27" y1="69.5" x2="71" y2="69.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 19" x1="80" y1="69.5" x2="124" y2="69.5" stroke="#FF0000" stroke-width="11"/>
+<line id="Line 29" x1="133" y1="69.5" x2="177" y2="69.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 39" x1="186" y1="69.5" x2="230" y2="69.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 49" x1="239" y1="69.5" x2="283" y2="69.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 11" x1="27" y1="89.5" x2="71" y2="89.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 20" x1="80" y1="89.5" x2="124" y2="89.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 30" x1="133" y1="89.5" x2="177" y2="89.5" stroke="#FF0000" stroke-width="11"/>
+<line id="Line 40" x1="186" y1="89.5" x2="230" y2="89.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 50" x1="239" y1="89.5" x2="283" y2="89.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 12" x1="27" y1="109.5" x2="71" y2="109.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 21" x1="80" y1="109.5" x2="124" y2="109.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 31" x1="133" y1="109.5" x2="177" y2="109.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 41" x1="186" y1="109.5" x2="230" y2="109.5" stroke="#888888" stroke-width="11"/>
+<line id="Line 58" x1="186" y1="109.5" x2="230" y2="109.5" stroke="#FF0000" stroke-width="11"/>
+<line id="Line 51" x1="239" y1="109.5" x2="283" y2="109.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 13" x1="27" y1="129.5" x2="71" y2="129.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 22" x1="80" y1="129.5" x2="124" y2="129.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 32" x1="133" y1="129.5" x2="177" y2="129.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 42" x1="186" y1="129.5" x2="230" y2="129.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 52" x1="239" y1="129.5" x2="283" y2="129.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 14" x1="27" y1="149.5" x2="71" y2="149.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 23" x1="80" y1="149.5" x2="124" y2="149.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 33" x1="133" y1="149.5" x2="177" y2="149.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 43" x1="186" y1="149.5" x2="230" y2="149.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 53" x1="239" y1="149.5" x2="283" y2="149.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 15" x1="27" y1="169.5" x2="71" y2="169.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 24" x1="80" y1="169.5" x2="124" y2="169.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 34" x1="133" y1="169.5" x2="177" y2="169.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 44" x1="186" y1="169.5" x2="230" y2="169.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 54" x1="239" y1="169.5" x2="283" y2="169.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 16" x1="27" y1="189.5" x2="71" y2="189.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 25" x1="80" y1="189.5" x2="124" y2="189.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 35" x1="133" y1="189.5" x2="177" y2="189.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 45" x1="186" y1="189.5" x2="230" y2="189.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 55" x1="239" y1="189.5" x2="283" y2="189.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 17" x1="27" y1="209.5" x2="71" y2="209.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 26" x1="80" y1="209.5" x2="124" y2="209.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 36" x1="133" y1="209.5" x2="177" y2="209.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 46" x1="186" y1="209.5" x2="230" y2="209.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 56" x1="239" y1="209.5" x2="283" y2="209.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 9" x1="27" y1="49.5" x2="71" y2="49.5" stroke="#FF0000" stroke-width="11"/>
+<line id="Line 27" x1="80" y1="49.5" x2="124" y2="49.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 37" x1="133" y1="49.5" x2="177" y2="49.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 47" x1="186" y1="49.5" x2="230" y2="49.5" stroke="#AFAFAF" stroke-width="11"/>
+<line id="Line 57" x1="239" y1="49.5" x2="283" y2="49.5" stroke="#AFAFAF" stroke-width="11"/>
+<text id="Latin" fill="#FF0000" stroke="#FF0000" stroke-width="3" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="bold" letter-spacing="-0.04em"><tspan x="32" y="55.75">Latin</tspan></text>
+<text id="Latin_2" fill="white" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="600" letter-spacing="-0.04em"><tspan x="32" y="55.75">Latin</tspan></text>
+<text id="Latin_3" fill="#FF0000" stroke="#FF0000" stroke-width="3" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="bold" letter-spacing="-0.04em"><tspan x="190" y="115.75">Latin</tspan></text>
+<text id="Latin_4" fill="white" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="600" letter-spacing="-0.04em"><tspan x="190" y="115.75">Latin</tspan></text>
+<path id="Arrow 1" d="M211.707 129.293C211.317 128.902 210.683 128.902 210.293 129.293L203.929 135.657C203.538 136.047 203.538 136.681 203.929 137.071C204.319 137.462 204.953 137.462 205.343 137.071L211 131.414L216.657 137.071C217.047 137.462 217.681 137.462 218.071 137.071C218.462 136.681 218.462 136.047 218.071 135.657L211.707 129.293ZM212 155L212 130L210 130L210 155L212 155Z" fill="black"/>
+<text id="2016" fill="black" fill-opacity="0.8" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="600" letter-spacing="0em"><tspan x="33" y="12.75">2016</tspan></text>
+<text id="2020" fill="black" fill-opacity="0.8" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="600" letter-spacing="0em"><tspan x="140" y="12.75">2020</tspan></text>
+<text id="2023" fill="black" fill-opacity="0.8" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="600" letter-spacing="0em"><tspan x="245" y="12.75">2023</tspan></text>
+<text id="#1" fill="black" fill-opacity="0.8" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="600" letter-spacing="0em"><tspan x="7" y="32.75">#1</tspan></text>
+<text id="#5" fill="black" fill-opacity="0.8" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="600" letter-spacing="0em"><tspan x="7" y="113.75">#5</tspan></text>
+<text id="#10" fill="black" fill-opacity="0.8" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="600" letter-spacing="0em"><tspan x="0" y="214.75">#10</tspan></text>
+<text id="Latin drops from Spotify&#226;&#128;&#153;s genre classifications" fill="#D4D4D4" stroke="#D4D4D4" stroke-width="3" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="15" font-weight="600" letter-spacing="0em"><tspan x="156.188" y="172.125">Latin drops from </tspan><tspan x="160.964" y="187.125">Spotify&#x2019;s genre </tspan><tspan x="163.081" y="202.125">classifications</tspan></text>
+<text id="Latin drops from Spotify&#226;&#128;&#153;s genre classifications_2" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="15" font-weight="600" letter-spacing="0em"><tspan x="156.188" y="172.125">Latin drops from </tspan><tspan x="160.964" y="187.125">Spotify&#x2019;s genre </tspan><tspan x="163.081" y="202.125">classifications</tspan></text>
+</g>
 </svg>
