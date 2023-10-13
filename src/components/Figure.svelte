@@ -1,7 +1,7 @@
 <script>
 	import { activeSlide, dir } from "$stores/misc.js";
 	import viewport from "$stores/viewport.js";
-	import mq from "$stores/mq.js";
+	import Tap from "$components/Tap.svelte";
 	import Svg from "$components/Svg.svelte";
 	import Ranks from "$components/Ranks.svelte";
 	import Table from "$components/Table.svelte";
@@ -13,8 +13,6 @@
 	import Quote from "$components/Quote.svelte";
 	import Video from "$components/Video.svelte";
 	import Sample from "$components/Sample.svelte";
-	import pointer from "$svg/pointer.svg";
-	import Icon from "$components/helpers/Icon.svelte";
 	import Footer from "$components/Footer.svelte";
 	import { onMount, tick } from "svelte";
 	import _ from "lodash";
@@ -38,6 +36,8 @@
 	const sample = [34];
 	const footer = [36];
 
+	$: mobile = $viewport.width < 600;
+	$: buffer = mobile ? 10 : 50;
 	$: $activeSlide, $viewport.width, getSlideHeight();
 	$: previousSlide =
 		$activeSlide === 0
@@ -61,6 +61,13 @@
 		footer: footer
 	};
 	const getSlidesArr = (slideNumber) => {
+		// special case for ranking table
+		if (slideNumber === 0) return [0];
+		else if (slideNumber === 1 || slideNumber === 2 || slideNumber === 3)
+			return [1, 2, 3];
+		else if (slideNumber === 4) return [4];
+		else if (slideNumber === 5) return [5];
+
 		for (const [key, list] of Object.entries(lookup)) {
 			if (list.includes(slideNumber)) {
 				return list;
@@ -84,7 +91,6 @@
 			);
 		});
 	};
-
 	const getSlideHeight = async () => {
 		if (mounted) {
 			await tick();
@@ -101,7 +107,7 @@
 					document.getElementById(`slide-${d}`)
 				);
 				const maxHeight = Math.max(...slideEls.map((d) => d.clientHeight));
-				offset = maxHeight + 50;
+				offset = maxHeight + buffer;
 			}
 		}
 	};
@@ -116,6 +122,7 @@
 	style={`--offset: ${offset}px; --buffer: 2rem`}
 	class:bleed={bleed.includes($activeSlide)}
 	class:visible={offset}
+	class:animate={$activeSlide === 0 || $activeSlide === 1}
 >
 	{#if ranks.includes($activeSlide)}
 		<Ranks />
@@ -143,20 +150,7 @@
 		<Footer />
 	{/if}
 
-	<div class="tap" class:visible={$activeSlide === 0}>
-		<div class="row">
-			<strong>Tap to continue</strong>
-			{@html pointer}
-		</div>
-
-		{#if $mq.desktop}
-			<div class="row keyboard">
-				<strong>Or use the keyboard</strong>
-				<div class="key"><Icon name="chevron-left" /></div>
-				<div class="key"><Icon name="chevron-right" /></div>
-			</div>
-		{/if}
-	</div>
+	<Tap />
 </figure>
 
 <style>
@@ -177,42 +171,11 @@
 	figure.visible {
 		opacity: 1;
 	}
+	figure.animate {
+		transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
+	}
 	.bleed {
 		padding: 0;
 		width: 100%;
-	}
-	.tap {
-		font-size: 1.3rem;
-		position: fixed;
-		bottom: 2rem;
-		right: 1rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		opacity: 0;
-	}
-	.tap.visible {
-		opacity: 1;
-	}
-	.row {
-		display: flex;
-		align-items: center;
-		margin-top: 0.5rem;
-	}
-	.keyboard {
-		font-size: 1rem;
-	}
-	.key {
-		display: flex;
-		padding: 4px;
-		margin-left: 4px;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-		background-color: #f9f9f9;
-		text-align: center;
-	}
-	.key:first-of-type {
-		margin-left: 10px;
 	}
 </style>

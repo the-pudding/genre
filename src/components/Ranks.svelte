@@ -14,26 +14,25 @@
 	$: highlightList =
 		$activeSlide === 3 || $activeSlide === 4
 			? [
-					{ genre: "urbano latino", highlight: "var(--color-secondary)" },
-					{ genre: "trap latino", highlight: "var(--color-secondary)" },
-					{ genre: "reggaeton", highlight: "var(--color-secondary)" },
-					{ genre: "filmi", highlight: "var(--color-secondary)" },
-					{ genre: "k-pop", highlight: "var(--color-secondary)" },
-					{ genre: "pov:indie", highlight: "var(--color-secondary)" },
-					{ genre: "musica mexicana", highlight: "var(--color-secondary)" },
-					{ genre: "modern rock", highlight: "var(--color-secondary)" },
-					{ genre: "alternative metal", highlight: "var(--color-secondary)" },
-					{ genre: "permanent wave", highlight: "var(--color-secondary)" },
-					{ genre: "sad sierreno", highlight: "var(--color-secondary)" },
-					{ genre: "sierreno", highlight: "var(--color-secondary)" },
-					{ genre: "contemporary country", highlight: "var(--color-secondary)" },
-					{ genre: "modern bollywood", highlight: "var(--color-secondary)" },
-					{ genre: "norteno", highlight: "var(--color-secondary)" },
-					{ genre: "corrido", highlight: "var(--color-secondary)" },
-					{ genre: "latin pop", highlight: "var(--color-secondary)" },
-					{ genre: "latin pop", highlight: "var(--color-secondary)" }
-
-			  ]
+					"urbano latino",
+					"trap latino",
+					"reggaeton",
+					"filmi",
+					"k-pop",
+					"pov:indie",
+					"musica mexicana",
+					"modern rock",
+					"alternative metal",
+					"permanent wave",
+					"sad sierreno",
+					"sierreno",
+					"contemporary country",
+					"modern bollywood",
+					"norteno",
+					"corrido",
+					"latin pop",
+					"latin pop"
+			  ].map((d) => ({ genre: d, highlight: "var(--color-secondary)" }))
 			: $activeSlide === 5
 			? genreList.map((d) => ({
 					genre: d,
@@ -44,7 +43,6 @@
 			  }))
 			: [];
 	$: bottomFade = $activeSlide === 0;
-	$: blurredColumn = $activeSlide === 2 ? 1 : null;
 	$: legend = $activeSlide === 5;
 	$: genreList = data.reduce((acc, current) => {
 		const genres = current.ranks.map((d) => d.genre);
@@ -91,7 +89,7 @@
 						{@const color = highlightList.find(
 							(d) => d.genre === genre
 						)?.highlight}
-						<td style:color class:blur={blurredColumn === col}>
+						<td style:color>
 							{#if col === 0}
 								<span class="number">{row + 1}</span>
 							{/if}
@@ -111,11 +109,6 @@
 <style>
 	.table-wrapper {
 		font-family: var(--sans);
-		transform: translate(0, 0);
-		transition: transform calc(var(--1s) * 0.5) ease-in-out;
-	}
-	.slide {
-		transform: translate(0, 0%);
 	}
 	table {
 		max-width: 20rem;
@@ -131,7 +124,6 @@
 	th:first-child {
 		padding-left: 1rem;
 	}
-
 	thead th {
 		font-weight: 500;
 		padding-bottom: 0.1rem;
@@ -149,9 +141,6 @@
 		width: 14px;
 		display: inline-block;
 		text-align: left;
-	}
-	.blur {
-		/* filter: blur(3px); */
 	}
 	.fade {
 		background: linear-gradient(

@@ -21,17 +21,20 @@
 			: null;
 	$: title = copy.slides.find((d) => +d.slide === $activeSlide)?.title;
 	$: bottom = $activeSlide === 30;
-	$: maxWidth =
-		$activeSlide === 13 ? "300px" : $activeSlide === 30 ? "none" : "500px";
 </script>
 
-<div class:bottom style:max-width={maxWidth}>
+<div
+	class:bottom
+	class:latin={$activeSlide === 13}
+	class:indie={$activeSlide === 30}
+>
 	{#if title}<h4>{title}</h4>{/if}
 	{@html currentSvg}
 </div>
 
 <style>
 	div {
+		max-width: 500px;
 		margin: auto;
 	}
 	.bottom {
@@ -48,5 +51,14 @@
 		width: 43rem;
 		margin: auto;
 		padding: 0 1rem;
+	}
+	.indie {
+		max-width: none;
+	}
+
+	@media (max-width: 600px) {
+		.latin {
+			max-width: 300px;
+		}
 	}
 </style>
