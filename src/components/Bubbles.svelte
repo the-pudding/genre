@@ -1,26 +1,25 @@
 <script>
 	import Slide from "$components/Bubbles.Slide.svelte";
 	import { activeSlide } from "$stores/misc.js";
-	import latin1 from "$svg/bubbles/latin1.svg";
-	import latin2 from "$svg/bubbles/latin2.svg";
-	import hiphop1 from "$svg/bubbles/hiphop1.svg";
-	import hiphop2 from "$svg/bubbles/hiphop2.svg";
+	import latinCombined from "$svg/bubbles/latin-combined.svg";
+	import hiphopCombined from "$svg/bubbles/hiphop-combined.svg";
 	import escapeRoom from "$svg/bubbles/escape-room.svg";
 	import rock from "$svg/bubbles/rock.svg";
 	import stompAndHoller from "$svg/bubbles/stomp-and-holler.svg";
 
 	const svgs = {
-		14: latin1,
-		15: latin2,
-		16: hiphop1,
-		17: hiphop2,
+		14: latinCombined,
+		15: latinCombined,
+		16: hiphopCombined,
+		17: hiphopCombined,
 		20: escapeRoom,
 		21: rock,
 		23: stompAndHoller
 	};
+	$: step = { 14: 1, 15: 2, 16: 1, 17: 2 }[$activeSlide] || undefined;
 	$: currentSvg = svgs[$activeSlide];
 </script>
 
 {#key currentSvg}
-	<Slide svg={currentSvg} />
+	<Slide svg={currentSvg} {step} />
 {/key}

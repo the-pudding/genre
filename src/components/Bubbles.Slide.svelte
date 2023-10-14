@@ -6,33 +6,23 @@
 	import * as d3 from "d3";
 
 	export let svg;
+	export let step;
 
+	const constant = ["chino-nacho", "becky-g", "juan-gabriel"];
+	const isConstant = (id) => constant.some((d) => id.includes(d));
+
+	let mounted = false;
 	let artistsWithAudio = [];
-	$: special =
-		($activeSlide === 17 && $dir === "right") ||
-		($activeSlide === 16 && $dir === "left");
 
 	const enterBubbles = () => {
-		let ignore = [];
-		if (special) {
-			const audioEls = Array.from(document.querySelectorAll("g")).filter((d) =>
-				d.id.includes("-audio")
-			);
-			ignore = [document.querySelector("#hip-hop-bubble"), ...audioEls];
-
-			// move audio elements from the invisible spot to where they are
-			const origins = Array.from(document.querySelectorAll("g")).filter((d) =>
-				d.id.includes("-origin")
-			);
-		}
-
 		const toEnter = Array.from(document.querySelectorAll("g"))
 			.filter((d) => d.id.includes("-bubble") || d.id.includes("-audio"))
-			.filter((d) => !ignore.includes(d));
+			.filter((d) => !step || d.id.endsWith(step));
 		toEnter.forEach((el) => {
 			el.style.transformOrigin = "center";
 			const randomDelay = _.random(0, 800);
-			const opacityDestination = el.getAttribute("opacity") || 1;
+			const opacityDestination =
+				el.getAttribute("opacity") > 0 ? el.getAttribute("opacity") > 0 : 1;
 			el.style.setProperty("--opacity-destination", opacityDestination);
 			el.style.animation = `bounce-in calc(var(--1s) * 0.8) ${randomDelay}ms both`;
 		});
@@ -77,8 +67,48 @@
 		});
 	};
 
-	onMount(() => {
+	$: step, stepChange();
+	$: between =
+		(step === 1 && $dir === "left") || (step === 2) & ($dir === "right");
+
+	const stepChange = () => {
+		if (!mounted) return;
+
 		enterBubbles();
+
+		if (between) {
+			const startingPositions = constant.map((id) =>
+				document
+					.querySelector(`g#${id}-audio-${step === 1 ? 2 : 1}`)
+					.getBoundingClientRect()
+			);
+			const endingPositions = constant.map((id) =>
+				document.querySelector(`g#${id}-audio-${step}`).getBoundingClientRect()
+			);
+			// console.log({ startingPositions, endingPositions });
+		}
+
+		const toExit = Array.from(document.querySelectorAll("g"))
+			.filter((d) => d.id.includes("-bubble") || d.id.includes("-audio"))
+			.filter((d) => !step || !d.id.endsWith(step));
+		toExit.forEach((el) => {
+			if (between) {
+				el.style.transformOrigin = "center";
+				el.style.animation = `bounce-out calc(var(--1s) * 0.8) both`;
+			} else {
+				el.style.animation = "";
+				el.style.opacity = 0;
+			}
+		});
+	};
+
+	onMount(() => {
+		mounted = true;
+		if (step) {
+			stepChange();
+		} else {
+			enterBubbles();
+		}
 		interactiveAudio();
 	});
 </script>
@@ -99,10 +129,21 @@
 			transform: scale(1);
 		}
 		70% {
+			opacity: var(--opacity-destination);
 			transform: scale(0.85);
 		}
 		100% {
+			opacity: var(--opacity-destination);
 			transform: scale(1);
+		}
+	}
+	@keyframes -global-bounce-out {
+		0% {
+			transform: scale(1);
+		}
+		100% {
+			opacity: 0;
+			transform: scale(0);
 		}
 	}
 </style>
