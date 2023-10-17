@@ -10,6 +10,27 @@
 <text id="ozuna" opacity="0.7" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="500" letter-spacing="-0.04em"><tspan x="106" y="302.5">Ozuna</tspan></text>
 <text id="ricky-martin" opacity="0.7" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="500" letter-spacing="-0.04em"><tspan x="108" y="159.5">Ricky Martin</tspan></text>
 </g>
+<g id="urbano-latino-bubble-2">
+<circle id="Ellipse 3_2" opacity="0.9" cx="88" cy="281" r="155" fill="#E7E7E7"/>
+<text id="Urbano Latino" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="19" y="284.5">Urbano Latino</tspan></text>
+</g>
+<g id="latin-pop-bubble-2">
+<circle id="Ellipse 4" opacity="0.3" cx="271.5" cy="192.5" r="121.5" fill="#B1B1B1"/>
+<text id="Latin Pop" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="254" y="182.5">Latin Pop</tspan></text>
+</g>
+<g id="latin-hip-hop-bubble-2">
+<circle id="Ellipse 7" opacity="0.6" cx="114" cy="105" r="95" fill="#B8B8B8"/>
+<text id="Latin Hip Hop" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="45" y="104.5">Latin Hip Hop</tspan></text>
+</g>
+<g id="trap-latino-bubble-2">
+<circle id="Ellipse 6" opacity="0.4" cx="55" cy="467" r="82" fill="#B8B8B8"/>
+<text id="Trap Latino" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="10" y="484.5">Trap Latino</tspan></text>
+<text id="bad-bunny_2" fill="black" fill-opacity="0.7" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="500" letter-spacing="-0.04em"><tspan x="28" y="416.5">Bad Bunny</tspan></text>
+</g>
+<g id="musica-mexicana-bubble-2">
+<circle id="Ellipse 5" opacity="0.6" cx="333" cy="352" r="71" fill="#B1B1B1"/>
+<text id="Musica Mexicana" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="294.638" y="349.5">Musica </tspan><tspan x="282.415" y="378.5">Mexicana</tspan></text>
+</g>
 <g id="carlos-vives-audio-1">
 <rect id="bg" x="53" y="93" width="117" height="35" rx="10" fill="#D8D8D8"/>
 <rect id="fg" x="53" y="93" width="117" height="35" rx="10" fill="#45FE9A"/>
@@ -69,27 +90,6 @@
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="88" y="420.38">&#x1f3b5;</tspan></text>
 </g>
 </g>
-</g>
-<g id="urbano-latino-bubble-2">
-<circle id="Ellipse 3_2" opacity="0.9" cx="88" cy="281" r="155" fill="#E7E7E7"/>
-<text id="Urbano Latino" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="19" y="284.5">Urbano Latino</tspan></text>
-</g>
-<g id="latin-pop-bubble-2">
-<circle id="Ellipse 4" opacity="0.3" cx="271.5" cy="192.5" r="121.5" fill="#B1B1B1"/>
-<text id="Latin Pop" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="254" y="182.5">Latin Pop</tspan></text>
-</g>
-<g id="latin-hip-hop-bubble-2">
-<circle id="Ellipse 7" opacity="0.6" cx="114" cy="105" r="95" fill="#B8B8B8"/>
-<text id="Latin Hip Hop" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="45" y="104.5">Latin Hip Hop</tspan></text>
-</g>
-<g id="trap-latino-bubble-2">
-<circle id="Ellipse 6" opacity="0.4" cx="55" cy="467" r="82" fill="#B8B8B8"/>
-<text id="Trap Latino" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="10" y="484.5">Trap Latino</tspan></text>
-<text id="bad-bunny_2" fill="black" fill-opacity="0.7" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="500" letter-spacing="-0.04em"><tspan x="28" y="416.5">Bad Bunny</tspan></text>
-</g>
-<g id="musica-mexicana-bubble-2">
-<circle id="Ellipse 5" opacity="0.6" cx="333" cy="352" r="71" fill="#B1B1B1"/>
-<text id="Musica Mexicana" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="294.638" y="349.5">Musica </tspan><tspan x="282.415" y="378.5">Mexicana</tspan></text>
 </g>
 <g id="chino-nacho-audio-2">
 <rect id="bg_7" x="28" y="139" width="133" height="35" rx="10" fill="#D8D8D8"/>

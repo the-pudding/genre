@@ -12,10 +12,11 @@
 	const isConstant = (id) => constant.some((d) => id.includes(d));
 
 	let mounted = false;
+	let artistsWithAudio = [];
 	let startingStep;
 	let startingPositions;
 	let endingPositions;
-	let artistsWithAudio = [];
+	let animationFrame;
 
 	const enterBubbles = () => {
 		const between =
@@ -72,8 +73,7 @@
 				el.style.animation = "";
 				el.style.opacity = 1;
 
-				// force reflow
-				el.getBoundingClientRect();
+				el.getBoundingClientRect(); // force reflow
 
 				if (step !== startingStep)
 					el.style.transform = `translate(${dx}px, ${dy}px)`;
@@ -81,8 +81,6 @@
 			});
 		}
 	};
-
-	let animationFrame;
 	const interactiveAudio = () => {
 		const audioGroups = Array.from(document.querySelectorAll("g")).filter(
 			(d) => d.id.includes("-audio") && (!step || d.id.endsWith(startingStep))
@@ -162,8 +160,8 @@
 			});
 		});
 	};
-	$: step, stepChange();
 
+	$: step, stepChange();
 	const stepChange = async () => {
 		if (!mounted) return;
 		enterBubbles();
@@ -194,16 +192,18 @@
 				else hipHopBubble.style.opacity = 0.5;
 			}
 
-			startingPositions = constant.map((id) =>
-				document
-					.querySelector(`g#${id}-audio-${startingStep}`)
-					.getBoundingClientRect()
-			);
-			endingPositions = constant.map((id) =>
-				document
-					.querySelector(`g#${id}-audio-${startingStep === 1 ? 2 : 1}`)
-					.getBoundingClientRect()
-			);
+			startingPositions = constant.map((id) => {
+				const el = document.querySelector(`g#${id}-audio-${startingStep}`);
+				const rect = el.querySelector('rect[id^="bg"]');
+				return { x: rect.getAttribute("x"), y: rect.getAttribute("y") };
+			});
+			endingPositions = constant.map((id) => {
+				const el = document.querySelector(
+					`g#${id}-audio-${startingStep === 1 ? 2 : 1}`
+				);
+				const rect = el.querySelector('rect[id^="bg"]');
+				return { x: rect.getAttribute("x"), y: rect.getAttribute("y") };
+			});
 
 			stepChange();
 		} else {
@@ -211,7 +211,6 @@
 		}
 		interactiveAudio();
 	});
-
 	onDestroy(() => {
 		if (animationFrame) cancelAnimationFrame(animationFrame);
 	});
