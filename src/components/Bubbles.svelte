@@ -16,10 +16,16 @@
 		21: rock,
 		23: stompAndHoller
 	};
+	$: constant =
+		$activeSlide === 14 || $activeSlide === 15
+			? ["chino-nacho", "becky-g", "juan-gabriel"]
+			: $activeSlide === 16 || $activeSlide === 17
+			? ["cloudymane", "kobelocks", "scarlxrd", "lei"]
+			: [];
 	$: step = { 14: 1, 15: 2, 16: 1, 17: 2 }[$activeSlide] || undefined;
 	$: currentSvg = svgs[$activeSlide];
 </script>
 
 {#key currentSvg}
-	<Slide svg={currentSvg} {step} />
+	<Slide svg={currentSvg} {step} {constant} />
 {/key}
