@@ -12,7 +12,7 @@
 </g>
 <g id="carlos-vives-audio-1">
 <rect id="bg" x="53" y="93" width="117" height="35" rx="10" fill="#D8D8D8"/>
-<path id="fg" d="M53 103C53 97.4772 57.4772 93 63 93H145V128H63C57.4772 128 53 123.523 53 118V103Z" fill="#45FE9A"/>
+<rect id="fg" x="53" y="93" width="117" height="35" rx="10" fill="#45FE9A"/>
 <g id="Group 27">
 <text id="Carlos Vives" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="62" y="116.5">Carlos Vives</tspan></text>
 <g id="&#240;&#159;&#142;&#181;">
@@ -22,7 +22,7 @@
 </g>
 <g id="romeo-santos-audio-1">
 <rect id="bg_2" x="214" y="242" width="129" height="35" rx="10" fill="#D8D8D8"/>
-<path id="fg_2" d="M214 252C214 246.477 218.477 242 224 242H299V277H224C218.477 277 214 272.523 214 267V252Z" fill="#45FE9A"/>
+<rect id="fg_2" x="214" y="242" width="129" height="35" rx="10" fill="#45FE9A"/>
 <g id="Group 27_2">
 <text id="Romeo Santos" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="222" y="265.5">Romeo Santos</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_2">
@@ -30,13 +30,43 @@
 </g>
 </g>
 </g>
+<g id="juan-gabriel-audio-1">
+<rect id="bg_3" x="184" y="348" width="122" height="35" rx="10" fill="#D8D8D8"/>
+<rect id="fg_3" x="184" y="348" width="122" height="35" rx="10" fill="#45FE9A"/>
+<g id="Group 27_3">
+<text id="Juan Gabriel" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="193" y="371.5">Juan Gabriel</tspan></text>
+<g id="&#240;&#159;&#142;&#181;_3">
+<text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="282" y="372.38">&#x1f3b5;</tspan></text>
+</g>
+</g>
+</g>
 <g id="luis-fonsi-audio-1">
 <rect id="bg_4" x="198" y="78" width="101" height="35" rx="10" fill="#D8D8D8"/>
-<path id="fg_4" d="M198 88C198 82.4772 202.477 78 208 78H269V113H208C202.477 113 198 108.523 198 103V88Z" fill="#45FE9A"/>
+<rect id="fg_4" x="198" y="78" width="101" height="35" rx="10" fill="#45FE9A"/>
 <g id="Group 27_4">
 <text id="Luis Fonsi" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="207" y="101.5">Luis Fonsi</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_4">
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="275" y="102.38">&#x1f3b5;</tspan></text>
+</g>
+</g>
+</g>
+<g id="chino-nacho-audio-1">
+<rect id="bg_5" x="29" y="224" width="133" height="35" rx="10" fill="#D8D8D8"/>
+<rect id="fg_5" x="29" y="224" width="133" height="35" rx="10" fill="#45FE9A"/>
+<g id="Group 26">
+<text id="Chino &#38; Nacho" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="38" y="246.5">Chino &#38; Nacho</tspan></text>
+<g id="&#240;&#159;&#142;&#181;_5">
+<text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="137" y="249.38">&#x1f3b5;</tspan></text>
+</g>
+</g>
+</g>
+<g id="becky-g-audio-1">
+<rect id="bg_6" x="17" y="396" width="95" height="35" rx="10" fill="#D8D8D8"/>
+<rect id="fg_6" x="17" y="396" width="95" height="35" rx="10" fill="#45FE9A"/>
+<g id="Group 27_5">
+<text id="Becky G" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="26" y="419.5">Becky G</tspan></text>
+<g id="&#240;&#159;&#142;&#181;_6">
+<text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="88" y="420.38">&#x1f3b5;</tspan></text>
 </g>
 </g>
 </g>
@@ -63,7 +93,7 @@
 </g>
 <g id="chino-nacho-audio-2">
 <rect id="bg_7" x="28" y="139" width="133" height="35" rx="10" fill="#D8D8D8"/>
-<path id="fg_7" d="M28 149C28 143.477 32.4772 139 38 139H126V174H38C32.4772 174 28 169.523 28 164V149Z" fill="#45FE9A"/>
+<rect id="fg_7" x="28" y="139" width="98" height="35" rx="10" fill="#45FE9A"/>
 <g id="Group 26_2">
 <text id="Chino &#38; Nacho_2" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="37" y="161.5">Chino &#38; Nacho</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_7">
@@ -71,39 +101,9 @@
 </g>
 </g>
 </g>
-<g id="chino-nacho-audio-1">
-<rect id="bg_5" x="29" y="224" width="133" height="35" rx="10" fill="#D8D8D8"/>
-<path id="fg_5" d="M29 234C29 228.477 33.4772 224 39 224H119V259H39C33.4772 259 29 254.523 29 249V234Z" fill="#45FE9A"/>
-<g id="Group 26">
-<text id="Chino &#38; Nacho" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="38" y="246.5">Chino &#38; Nacho</tspan></text>
-<g id="&#240;&#159;&#142;&#181;_5">
-<text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="137" y="249.38">&#x1f3b5;</tspan></text>
-</g>
-</g>
-</g>
-<g id="becky-g-audio-1">
-<rect id="bg_6" x="17" y="396" width="95" height="35" rx="10" fill="#D8D8D8"/>
-<path id="fg_6" d="M17 406C17 400.477 21.4772 396 27 396H88V431H27C21.4772 431 17 426.523 17 421V406Z" fill="#45FE9A"/>
-<g id="Group 27_5">
-<text id="Becky G" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="26" y="419.5">Becky G</tspan></text>
-<g id="&#240;&#159;&#142;&#181;_6">
-<text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="88" y="420.38">&#x1f3b5;</tspan></text>
-</g>
-</g>
-</g>
-<g id="juan-gabriel-audio-1" >
-<rect id="bg_3" x="184" y="348" width="122" height="35" rx="10" fill="#D8D8D8"/>
-<path id="fg_3" d="M184 358C184 352.477 188.477 348 194 348H269V383H194C188.477 383 184 378.523 184 373V358Z" fill="#45FE9A"/>
-<g id="Group 27_3">
-<text id="Juan Gabriel" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="193" y="371.5">Juan Gabriel</tspan></text>
-<g id="&#240;&#159;&#142;&#181;_3">
-<text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="282" y="372.38">&#x1f3b5;</tspan></text>
-</g>
-</g>
-</g>
 <g id="becky-g-audio-2">
 <rect id="bg_8" x="152" y="219" width="95" height="35" rx="10" fill="#D8D8D8"/>
-<path id="fg_8" d="M152 229C152 223.477 156.477 219 162 219H227V254H162C156.477 254 152 249.523 152 244V229Z" fill="#45FE9A"/>
+<rect id="fg_8" x="152" y="219" width="95" height="35" rx="10" fill="#45FE9A"/>
 <g id="Group 27_6">
 <text id="Becky G_2" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="161" y="242.5">Becky G</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_8">
@@ -111,9 +111,9 @@
 </g>
 </g>
 </g>
-<g id="juan-gabriel-audio-2" >
+<g id="juan-gabriel-audio-2">
 <rect id="bg_9" x="254" y="279" width="122" height="35" rx="10" fill="#D8D8D8"/>
-<path id="fg_9" d="M254 289C254 283.477 258.477 279 264 279H352V314H264C258.477 314 254 309.523 254 304V289Z" fill="#45FE9A"/>
+<rect id="fg_9" x="254" y="279" width="122" height="35" rx="10" fill="#45FE9A"/>
 <g id="Group 27_7">
 <text id="Juan Gabriel_2" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="263" y="302.5">Juan Gabriel</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_9">

@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from "svelte";
+	import { onDestroy, onMount } from "svelte";
 	import copy from "$data/copy.json";
 	import { dir } from "$stores/misc.js";
 	import _ from "lodash";
@@ -81,40 +81,84 @@
 			});
 		}
 	};
+
+	let animationFrame;
 	const interactiveAudio = () => {
-		const audioGroups = Array.from(document.querySelectorAll("g")).filter((d) =>
-			d.id.includes("-audio")
+		const audioGroups = Array.from(document.querySelectorAll("g")).filter(
+			(d) => d.id.includes("-audio") && (!step || d.id.endsWith(startingStep))
 		);
 		artistsWithAudio = audioGroups.map((d) => ({
-			id: d.id.split("-").slice(0, -1).join("-"),
-			url: copy.artists[d.id.split("-").slice(0, -1).join("-")]
+			id: d.id.split("-").slice(0, -2).join("-"),
+			url: copy.artists[d.id.split("-").slice(0, -2).join("-")]
 		}));
 		audioGroups.forEach((group) => {
 			group.style.pointerEvents = "auto";
 			group.addEventListener("mouseenter", () => {
 				group.style.cursor = "pointer";
-				const rect = group.querySelector("rect");
-				const color = rect.getAttribute("fill");
-				rect.setAttribute("fill", d3.color(color).darker(0.5));
+				const fg = group.querySelector('rect[id^="fg"]');
+				const color = fg.getAttribute("fill");
+				fg.setAttribute("fill", d3.color(color).darker(0.5));
 			});
 			group.addEventListener("mouseleave", () => {
-				const rect = group.querySelector("rect");
-				const color = rect.getAttribute("fill");
-				rect.setAttribute("fill", d3.color(color).brighter(0.5));
+				const fg = group.querySelector('rect[id^="fg"]');
+				const color = fg.getAttribute("fill");
+				fg.setAttribute("fill", d3.color(color).brighter(0.5));
 			});
 			group.addEventListener("click", () => {
-				const id = group.id.split("-").slice(0, -1).join("-");
+				const id = group.id.split("-").slice(0, -2).join("-");
 				const audioEl = document.querySelector(`audio#${id}`);
-				if (audioEl) {
-					if (audioEl.paused) audioEl.play();
-					else audioEl.pause();
+				const bg = group.querySelector('rect[id^="bg"]');
+				const fg = group.querySelector('rect[id^="fg"]');
+				const fullWidth = bg.getAttribute("width");
+
+				if (!audioEl) return;
+
+				if (audioEl.paused) {
+					// play me
+					audioEl.play();
+					if (animationFrame) cancelAnimationFrame(animationFrame);
+					let audioDuration = audioEl.duration;
+
+					// pause + restart everyone else
+					artistsWithAudio
+						.filter((d) => d.id !== id)
+						.forEach((d) => {
+							const audioEl = document.querySelector(`audio#${d.id}`);
+							if (audioEl) {
+								audioEl.pause();
+								audioEl.currentTime = 0;
+							}
+							const myFg = document
+								.querySelector(`g#${d.id}-audio-${startingStep}`)
+								.querySelector('rect[id^="fg"]');
+							const myBg = document
+								.querySelector(`g#${d.id}-audio-${startingStep}`)
+								.querySelector('rect[id^="fg"]');
+							myFg.style.width = myBg.getAttribute("width");
+						});
+
+					const animate = () => {
+						if (audioEl.currentTime < audioDuration) {
+							const percent =
+								(audioDuration - audioEl.currentTime) / audioDuration;
+							fg.style.width = `${fullWidth * percent}px`;
+							animationFrame = requestAnimationFrame(animate);
+						} else {
+							cancelAnimationFrame(animationFrame);
+							audioEl.currentTime = 0;
+							fg.style.width = fullWidth;
+							audioEl.pause();
+						}
+					};
+
+					// start animating my progress
+					animationFrame = requestAnimationFrame(animate);
+				} else {
+					// pause me
+					audioEl.pause();
+					// stop animating my progress
+					if (animationFrame) cancelAnimationFrame(animationFrame);
 				}
-				artistsWithAudio
-					.filter((d) => d.id !== id)
-					.forEach((d) => {
-						const audioEl = document.querySelector(`audio#${d.id}`);
-						if (audioEl) audioEl.pause();
-					});
 			});
 		});
 	};
@@ -166,6 +210,10 @@
 			enterBubbles();
 		}
 		interactiveAudio();
+	});
+
+	onDestroy(() => {
+		if (animationFrame) cancelAnimationFrame(animationFrame);
 	});
 </script>
 
