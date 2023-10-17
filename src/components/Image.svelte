@@ -1,6 +1,7 @@
 <script>
 	import Icon from "$components/helpers/Icon.svelte";
 	import { activeSlide } from "$stores/misc.js";
+	import copy from "$data/copy.json";
 
 	$: explore = $activeSlide === 35;
 	$: src =
@@ -14,12 +15,12 @@
 </div>
 
 {#if explore}
-	<button
+	<a href={copy.dataLink} target="_blank"
 		>Go to the Google Sheet
 		<span class="icon">
 			<Icon name="external-link" />
 		</span>
-	</button>
+	</a>
 {/if}
 
 <style>
@@ -45,7 +46,8 @@
 		margin: 0 auto;
 		display: block;
 	}
-	button {
+	a {
+		font-family: var(--sans);
 		background: black;
 		color: white;
 		font-weight: 500;
@@ -63,8 +65,9 @@
 		transform: translate(-50%, 0);
 		pointer-events: auto;
 	}
-	button:hover {
+	a:hover {
 		background: #333;
+		cursor: pointer;
 	}
 	.icon {
 		margin-left: 0.5rem;
