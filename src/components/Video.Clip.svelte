@@ -95,17 +95,12 @@
 		width: fit-content;
 		margin: auto;
 		position: relative;
-		height: 100%;
-		background-color: black;
 	}
 	.wrapper.loaded {
 		visibility: visible;
 	}
 	video {
 		width: 600px;
-		height: 100%;
-		object-fit: cover;
-		object-position: top;
 	}
 	video.has-captions {
 		width: 500px;
@@ -160,5 +155,17 @@
 		display: block;
 		margin-top: 0.5rem;
 		line-height: 130%;
+	}
+
+	@media (max-width: 600px) {
+		video {
+			height: 100%;
+			object-fit: cover;
+			object-position: top;
+		}
+		.wrapper {
+			height: 100%;
+			background-color: black;
+		}
 	}
 </style>

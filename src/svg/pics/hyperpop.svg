@@ -1,12 +1,16 @@
 <svg width="100%" height="100%" viewBox="0 0 344 320" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<a aria-label="link to article about hyperpop" href="https://www.dazeddigital.com/music/article/55293/1/the-rise-and-fall-of-hyperpop-the-internets-most-confusing-music-genre" target="_blank">
 <g filter="url(#filter0_d_808_3)">
 <rect width="241" height="131" transform="translate(95 181)" fill="white"/>
 <rect x="101" y="188" width="231" height="115" fill="url(#pattern0)"/>
 </g>
+</a>
 <g filter="url(#filter1_d_808_3)">
 <rect width="216" height="157" transform="translate(8)" fill="white"/>
 </g>
+<a aria-label="link to article about hyperpop" href="https://www.wired.com/story/hyperpop-end-internet-genres/" target="_blank">
 <rect x="17" y="11" width="201" height="132" fill="url(#pattern1)"/>
+</a>
 <defs>
 <filter id="filter0_d_808_3" x="95" y="181" width="249" height="139" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>

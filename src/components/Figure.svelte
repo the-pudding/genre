@@ -16,6 +16,7 @@
 	import Footer from "$components/Footer.svelte";
 	import { onMount, tick } from "svelte";
 	import _ from "lodash";
+	import copy from "$data/copy.json";
 
 	let mounted = false;
 	let offset;
@@ -37,6 +38,7 @@
 	const footer = [36];
 
 	$: mobile = $viewport.width < 600;
+	$: figcaption = copy.slides[$activeSlide].figcaption;
 	$: buffer = mobile ? 10 : 50;
 	$: $activeSlide, $viewport.width, getSlideHeight();
 	$: previousSlide =
@@ -124,6 +126,12 @@
 	class:visible={offset}
 	class:animate={$activeSlide === 0 || $activeSlide === 1}
 >
+	{#if figcaption}
+		<figcaption class="sr-only" aria-live="polite">
+			{figcaption}
+		</figcaption>
+	{/if}
+
 	{#if ranks.includes($activeSlide)}
 		<Ranks />
 	{:else if table.includes($activeSlide)}

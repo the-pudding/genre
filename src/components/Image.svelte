@@ -6,7 +6,10 @@
 	$: explore = $activeSlide === 35;
 	$: src =
 		$activeSlide === 29 ? "assets/img/birds.png" : "assets/img/explore.png";
-	$: alt = $activeSlide === 29 ? "Birds" : "Explore the data";
+	$: alt =
+		$activeSlide === 29
+			? "Birds"
+			: "A screenshot of the Google Sheet with the genre data";
 </script>
 
 <div class="img-wrapper" class:explore>

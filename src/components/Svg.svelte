@@ -40,6 +40,7 @@
 
 <div
 	class:bottom
+	class:articles={$activeSlide === 22 || $activeSlide === 24}
 	class:latin={$activeSlide === 13}
 	class:indie={$activeSlide === 30}
 >
@@ -51,7 +52,6 @@
 	div {
 		max-width: 500px;
 		margin: auto;
-		pointer-events: auto;
 	}
 	.bottom {
 		position: absolute;
@@ -70,6 +70,9 @@
 	}
 	.indie {
 		max-width: none;
+	}
+	.articles {
+		pointer-events: none;
 	}
 
 	@media (max-width: 600px) {
