@@ -9,8 +9,18 @@
 	import { activeSlide, dir } from "$stores/misc.js";
 	import { onMount } from "svelte";
 
-	const slides = copy.slides;
 	let sliderEl;
+
+	const slides = copy.slides.map((d) => ({
+		...d,
+		text: d.text.map((t) => ({
+			...t,
+			text: t.text
+				.replaceAll("##-##", "<span class='punctuation'>-</span>")
+				.replaceAll("##;##", "<span class='punctuation'>;</span>")
+				.replaceAll("##:##", "<span class='punctuation'>:</span>")
+		}))
+	}));
 
 	const onTap = ({ detail }) => {
 		if (detail === "right") sliderEl.next();
@@ -91,5 +101,8 @@
 	:global(.slide:last-of-type) {
 		margin-top: 3rem;
 		text-align: center;
+	}
+	:global(span.punctuation) {
+		vertical-align: middle;
 	}
 </style>
