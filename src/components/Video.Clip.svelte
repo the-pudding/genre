@@ -2,6 +2,7 @@
 	import Button from "$components/Button.svelte";
 	import Icon from "$components/helpers/Icon.svelte";
 	import { onMount } from "svelte";
+	import { videoMuted } from "$stores/misc.js";
 
 	export let id;
 	export let overlay;
@@ -15,19 +16,18 @@
 	let autoplay = true;
 	let paused = true;
 	let loaded = false;
-	let muted = true;
 	let captioned = true;
 
 	const onMute = () => {
-		muted = !muted;
-		videoEl.muted = muted;
+		$videoMuted = !$videoMuted;
+		videoEl.muted = $videoMuted;
 	};
 	const onEnded = () => {
 		currentTime = 0;
 	};
 
 	$: hasCC = id === "oates" || id === "tyler";
-	$: muteText = muted ? "Unmute video" : "Mute video";
+	$: muteText = $videoMuted ? "Unmute video" : "Mute video";
 	$: percentComplete = (currentTime / duration) * 100;
 	$: if (autoplay && currentTime === 0 && paused && loaded) {
 		autoplay = false;
@@ -63,7 +63,7 @@
 		bind:this={videoEl}
 		bind:currentTime
 		bind:duration
-		muted
+		muted={$videoMuted}
 		loop
 		on:ended={onEnded}
 		class:has-captions={hasCC}
@@ -81,7 +81,7 @@
 
 	<div class="controls" style:top={`${progressH + 10}px`}>
 		<Button style={"font-size: 1.5rem"} onClick={onMute} ariaLabel={muteText}>
-			<Icon name={muted ? "volume-x" : "volume-2"} />
+			<Icon name={$videoMuted ? "volume-x" : "volume-2"} />
 		</Button>
 	</div>
 </div>
