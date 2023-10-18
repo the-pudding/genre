@@ -57,7 +57,7 @@
 	<div
 		class="progress"
 		style:width={`${percentComplete}%`}
-		style:height={`${progressH}px`}
+		style:height={`${progressH * 2}px`}
 	/>
 	<video
 		bind:this={videoEl}
@@ -115,7 +115,7 @@
 		font-family: var(--sans);
 	}
 	.progress {
-		background: var(--color-accent);
+		background: var(--color-audio);
 		position: absolute;
 		top: -10px;
 	}

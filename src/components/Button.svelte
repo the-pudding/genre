@@ -1,7 +1,7 @@
 <script>
 	import variables from "$data/variables.json";
 
-	export let color = variables.color.accent;
+	export let color = variables.color.audio;
 	export let onClick;
 	export let ariaLabel;
 	export let style;

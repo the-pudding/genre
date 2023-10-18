@@ -21,7 +21,7 @@
 	--border-radius: 2px;
 	--font-body: var(--serif);
 	--font-form: var(--sans);
-	--color-bg: rgb(212, 212, 212);
+	--color-bg: #fbf9f4;
 	--color-fg: var(--color-gray-900);
 	--color-link: var(--color-black);
 	--color-focus: var(--color-red);
@@ -91,11 +91,14 @@ h4 {
 	font-weight: 700;
 }
 
-.primary {
-	color: var(--color-primary);
+.english {
+	color: var(--color-english);
 }
-.secondary {
-	color: var(--color-secondary);
+.nonenglish {
+	color: var(--color-nonenglish);
+}
+.emphasis {
+	color: var(--color-emphasis);
 }
 strong {
 	font-family: var(--sans);

@@ -1,9 +1,9 @@
 <script>
 	const items = [
-		{ color: "var(--color-gray-600)", label: "Global Genres" },
-		{ color: "var(--color-primary", label: "English-speaking or European" },
+		// { color: "var(--color-gray-600)", label: "Global Genres" },
+		{ color: "var(--color-english)", label: "English-speaking or European" },
 		{
-			color: "var(--color-secondary)",
+			color: "var(--color-nonenglish)",
 			label: "Latin America, Africa, and Asia"
 		}
 	];

@@ -29,10 +29,10 @@
 	const formatTickY = (d) => `#${d}`;
 	const allGenres = Object.keys(data[0]).filter((d) => d !== xKey);
 	const colors = [
-		"var(--color-secondary)",
-		"var(--color-primary)",
-		"var(--color-black)",
-		"var(--color-black)"
+		"var(--color-emphasis)",
+		"var(--color-emphasis)",
+		"var(--color-gray-600)",
+		"var(--color-gray-600)"
 	];
 
 	const groupedData = groupLonger(data, allGenres, {

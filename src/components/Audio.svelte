@@ -67,7 +67,7 @@
 
 <style>
 	.progress {
-		background: var(--color-accent);
+		background: var(--color-audio);
 		height: 100%;
 		top: 0;
 		left: 0;

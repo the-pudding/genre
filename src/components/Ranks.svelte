@@ -9,37 +9,41 @@
 
 	const numToDisplay = 25;
 
+	const newToTop25 = [
+		"urbano latino",
+		"trap latino",
+		"reggaeton",
+		"filmi",
+		"k-pop",
+		"pov:indie",
+		"musica mexicana",
+		"modern rock",
+		"alternative metal",
+		"permanent wave",
+		"sad sierreno",
+		"sierreno",
+		"contemporary country",
+		"modern bollywood",
+		"norteno",
+		"corrido",
+		"latin pop",
+		"latin pop"
+	];
 	$: columns = $activeSlide < 2 ? ["4/23/2016"] : ["4/23/2016", "8/9/2023"];
 	$: numColumns = columns.length;
 	$: highlightList =
 		$activeSlide === 3 || $activeSlide === 4
-			? [
-					"urbano latino",
-					"trap latino",
-					"reggaeton",
-					"filmi",
-					"k-pop",
-					"pov:indie",
-					"musica mexicana",
-					"modern rock",
-					"alternative metal",
-					"permanent wave",
-					"sad sierreno",
-					"sierreno",
-					"contemporary country",
-					"modern bollywood",
-					"norteno",
-					"corrido",
-					"latin pop",
-					"latin pop"
-			  ].map((d) => ({ genre: d, highlight: "var(--color-secondary)" }))
+			? newToTop25.map((d) => ({
+					genre: d,
+					highlight: "var(--color-emphasis)"
+			  }))
 			: $activeSlide === 5
 			? genreList.map((d) => ({
 					genre: d,
 					highlight:
 						geo.find((g) => g.genre === d).region === "west/english"
-							? "var(--color-primary)"
-							: "var(--color-secondary)"
+							? "var(--color-english)"
+							: "var(--color-nonenglish)"
 			  }))
 			: [];
 	$: bottomFade = $activeSlide === 0;
@@ -89,11 +93,14 @@
 						{@const color = highlightList.find(
 							(d) => d.genre === genre
 						)?.highlight}
+						{@const highlight = newToTop25.find((d) => d === genre)}
 						<td style:color>
-							{#if col === 0}
-								<span class="number">{row + 1}</span>
-							{/if}
-							{genre}
+							<div class:highlight>
+								{#if col === 0}
+									<span class="number">{row + 1}</span>
+								{/if}
+								{genre}
+							</div>
 						</td>
 					{/each}
 				</tr>
@@ -135,6 +142,11 @@
 		padding: 2px 0;
 		font-weight: 500;
 	}
+	/* .highlight {
+		padding: 0 5px;
+		width: fit-content;
+		background: var(--color-gray-200);
+	} */
 	.number {
 		color: var(--color-gray-600);
 		font-size: 0.75rem;
@@ -144,8 +156,8 @@
 	}
 	.fade {
 		background: linear-gradient(
-			rgba(212, 212, 212, 0),
-			rgba(212, 212, 212, 0.8)
+			rgba(251, 249, 244, 0),
+			rgba(251, 249, 244, 0.8)
 		);
 		position: absolute;
 		bottom: 0;

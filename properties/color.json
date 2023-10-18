@@ -1,8 +1,9 @@
 {
 	"color": {
-		"primary": { "value": "#0000ff" },
-		"secondary": { "value": "#ff0000" },
-		"accent": { "value": "#45fe9a" },
+		"english": { "value": "#435940" },
+		"nonenglish": { "value": "#8778D4" },
+		"emphasis": { "value": "#FF4950" },
+		"audio": { "value": "#45fe9a" },
 		"black": {
 			"value": "#000000"
 		},

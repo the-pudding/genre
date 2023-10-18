@@ -68,11 +68,11 @@
 		font-size: 2rem;
 		font-family: var(--sans);
 		margin-top: 1rem;
-		font-weight: 500;
+		font-weight: 700;
 	}
 	.words span {
 		transition: opacity calc(var(--1s) * 0.6);
-		opacity: 0.6;
+		opacity: 0.4;
 	}
 	.words span.dark {
 		opacity: 1;
@@ -80,6 +80,7 @@
 
 	@media (max-width: 600px) {
 		.words {
+			font-weight: 500;
 			font-size: 20px;
 			line-height: 1.2;
 			letter-spacing: -0.02em;
