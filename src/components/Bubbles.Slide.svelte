@@ -86,8 +86,16 @@
 			(d) => d.id.includes("-audio") && (!step || d.id.endsWith(startingStep))
 		);
 		artistsWithAudio = audioGroups.map((d) => ({
-			id: d.id.split("-").slice(0, -2).join("-"),
-			url: copy.artists[d.id.split("-").slice(0, -2).join("-")]
+			id: d.id
+				.split("-")
+				.slice(0, step ? -2 : -1)
+				.join("-"),
+			url: copy.artists[
+				d.id
+					.split("-")
+					.slice(0, step ? -2 : -1)
+					.join("-")
+			]
 		}));
 		audioGroups.forEach((group) => {
 			group.style.pointerEvents = "auto";
@@ -103,7 +111,10 @@
 				fg.setAttribute("fill", d3.color(color).brighter(0.5));
 			});
 			group.addEventListener("click", () => {
-				const id = group.id.split("-").slice(0, -2).join("-");
+				const id = group.id
+					.split("-")
+					.slice(0, step ? -2 : -1)
+					.join("-");
 				const audioEl = document.querySelector(`audio#${id}`);
 				const bg = group.querySelector('rect[id^="bg"]');
 				const fg = group.querySelector('rect[id^="fg"]');
@@ -127,10 +138,14 @@
 								audioEl.currentTime = 0;
 							}
 							const myFg = document
-								.querySelector(`g#${d.id}-audio-${startingStep}`)
+								.querySelector(
+									`g#${d.id}-audio${step ? `-${startingStep}` : ""}`
+								)
 								.querySelector('rect[id^="fg"]');
 							const myBg = document
-								.querySelector(`g#${d.id}-audio-${startingStep}`)
+								.querySelector(
+									`g#${d.id}-audio${step ? `-${startingStep}` : ""}`
+								)
 								.querySelector('rect[id^="fg"]');
 							myFg.style.width = myBg.getAttribute("width");
 						});
@@ -173,6 +188,7 @@
 		mounted = true;
 		startingStep = step;
 		if (step) {
+			// set up
 			const els = Array.from(document.querySelectorAll("g")).filter(
 				(d) =>
 					d.id !== "hip-hop-bubble" &&
@@ -184,6 +200,7 @@
 				el.style.transition = "transform var(--1s) ease-in-out";
 			});
 
+			// set up hip hop bubble
 			const hipHopBubble = document.querySelector("g#hip-hop-bubble");
 			if (hipHopBubble) {
 				hipHopBubble.style.transition =

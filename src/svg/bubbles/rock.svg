@@ -29,21 +29,24 @@
 <text id="Kansas" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="bold" letter-spacing="-0.04em"><tspan x="289" y="53.75">Kansas</tspan></text>
 </g>
 <g id="john-mellancamp-audio">
-<rect id="Rectangle 604" x="12" y="315" width="154" height="35" rx="10" fill="#45FE9A"/>
+<rect id="bg" x="12" y="315" width="154" height="35" rx="10" fill="#D8D8D8"/>
+<rect id="fg" x="12" y="315" width="154" height="35" rx="10" fill="#45FE9A"/>
 <text id="John Mellancamp" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="22" y="337.5">John Mellancamp</tspan></text>
 <g id="&#240;&#159;&#142;&#181;">
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="141" y="339.38">&#x1f3b5;</tspan></text>
 </g>
 </g>
 <g id="van-halen-audio">
-<rect id="Rectangle 604_2" x="208" y="70" width="107" height="35" rx="10" fill="#45FE9A"/>
+<rect id="bg_2" x="208" y="70" width="107" height="35" rx="10" fill="#D8D8D8"/>
+<rect id="fg_2" x="208" y="70" width="107" height="35" rx="10" fill="#45FE9A"/>
 <text id="Van Halen" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="217" y="92.5">Van Halen</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_2">
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="289" y="94.38">&#x1f3b5;</tspan></text>
 </g>
 </g>
 <g id="the-fray-audio">
-<rect id="Rectangle 604_3" x="240" y="307" width="94" height="35" rx="10" fill="#45FE9A"/>
+<rect id="bg_3" x="240" y="307" width="94" height="35" rx="10" fill="#D8D8D8"/>
+<rect id="fg_3" x="240" y="307" width="94" height="35" rx="10" fill="#45FE9A"/>
 <text id="The Fray" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="249" y="329.5">The Fray</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_3">
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="310" y="331.38">&#x1f3b5;</tspan></text>
