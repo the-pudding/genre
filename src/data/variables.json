@@ -9,9 +9,9 @@
     "gray": "#BBBBBB"
   },
   "color": {
-    "english": "#435940",
-    "nonenglish": "#8778D4",
-    "emphasis": "#FF4950",
+    "nonenglish": "#D32F2F",
+    "english": "#1976D2",
+    "emphasis": "#F57C00",
     "audio": "#45fe9a",
     "black": "#000000",
     "white": "#ffffff",

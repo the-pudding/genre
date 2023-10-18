@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 18 Oct 2023 00:32:14 GMT
+ * Generated on Wed, 18 Oct 2023 22:03:35 GMT
  */
 
 :root {
@@ -11,9 +11,9 @@
   --category-cyan: #66CCEE;
   --category-purple: #AA3377;
   --category-gray: #BBBBBB;
-  --color-english: #435940;
-  --color-nonenglish: #8778d4;
-  --color-emphasis: #ff4950;
+  --color-nonenglish: #d32f2f;
+  --color-english: #1976d2;
+  --color-emphasis: #f57c00;
   --color-audio: #45fe9a;
   --color-black: #000000;
   --color-white: #ffffff;

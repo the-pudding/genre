@@ -1,8 +1,8 @@
 {
 	"color": {
-		"english": { "value": "#435940" },
-		"nonenglish": { "value": "#8778D4" },
-		"emphasis": { "value": "#FF4950" },
+		"nonenglish": { "value": "#D32F2F" },
+		"english": { "value": "#1976D2" },
+		"emphasis": { "value": "#F57C00" },
 		"audio": { "value": "#45fe9a" },
 		"black": {
 			"value": "#000000"

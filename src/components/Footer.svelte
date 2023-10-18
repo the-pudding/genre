@@ -49,7 +49,7 @@
 		{/each}
 	</section>
 
-	<!-- <section class="about">
+	<section class="about">
 		<div class="wordmark">
 			{@html wordmark}
 		</div>
@@ -58,7 +58,7 @@
 			is a digital publication that explains ideas debated in culture with visual
 			essays.
 		</p>
-	</section> -->
+	</section>
 
 	<section class="links">
 		<ul>

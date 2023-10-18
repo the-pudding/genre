@@ -93,7 +93,8 @@
 						{@const color = highlightList.find(
 							(d) => d.genre === genre
 						)?.highlight}
-						{@const highlight = newToTop25.find((d) => d === genre)}
+						{@const highlight =
+							$activeSlide === 3 && newToTop25.find((d) => d === genre)}
 						<td style:color>
 							<div class:highlight>
 								{#if col === 0}
@@ -142,11 +143,10 @@
 		padding: 2px 0;
 		font-weight: 500;
 	}
-	/* .highlight {
-		padding: 0 5px;
+	.highlight {
 		width: fit-content;
-		background: var(--color-gray-200);
-	} */
+		text-decoration: underline;
+	}
 	.number {
 		color: var(--color-gray-600);
 		font-size: 0.75rem;

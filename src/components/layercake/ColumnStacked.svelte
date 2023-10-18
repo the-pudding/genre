@@ -10,10 +10,10 @@
 	const formatLabel = timeFormat("%Y");
 
 	const colors = {
-		"west/english": "#7676ff",
-		latin: "var(--color-secondary)",
-		asia: "var(--color-secondary)",
-		africa: "var(--color-secondary)"
+		"west/english": "var(--color-english)",
+		latin: "var(--color-nonenglish)",
+		asia: "var(--color-nonenglish)",
+		africa: "var(--color-nonenglish)"
 	};
 	$: annotation = copy.slides.find((d) => +d.slide === $activeSlide).annotation;
 </script>
