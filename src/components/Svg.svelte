@@ -6,6 +6,7 @@
 	import indie from "$svg/charts/indie.svg";
 	import { activeSlide } from "$stores/misc.js";
 	import copy from "$data/copy.json";
+	import { onMount } from "svelte";
 
 	$: currentSvg =
 		$activeSlide === 6
@@ -21,6 +22,20 @@
 			: null;
 	$: title = copy.slides.find((d) => +d.slide === $activeSlide)?.title;
 	$: bottom = $activeSlide === 30;
+
+	onMount(() => {
+		if ($activeSlide === 22 || $activeSlide === 24) {
+			const pics = document.querySelectorAll("svg > a");
+			pics.forEach((pic) => {
+				// pic.addEventListener("mouseenter", (e) => {
+				// 	e.target.style.transform = "translate(-5px, -5px)";
+				// });
+				// pic.addEventListener("mouseleave", (e) => {
+				// 	e.target.style.transform = "translate(0, 0)";
+				// });
+			});
+		}
+	});
 </script>
 
 <div
@@ -36,6 +51,7 @@
 	div {
 		max-width: 500px;
 		margin: auto;
+		pointer-events: auto;
 	}
 	.bottom {
 		position: absolute;
