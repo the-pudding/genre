@@ -51,7 +51,7 @@
 	}
 	a {
 		font-family: var(--sans);
-		background: black;
+		background: var(--color-emphasis);
 		color: white;
 		font-weight: 500;
 		width: 100%;
@@ -69,7 +69,7 @@
 		pointer-events: auto;
 	}
 	a:hover {
-		background: #333;
+		background: #4333c0;
 		cursor: pointer;
 	}
 	.icon {

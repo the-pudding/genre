@@ -6,20 +6,20 @@
 <line id="Line 38" x1="186" y1="29.5" x2="230" y2="29.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 48" x1="239" y1="29.5" x2="283" y2="29.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 10" x1="27" y1="69.5" x2="71" y2="69.5" stroke="#AFAFAF" stroke-width="11"/>
-<line id="Line 19" x1="80" y1="69.5" x2="124" y2="69.5" stroke="#FF0000" stroke-width="11"/>
+<line id="Line 19" x1="80" y1="69.5" x2="124" y2="69.5" stroke="#5B4AE4" stroke-width="11"/>
 <line id="Line 29" x1="133" y1="69.5" x2="177" y2="69.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 39" x1="186" y1="69.5" x2="230" y2="69.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 49" x1="239" y1="69.5" x2="283" y2="69.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 11" x1="27" y1="89.5" x2="71" y2="89.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 20" x1="80" y1="89.5" x2="124" y2="89.5" stroke="#AFAFAF" stroke-width="11"/>
-<line id="Line 30" x1="133" y1="89.5" x2="177" y2="89.5" stroke="#FF0000" stroke-width="11"/>
+<line id="Line 30" x1="133" y1="89.5" x2="177" y2="89.5" stroke="#5B4AE4" stroke-width="11"/>
 <line id="Line 40" x1="186" y1="89.5" x2="230" y2="89.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 50" x1="239" y1="89.5" x2="283" y2="89.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 12" x1="27" y1="109.5" x2="71" y2="109.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 21" x1="80" y1="109.5" x2="124" y2="109.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 31" x1="133" y1="109.5" x2="177" y2="109.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 41" x1="186" y1="109.5" x2="230" y2="109.5" stroke="#888888" stroke-width="11"/>
-<line id="Line 58" x1="186" y1="109.5" x2="230" y2="109.5" stroke="#FF0000" stroke-width="11"/>
+<line id="Line 58" x1="186" y1="109.5" x2="230" y2="109.5" stroke="#5B4AE4" stroke-width="11"/>
 <line id="Line 51" x1="239" y1="109.5" x2="283" y2="109.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 13" x1="27" y1="129.5" x2="71" y2="129.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 22" x1="80" y1="129.5" x2="124" y2="129.5" stroke="#AFAFAF" stroke-width="11"/>
@@ -46,14 +46,14 @@
 <line id="Line 36" x1="133" y1="209.5" x2="177" y2="209.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 46" x1="186" y1="209.5" x2="230" y2="209.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 56" x1="239" y1="209.5" x2="283" y2="209.5" stroke="#AFAFAF" stroke-width="11"/>
-<line id="Line 9" x1="27" y1="49.5" x2="71" y2="49.5" stroke="#FF0000" stroke-width="11"/>
+<line id="Line 9" x1="27" y1="49.5" x2="71" y2="49.5" stroke="#5B4AE4" stroke-width="11"/>
 <line id="Line 27" x1="80" y1="49.5" x2="124" y2="49.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 37" x1="133" y1="49.5" x2="177" y2="49.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 47" x1="186" y1="49.5" x2="230" y2="49.5" stroke="#AFAFAF" stroke-width="11"/>
 <line id="Line 57" x1="239" y1="49.5" x2="283" y2="49.5" stroke="#AFAFAF" stroke-width="11"/>
-<text id="Latin" fill="#FF0000" stroke="#FF0000" stroke-width="3" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="bold" letter-spacing="-0.04em"><tspan x="32" y="55.75">Latin</tspan></text>
+<text id="Latin" fill="#5B4AE4" stroke="#5B4AE4" stroke-width="3" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="bold" letter-spacing="-0.04em"><tspan x="32" y="55.75">Latin</tspan></text>
 <text id="Latin_2" fill="white" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="600" letter-spacing="-0.04em"><tspan x="32" y="55.75">Latin</tspan></text>
-<text id="Latin_3" fill="#FF0000" stroke="#FF0000" stroke-width="3" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="bold" letter-spacing="-0.04em"><tspan x="190" y="115.75">Latin</tspan></text>
+<text id="Latin_3" fill="#5B4AE4" stroke="#5B4AE4" stroke-width="3" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="bold" letter-spacing="-0.04em"><tspan x="190" y="115.75">Latin</tspan></text>
 <text id="Latin_4" fill="white" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="18" font-weight="600" letter-spacing="-0.04em"><tspan x="190" y="115.75">Latin</tspan></text>
 <path id="Arrow 1" d="M211.707 129.293C211.317 128.902 210.683 128.902 210.293 129.293L203.929 135.657C203.538 136.047 203.538 136.681 203.929 137.071C204.319 137.462 204.953 137.462 205.343 137.071L211 131.414L216.657 137.071C217.047 137.462 217.681 137.462 218.071 137.071C218.462 136.681 218.462 136.047 218.071 135.657L211.707 129.293ZM212 155L212 130L210 130L210 155L212 155Z" fill="black"/>
 <text id="2016" fill="black" fill-opacity="0.8" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="600" letter-spacing="0em"><tspan x="33" y="12.75">2016</tspan></text>

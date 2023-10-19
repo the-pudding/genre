@@ -93,7 +93,8 @@
 							(d) => d.genre === genre
 						)?.highlight}
 						{@const highlight =
-							$activeSlide === 3 && newToTop25.find((d) => d === genre)}
+							($activeSlide === 3 || $activeSlide === 4) &&
+							newToTop25.find((d) => d === genre)}
 						<td style:color>
 							<div class:highlight>
 								{#if col === 0}

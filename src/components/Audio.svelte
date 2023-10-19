@@ -83,7 +83,7 @@
 		border-radius: 10px;
 	}
 	.progress:hover {
-		background: #31ea86;
+		background: var(--color-audio-dark);
 	}
 	.words {
 		color: black;

@@ -10,7 +10,7 @@
 	const formatLabel = timeFormat("%Y");
 
 	const colors = {
-		"west/english": "var(--color-english)",
+		"west/english": "rgb(94, 36, 4, .8)",
 		latin: "var(--color-nonenglish)",
 		asia: "var(--color-nonenglish)",
 		africa: "var(--color-nonenglish)"
@@ -72,7 +72,7 @@
 		position: relative;
 	}
 	.highlight {
-		outline: 3px solid #6e0909;
+		outline: 3px solid black;
 		transform: 1;
 		position: absolute;
 		top: 0;

@@ -1,9 +1,10 @@
 {
 	"color": {
-		"nonenglish": { "value": "#D32F2F" },
-		"english": { "value": "#1976D2" },
-		"emphasis": { "value": "#F57C00" },
-		"audio": { "value": "#45fe9a" },
+		"nonenglish": { "value": "#BE3AA7" },
+		"english": { "value": "#5E2404" },
+		"emphasis": { "value": "#5B4AE4" },
+		"audio": { "value": "#B3FF00" },
+		"audio-dark": { "value": "#95D500" },
 		"black": {
 			"value": "#000000"
 		},
