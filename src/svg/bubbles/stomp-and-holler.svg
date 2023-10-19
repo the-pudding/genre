@@ -1,7 +1,7 @@
 <svg width="100%" height="100%" viewBox="0 0 374 407" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="stomp-and-holler">
 <g id="stomp-and-holler-bubble">
-<circle id="Ellipse 9" cx="186.5" cy="259.5" r="219.5" fill="white"/>
+<circle id="Ellipse 9" cx="186.5" cy="259.5" r="219.5" fill="var(--color-english)" opacity="0.07"/>
 <text id="Stomp and Holler" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="105" y="23.5">Stomp and Holler</tspan></text>
 <text id="Caamp" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="260" y="125.5">Caamp</tspan></text>
 <text id="Fleet Foxes" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="13" y="217.5">Fleet Foxes</tspan></text>
@@ -12,24 +12,24 @@
 <text id="Cold War Kids" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="226" y="369.5">Cold War Kids</tspan></text>
 </g>
 <g id="lord-huron-audio">
-<rect id="bg" x="91" y="135" width="113" height="35" rx="10" fill="#D8D8D8"/>
-<rect id="fg" x="91" y="135" width="113" height="35" rx="10" fill="#45FE9A"/>
+<rect id="bg" x="91" y="135" width="113" height="35" rx="10" fill="var(--color-audio-bg)"/>
+<rect id="fg" x="91" y="135" width="113" height="35" rx="10" fill="var(--color-audio)"/>
 <text id="Lord Huron" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="100" y="157.5">Lord Huron</tspan></text>
 <g id="&#240;&#159;&#142;&#181;">
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="178" y="159.38">&#x1f3b5;</tspan></text>
 </g>
 </g>
 <g id="of-monsters-and-men-audio">
-<rect id="bg_2" x="105" y="218" width="176" height="35" rx="10" fill="#D8D8D8"/>
-<rect id="fg_2" x="105" y="218" width="176" height="35" rx="10" fill="#45FE9A"/>
+<rect id="bg_2" x="105" y="218" width="176" height="35" rx="10" fill="var(--color-audio-bg)"/>
+<rect id="fg_2" x="105" y="218" width="176" height="35" rx="10" fill="var(--color-audio)"/>
 <text id="Of Monsters and Men" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="118" y="240.5">Of Monsters and Men</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_2">
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="256" y="242.38">&#x1f3b5;</tspan></text>
 </g>
 </g>
 <g id="iron-and-wine-audio">
-<rect id="bg_3" x="36" y="289" width="121" height="35" rx="10" fill="#D8D8D8"/>
-<rect id="fg_3" x="36" y="289" width="121" height="35" rx="10" fill="#45FE9A"/>
+<rect id="bg_3" x="36" y="289" width="121" height="35" rx="10" fill="var(--color-audio-bg)"/>
+<rect id="fg_3" x="36" y="289" width="121" height="35" rx="10" fill="var(--color-audio)"/>
 <text id="Iron &#38; Wine" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="47" y="311.5">Iron &#38; Wine</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_3">
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="131" y="313.38">&#x1f3b5;</tspan></text>

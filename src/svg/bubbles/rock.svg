@@ -1,11 +1,11 @@
 <svg width="100%" height="100%" viewBox="0 0 374 421" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="rock">
 <g id="rock-bubble">
-<circle id="Ellipse 8" opacity="0.4" cx="187" cy="212" r="209" fill="#F1F1F1"/>
+<circle id="Ellipse 8" cx="187" cy="212" r="209" fill="var(--color-english)" opacity="0.03"/>
 <text id="Rock" opacity="0.4" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="36" font-weight="bold" letter-spacing="-0.04em"><tspan x="38" y="134">Rock</tspan></text>
 </g>
 <g id="mellow-gold-bubble">
-<circle id="Ellipse 9" cx="66.5" cy="332.5" r="88.5" fill="white"/>
+<circle id="Ellipse 9" cx="66.5" cy="332.5" r="88.5" fill="var(--color-english)" opacity="0.1"/>
 <text id="Mellow Gold" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="14" y="272.5">Mellow Gold</tspan></text>
 <text id="Carole King" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="bold" letter-spacing="-0.04em"><tspan x="102" y="299.75">Carole King</tspan></text>
 <text id="Steely Dan" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="bold" letter-spacing="-0.04em"><tspan x="59" y="375.75">Steely Dan</tspan></text>
@@ -13,7 +13,7 @@
 <text id="Kenny Loggins" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="bold" letter-spacing="-0.04em"><tspan x="12" y="299.75">Kenny Loggins</tspan></text>
 </g>
 <g id="neo-mellow-bubble">
-<circle id="Ellipse 11" cx="295.5" cy="319.5" r="88.5" fill="white"/>
+<circle id="Ellipse 11" cx="295.5" cy="319.5" r="88.5" fill="var(--color-english)" opacity="0.1"/>
 <text id="Neo Mellow" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="240" y="263.5">Neo Mellow</tspan></text>
 <text id="John Mayer" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="bold" letter-spacing="-0.04em"><tspan x="283" y="363.75">John Mayer</tspan></text>
 <text id="Jason Mraz" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="bold" letter-spacing="-0.04em"><tspan x="204" y="363.75">Jason Mraz</tspan></text>
@@ -21,7 +21,7 @@
 <text id="The Goo Goo Dolls" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="bold" letter-spacing="-0.04em"><tspan x="230" y="294.75">The Goo Goo Dolls</tspan></text>
 </g>
 <g id="album-rock-bubble">
-<circle id="Ellipse 10" cx="266.5" cy="88.5" r="88.5" fill="white"/>
+<circle id="Ellipse 10" cx="266.5" cy="88.5" r="88.5" fill="var(--color-english)" opacity="0.1"/>
 <text id="Album Rock" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="212" y="23.5">Album Rock</tspan></text>
 <text id="Boston" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="bold" letter-spacing="-0.04em"><tspan x="231" y="53.75">Boston</tspan></text>
 <text id="Styx" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="bold" letter-spacing="-0.04em"><tspan x="271" y="134.75">Styx</tspan></text>
@@ -29,24 +29,24 @@
 <text id="Kansas" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="14" font-weight="bold" letter-spacing="-0.04em"><tspan x="289" y="53.75">Kansas</tspan></text>
 </g>
 <g id="john-mellancamp-audio">
-<rect id="bg" x="12" y="315" width="154" height="35" rx="10" fill="#D8D8D8"/>
-<rect id="fg" x="12" y="315" width="154" height="35" rx="10" fill="#45FE9A"/>
+<rect id="bg" x="12" y="315" width="154" height="35" rx="10" fill="var(--color-audio-bg)"/>
+<rect id="fg" x="12" y="315" width="154" height="35" rx="10" fill="var(--color-audio)"/>
 <text id="John Mellancamp" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="22" y="337.5">John Mellancamp</tspan></text>
 <g id="&#240;&#159;&#142;&#181;">
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="141" y="339.38">&#x1f3b5;</tspan></text>
 </g>
 </g>
 <g id="van-halen-audio">
-<rect id="bg_2" x="208" y="70" width="107" height="35" rx="10" fill="#D8D8D8"/>
-<rect id="fg_2" x="208" y="70" width="107" height="35" rx="10" fill="#45FE9A"/>
+<rect id="bg_2" x="208" y="70" width="107" height="35" rx="10" fill="var(--color-audio-bg)"/>
+<rect id="fg_2" x="208" y="70" width="107" height="35" rx="10" fill="var(--color-audio)"/>
 <text id="Van Halen" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="217" y="92.5">Van Halen</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_2">
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="289" y="94.38">&#x1f3b5;</tspan></text>
 </g>
 </g>
 <g id="the-fray-audio">
-<rect id="bg_3" x="240" y="307" width="94" height="35" rx="10" fill="#D8D8D8"/>
-<rect id="fg_3" x="240" y="307" width="94" height="35" rx="10" fill="#45FE9A"/>
+<rect id="bg_3" x="240" y="307" width="94" height="35" rx="10" fill="var(--color-audio-bg)"/>
+<rect id="fg_3" x="240" y="307" width="94" height="35" rx="10" fill="var(--color-audio)"/>
 <text id="The Fray" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="249" y="329.5">The Fray</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_3">
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="310" y="331.38">&#x1f3b5;</tspan></text>

@@ -1,7 +1,7 @@
 <svg width="100%" height="100%" viewBox="0 0 374 475" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="escape-room">
 <g id="escape-room-bubble">
-<circle id="Ellipse 9" cx="186.5" cy="255.5" r="219.5" fill="white"/>
+<circle id="Ellipse 9" cx="186.5" cy="255.5" r="219.5" fill="var(--color-english)" opacity="0.07"/>
 <text id="Escape Room" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="24" font-weight="bold" letter-spacing="-0.04em"><tspan x="129" y="23.5">Escape Room</tspan></text>
 <text id="Empress Of" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="232" y="377.5">Empress Of</tspan></text>
 <text id="Blood Orange" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="58" y="403.5">Blood Orange</tspan></text>
@@ -13,32 +13,32 @@
 <text id="Danny Brown" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="105" y="358.5">Danny Brown</tspan></text>
 </g>
 <g id="lizzo-audio">
-<rect id="bg" x="198" y="214" width="73" height="35" rx="10" fill="#D8D8D8"/>
-<rect id="fg" x="198" y="214" width="73" height="35" rx="10" fill="#45FE9A"/>
+<rect id="bg" x="198" y="214" width="73" height="35" rx="10" fill="var(--color-audio-bg)"/>
+<rect id="fg" x="198" y="214" width="73" height="35" rx="10" fill="var(--color-audio)"/>
 <text id="Lizzo" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="207" y="236.5">Lizzo</tspan></text>
 <g id="&#240;&#159;&#142;&#181;">
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="246" y="238.38">&#x1f3b5;</tspan></text>
 </g>
 </g>
 <g id="yaeji-audio">
-<rect id="bg_2" x="162" y="417" width="70" height="35" rx="10" fill="#D8D8D8"/>
-<rect id="fg_2" x="162" y="417" width="70" height="35" rx="10" fill="#45FE9A"/>
+<rect id="bg_2" x="162" y="417" width="70" height="35" rx="10" fill="var(--color-audio-bg)"/>
+<rect id="fg_2" x="162" y="417" width="70" height="35" rx="10" fill="var(--color-audio)"/>
 <text id="Yaeji" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="170" y="439.5">Yaeji</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_2">
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="208" y="441.38">&#x1f3b5;</tspan></text>
 </g>
 </g>
 <g id="kaytranada-audio">
-<rect id="bg_3" x="36" y="285" width="116" height="35" rx="10" fill="#D8D8D8"/>
-<rect id="fg_3" x="36" y="285" width="116" height="35" rx="10" fill="#45FE9A"/>
+<rect id="bg_3" x="36" y="285" width="116" height="35" rx="10" fill="var(--color-audio-bg)"/>
+<rect id="fg_3" x="36" y="285" width="116" height="35" rx="10" fill="var(--color-audio)"/>
 <text id="Kaytranada" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="46" y="307.5">Kaytranada</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_3">
 <text fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="127" y="309.38">&#x1f3b5;</tspan></text>
 </g>
 </g>
 <g id="anderson-paak-audio">
-<rect id="bg_4" x="91" y="131" width="134" height="35" rx="10" fill="#D8D8D8"/>
-<rect id="fg_4" x="91" y="131" width="134" height="35" rx="10" fill="#45FE9A"/>
+<rect id="bg_4" x="91" y="131" width="134" height="35" rx="10" fill="var(--color-audio-bg)"/>
+<rect id="fg_4" x="91" y="131" width="134" height="35" rx="10" fill="var(--color-audio)"/>
 <g id="Group 28">
 <text id="Anderson .Paak" fill="black" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Sans Condensed" font-size="16" font-weight="bold" letter-spacing="-0.04em"><tspan x="99" y="154.5">Anderson .Paak</tspan></text>
 <g id="&#240;&#159;&#142;&#181;_4">
