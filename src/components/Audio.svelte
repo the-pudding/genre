@@ -19,7 +19,7 @@
 	$: url = copy.artists[id];
 	$: percentLeft =
 		duration && currentTime ? ((duration - currentTime) / duration) * 100 : 100;
-	$: padding = inline ? "4px 8px" : mobile ? "4px 8px" : "10px 14px";
+	$: padding = inline ? "4px 8px" : mobile ? "6px 12px" : "10px 14px";
 	$: if (slide && !onScreen && audioEl) {
 		audioEl.pause();
 		currentTime = 0;
@@ -49,7 +49,7 @@
 	onClick={toggle}
 	style={`position: relative; display: inline; padding: ${padding}; color: transparent`}
 >
-	{label.concat(" 🎵")}
+	<div class="ghost-words">{label.concat(" 🎵")}</div>
 	<div
 		class="progress"
 		class:curved={percentLeft === 100}
@@ -96,7 +96,8 @@
 	}
 
 	@media (max-width: 600px) {
-		.words {
+		.words,
+		.ghost-words {
 			font-size: 14px;
 		}
 	}
