@@ -102,9 +102,6 @@
 		margin-top: 3rem;
 		text-align: center;
 	}
-	:global(.slide:last-of-type a) {
-		font-family: var(--sans);
-	}
 	:global(span.punctuation) {
 		vertical-align: middle;
 	}

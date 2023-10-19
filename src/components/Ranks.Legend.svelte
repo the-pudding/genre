@@ -35,11 +35,18 @@
 		margin-right: 0;
 	}
 	.square {
-		height: 10px;
-		width: 10px;
+		height: 14px;
+		width: 14px;
 		margin-right: 0.3rem;
 	}
 	.label {
 		font-weight: 600;
+	}
+
+	@media (max-width: 600px) {
+		.square {
+			height: 10px;
+			width: 10px;
+		}
 	}
 </style>

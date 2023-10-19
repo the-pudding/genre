@@ -65,8 +65,6 @@
 	}
 	h4 {
 		width: 43rem;
-		margin: auto;
-		padding: 0 1rem;
 	}
 	.indie {
 		max-width: none;

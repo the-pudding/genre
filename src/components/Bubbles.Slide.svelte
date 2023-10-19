@@ -104,12 +104,12 @@
 				group.style.cursor = "pointer";
 				const fg = group.querySelector('rect[id^="fg"]');
 				const color = fg.getAttribute("fill");
-				fg.setAttribute("fill", d3.color(color).darker(0.5));
+				fg.setAttribute("fill", "var(--color-audio-dark)");
 			});
 			group.addEventListener("mouseleave", () => {
 				const fg = group.querySelector('rect[id^="fg"]');
 				const color = fg.getAttribute("fill");
-				fg.setAttribute("fill", d3.color(color).brighter(0.5));
+				fg.setAttribute("fill", "var(--color-audio)");
 			});
 			group.addEventListener("click", () => onClick(group));
 			group.addEventListener("keydown", (e) => {

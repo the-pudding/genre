@@ -106,15 +106,12 @@
 	text {
 		transition: opacity var(--1s), stroke var(--1s), fill var(--1s);
 	}
-	path.faded {
-		opacity: 0.5;
-		stroke: var(--color-gray-400);
+	path.faded,
+	text.faded {
+		opacity: 0.3;
 	}
 	circle.faded {
-		fill: var(--color-gray-400);
-	}
-	text.faded {
-		fill: var(--color-gray-400);
+		fill: #c5c5dc;
 	}
 	.label-rank {
 		font-size: 14px;

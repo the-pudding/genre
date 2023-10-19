@@ -15,6 +15,7 @@
 
 	$: mobile = $viewport.width < 600;
 	$: zoom = mobile ? 2.5 : 4;
+	$: noAnimation = $activeSlide === 28; // mq
 	$: zoomedIn = $activeSlide === 11;
 	$: zoomedVB = originalVB
 		? [
@@ -55,7 +56,7 @@
 	class="wrapper"
 	class:zoomed-in={zoomedIn}
 	bind:this={wrapperEl}
-	in:fly={{ y: 1000, duration: 1500 }}
+	in:fly={{ y: 1000, duration: noAnimation ? 0 : 1500 }}
 >
 	{@html full}
 </div>
@@ -63,7 +64,7 @@
 <style>
 	.wrapper {
 		position: absolute;
-		bottom: 0;
+		bottom: -20px;
 		left: 50%;
 		transform: translate(-50%, 0);
 		width: 100vw;
@@ -73,9 +74,9 @@
 		transition: transform 4s ease-in-out;
 	}
 
-	/* @media (max-width: 600px) {
-		.zoomed-in {
-			transform: translate(-55%, 0);
+	@media (max-width: 600px) {
+		.wrapper {
+			min-width: 900px;
 		}
-	} */
+	}
 </style>
