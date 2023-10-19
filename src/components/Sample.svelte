@@ -53,4 +53,13 @@
 		margin-right: 0.5rem;
 		margin-top: 0.5rem;
 	}
+	@media (max-width: 600px) {
+		.genre {
+			padding-left: 0;
+		}
+		.group {
+			margin-right: 2px;
+			margin-top: 2px;
+		}
+	}
 </style>

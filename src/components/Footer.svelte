@@ -150,9 +150,13 @@
 	}
 
 	@media only screen and (min-width: 30em) {
+		footer {
+			margin-top: 0;
+		}
 		.story {
 			width: 50%;
 			padding: 0 1em;
+			margin-bottom: 0.5rem;
 		}
 	}
 
@@ -160,6 +164,29 @@
 		.story {
 			width: 25%;
 			padding: 0 1em;
+		}
+	}
+
+	@media (max-width: 600px) {
+		footer {
+			margin-top: 0;
+			padding: 2em 0.5em;
+		}
+		.story {
+			max-width: 47%;
+			margin-bottom: 4px;
+		}
+		.about {
+			margin: 0;
+		}
+		.about p {
+			display: none;
+		}
+		ul {
+			padding: 0;
+		}
+		.links li {
+			padding: 2px 4px;
 		}
 	}
 </style>

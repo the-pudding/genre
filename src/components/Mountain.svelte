@@ -13,11 +13,13 @@
 	let viewBox;
 	const duration = 3000;
 
-	$: zoom = mobile ? 3 : 4;
 	$: mobile = $viewport.width < 600;
+	$: zoom = mobile ? 2.5 : 4;
+	$: zoomedIn = $activeSlide === 11;
 	$: zoomedVB = originalVB
 		? [
-				(originalVB[2] - originalVB[2] / zoom) / 2,
+				(originalVB[2] - originalVB[2] / zoom) / 2 +
+					((originalVB[2] - originalVB[2] / zoom) / 2) * (mobile ? 0.06 : 0),
 				0,
 				originalVB[2] / zoom,
 				originalVB[3] / zoom
@@ -49,7 +51,12 @@
 	});
 </script>
 
-<div class="wrapper" bind:this={wrapperEl} in:fly={{ y: 1000, duration: 1500 }}>
+<div
+	class="wrapper"
+	class:zoomed-in={zoomedIn}
+	bind:this={wrapperEl}
+	in:fly={{ y: 1000, duration: 1500 }}
+>
 	{@html full}
 </div>
 
@@ -63,5 +70,12 @@
 		min-width: 1200px;
 		max-width: 1500px;
 		max-height: 90%;
+		transition: transform 4s ease-in-out;
 	}
+
+	/* @media (max-width: 600px) {
+		.zoomed-in {
+			transform: translate(-55%, 0);
+		}
+	} */
 </style>

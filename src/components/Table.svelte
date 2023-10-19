@@ -47,8 +47,7 @@
 		margin-bottom: 0.5rem;
 	}
 	td {
-		padding: 0.3rem 0;
-		padding-left: 1rem;
+		padding: 0.3rem 0 0.3rem 1rem;
 	}
 	td:first-of-type {
 		text-align: right;
@@ -88,7 +87,7 @@
 
 	@media (max-width: 600px) {
 		td {
-			padding: 2px 0;
+			padding: 2px 0 2px 0.6rem;
 			line-height: 0.9;
 		}
 		.race td,

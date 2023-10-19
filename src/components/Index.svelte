@@ -105,4 +105,10 @@
 	:global(span.punctuation) {
 		vertical-align: middle;
 	}
+
+	@media (max-width: 600px) {
+		:global(.slide:last-of-type) {
+			margin-top: 0;
+		}
+	}
 </style>

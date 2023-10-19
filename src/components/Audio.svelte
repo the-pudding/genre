@@ -2,6 +2,7 @@
 	import copy from "$data/copy.json";
 	import { activeSlide } from "$stores/misc.js";
 	import Button from "$components/Button.svelte";
+	import viewport from "$stores/viewport.js";
 
 	export let id;
 	export let label;
@@ -13,11 +14,12 @@
 	let duration;
 	let currentTime;
 
+	$: mobile = $viewport.width < 600;
 	$: onScreen = slide === $activeSlide;
 	$: url = copy.artists[id];
 	$: percentLeft =
 		duration && currentTime ? ((duration - currentTime) / duration) * 100 : 100;
-	$: padding = inline ? "4px 8px" : "10px 14px";
+	$: padding = inline ? "4px 8px" : mobile ? "4px 8px" : "10px 14px";
 	$: if (slide && !onScreen && audioEl) {
 		audioEl.pause();
 		currentTime = 0;
@@ -47,7 +49,7 @@
 	onClick={toggle}
 	style={`position: relative; display: inline; padding: ${padding}; color: transparent`}
 >
-	{label} 🎵
+	{label.concat(" 🎵")}
 	<div
 		class="progress"
 		class:curved={percentLeft === 100}
@@ -91,5 +93,11 @@
 		position: absolute;
 		white-space: nowrap;
 		pointer-events: none;
+	}
+
+	@media (max-width: 600px) {
+		.words {
+			font-size: 14px;
+		}
 	}
 </style>
