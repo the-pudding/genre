@@ -2,7 +2,7 @@
 	import Button from "$components/Button.svelte";
 	import { activeSlide } from "$stores/misc.js";
 	import copy from "$data/copy.json";
-	import Icon from "$components/helpers/Icon.svelte";
+	import mq from "$stores/mq.js";
 
 	let audioEl;
 	let currentTime;
@@ -41,7 +41,7 @@
 
 	<strong class="words">
 		{#each words as word, i}
-			{@const dark = currentTime >= beats[i]}
+			{@const dark = $mq.reducedMotion || currentTime >= beats[i]}
 			<span class:dark>{word} </span>
 		{/each}
 	</strong>

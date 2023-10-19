@@ -174,13 +174,14 @@
 		z-index: 3;
 		pointer-events: none;
 		opacity: 0;
-		transition: opacity 0.5s ease-in-out;
+		transition: opacity calc(var(--1s) * 0.5) ease-in-out;
 	}
 	figure.visible {
 		opacity: 1;
 	}
 	figure.animate {
-		transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
+		transition: opacity calc(var(--1s) * 0.5) ease-in-out,
+			top calc(var(--1s) * 0.5) ease-in-out;
 	}
 	.bleed {
 		padding: 0;

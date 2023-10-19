@@ -3,6 +3,7 @@
 	import { activeSlide } from "$stores/misc.js";
 	import Button from "$components/Button.svelte";
 	import viewport from "$stores/viewport.js";
+	import mq from "$stores/mq.js";
 
 	export let id;
 	export let label;
@@ -52,8 +53,8 @@
 	<div class="ghost-words">{label.concat(" 🎵")}</div>
 	<div
 		class="progress"
-		class:curved={percentLeft === 100}
-		style:width={`${percentLeft}%`}
+		class:curved={percentLeft === 100 || $mq.reducedMotion}
+		style:width={`${$mq.reducedMotion ? 100 : percentLeft}%`}
 	/>
 	<div class="words" style:padding>{label} 🎵</div>
 </Button>

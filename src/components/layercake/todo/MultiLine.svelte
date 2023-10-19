@@ -46,7 +46,7 @@
 				d={path(group.values)}
 				stroke={$zGet(group)}
 				in:draw={{ duration: animateDraw ? 1500 : 0 }}
-				out:fade={{ duration: 500 }}
+				out:fade={{ duration: $mq.reducedMotion ? 0 : 500 }}
 			/>
 			<circle
 				cx={$xGet(_.first(group.values))}

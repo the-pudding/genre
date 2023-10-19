@@ -1,11 +1,12 @@
 <script>
-	import full from "$svg/full-mountain.svg";
+	import full from "$svg/mountain.svg";
 	import { activeSlide, dir } from "$stores/misc.js";
 	import { onMount } from "svelte";
 	import { tweened } from "svelte/motion";
 	import { quintInOut } from "svelte/easing";
 	import { fly } from "svelte/transition";
 	import viewport from "$stores/viewport.js";
+	import mq from "$stores/mq.js";
 
 	let wrapperEl;
 	let svgElement;
@@ -15,7 +16,6 @@
 
 	$: mobile = $viewport.width < 600;
 	$: zoom = mobile ? 2.5 : 4;
-	$: noAnimation = $activeSlide === 28; // mq
 	$: zoomedIn = $activeSlide === 11;
 	$: zoomedVB = originalVB
 		? [
@@ -26,17 +26,19 @@
 				originalVB[3] / zoom
 		  ]
 		: [];
-	$: animate =
-		($activeSlide === 12 && $dir === "right") ||
-		($activeSlide === 11 && $dir === "left");
+	$: flyAnimate = !$mq.reducedMotion && $activeSlide !== 28;
+	$: zoomAnimate =
+		!$mq.reducedMotion &&
+		(($activeSlide === 12 && $dir === "right") ||
+			($activeSlide === 11 && $dir === "left"));
 	$: if ($activeSlide === 11 && viewBox) {
 		viewBox.set(zoomedVB, {
-			duration: animate ? duration : 0,
+			duration: zoomAnimate ? duration : 0,
 			easing: quintInOut
 		});
 	} else if (viewBox) {
 		viewBox.set(originalVB, {
-			duration: animate ? duration : 0,
+			duration: zoomAnimate ? duration : 0,
 			easing: quintInOut
 		});
 	}
@@ -56,7 +58,7 @@
 	class="wrapper"
 	class:zoomed-in={zoomedIn}
 	bind:this={wrapperEl}
-	in:fly={{ y: 1000, duration: noAnimation ? 0 : 1500 }}
+	in:fly={{ y: 1000, duration: flyAnimate ? 1500 : 0 }}
 >
 	{@html full}
 </div>
@@ -69,9 +71,13 @@
 		transform: translate(-50%, 0);
 		width: 100vw;
 		min-width: 1200px;
+		max-width: 1000px;
 		max-width: 1500px;
 		max-height: 90%;
-		transition: transform 4s ease-in-out;
+		transition: transform calc(var(--1s) * 4) ease-in-out;
+	}
+	:global(svg#mountain) {
+		overflow: visible;
 	}
 
 	@media (max-width: 600px) {

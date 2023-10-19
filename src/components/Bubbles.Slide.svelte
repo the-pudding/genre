@@ -3,7 +3,7 @@
 	import copy from "$data/copy.json";
 	import { dir } from "$stores/misc.js";
 	import _ from "lodash";
-	import * as d3 from "d3";
+	import mq from "$stores/mq.js";
 
 	export let constant;
 	export let svg;
@@ -28,12 +28,12 @@
 
 		toEnter.forEach((el) => {
 			el.style.transformOrigin = "center";
-			const randomDelay = _.random(0, 800);
+			const delay = $mq.reducedMotion ? 0 : _.random(0, 800);
 			const opacityDestination =
 				el.getAttribute("opacity") > 0 ? el.getAttribute("opacity") > 0 : 1;
 			el.style.setProperty("--opacity-destination", opacityDestination);
 			el.style.opacity = 1;
-			el.style.animation = `bounce-in calc(var(--1s) * 0.8) ${randomDelay}ms both`;
+			el.style.animation = `bounce-in calc(var(--1s) * 0.8) ${delay}ms both`;
 		});
 	};
 	const exitBubbles = () => {
@@ -154,7 +154,14 @@
 						.querySelector(`g#${d.id}-audio${step ? `-${startingStep}` : ""}`)
 						.querySelector('rect[id^="fg"]');
 					myFg.style.width = myBg.getAttribute("width");
+
+					if ($mq.reducedMotion) myFg.style.fill = "var(--color-audio)";
 				});
+
+			if ($mq.reducedMotion) {
+				fg.style.fill = "var(--color-audio-dark)";
+				return;
+			}
 
 			const animate = () => {
 				if (audioEl.currentTime < audioDuration) {
@@ -174,6 +181,12 @@
 		} else {
 			// pause me
 			audioEl.pause();
+
+			if ($mq.reducedMotion) {
+				fg.style.fill = "var(--color-audio)";
+				return;
+			}
+
 			// stop animating my progress
 			if (animationFrame) cancelAnimationFrame(animationFrame);
 		}
@@ -242,6 +255,9 @@
 {/each}
 
 <style>
+	:global(svg g):focus {
+		outline: var(--color-emphasis) auto 5px;
+	}
 	@keyframes -global-bounce-in {
 		0% {
 			opacity: 0;

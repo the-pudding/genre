@@ -3,6 +3,7 @@
 	import Icon from "$components/helpers/Icon.svelte";
 	import { onMount } from "svelte";
 	import { videoMuted } from "$stores/misc.js";
+	import mq from "$stores/mq.js";
 
 	export let id;
 	export let overlay;
@@ -54,11 +55,13 @@
 </script>
 
 <div class="wrapper" class:loaded>
-	<div
-		class="progress"
-		style:width={`${percentComplete}%`}
-		style:height={`${progressH * 2}px`}
-	/>
+	{#if !$mq.reducedMotion}
+		<div
+			class="progress"
+			style:width={`${percentComplete}%`}
+			style:height={`${progressH * 2}px`}
+		/>
+	{/if}
 	<video
 		bind:this={videoEl}
 		bind:currentTime

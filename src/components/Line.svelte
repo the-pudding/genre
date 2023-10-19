@@ -10,6 +10,7 @@
 	import { activeSlide, dir } from "$stores/misc.js";
 	import { tweened } from "svelte/motion";
 	import _ from "lodash";
+	import mq from "$stores/mq.js";
 	import viewport from "$stores/viewport.js";
 
 	const data = rank.map((d) => ({
@@ -24,7 +25,7 @@
 	const yKey = "value";
 	const zKey = "genre";
 	const yDomain = tweened($dir === "right" ? [1, 300] : [1, 75], {
-		duration: 1000
+		duration: $mq.reducedMotion ? 0 : 1000
 	});
 	const formatTickX = timeFormat("%Y");
 	const formatTickY = (d) => `#${d}`;
@@ -81,7 +82,7 @@
 	</LayerCake>
 </div>
 
-{#if $activeSlide === 9}
+{#if $activeSlide === 9 && !$mq.reducedMotion}
 	{#each _.range(3) as i}
 		{@const positions = [
 			[10, 20, 10],

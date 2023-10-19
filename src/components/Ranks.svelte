@@ -70,7 +70,7 @@
 		}, []);
 </script>
 
-<div class="table-wrapper" class:slide={$activeSlide === 0}>
+<div class="table-wrapper">
 	{#if legend}
 		<h4>Genres, ranked by streams on Spotify</h4>
 		<Legend />

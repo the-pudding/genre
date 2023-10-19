@@ -7,7 +7,7 @@
 
 <div class="tap" class:visible={$activeSlide === 0}>
 	<div class="row">
-		<strong>Tap to continue</strong>
+		<strong>{$mq.desktop ? "Click" : "Tap"} to continue</strong>
 		{@html pointer}
 	</div>
 
