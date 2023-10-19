@@ -99,6 +99,7 @@
 		}));
 		audioGroups.forEach((group) => {
 			group.style.pointerEvents = "auto";
+			group.setAttribute("tabindex", 0);
 			group.addEventListener("mouseenter", () => {
 				group.style.cursor = "pointer";
 				const fg = group.querySelector('rect[id^="fg"]');
@@ -110,70 +111,72 @@
 				const color = fg.getAttribute("fill");
 				fg.setAttribute("fill", d3.color(color).brighter(0.5));
 			});
-			group.addEventListener("click", () => {
-				const id = group.id
-					.split("-")
-					.slice(0, step ? -2 : -1)
-					.join("-");
-				const audioEl = document.querySelector(`audio#${id}`);
-				const bg = group.querySelector('rect[id^="bg"]');
-				const fg = group.querySelector('rect[id^="fg"]');
-				const fullWidth = bg.getAttribute("width");
-
-				if (!audioEl) return;
-
-				if (audioEl.paused) {
-					// play me
-					audioEl.play();
-					if (animationFrame) cancelAnimationFrame(animationFrame);
-					let audioDuration = audioEl.duration;
-
-					// pause + restart everyone else
-					artistsWithAudio
-						.filter((d) => d.id !== id)
-						.forEach((d) => {
-							const audioEl = document.querySelector(`audio#${d.id}`);
-							if (audioEl) {
-								audioEl.pause();
-								audioEl.currentTime = 0;
-							}
-							const myFg = document
-								.querySelector(
-									`g#${d.id}-audio${step ? `-${startingStep}` : ""}`
-								)
-								.querySelector('rect[id^="fg"]');
-							const myBg = document
-								.querySelector(
-									`g#${d.id}-audio${step ? `-${startingStep}` : ""}`
-								)
-								.querySelector('rect[id^="fg"]');
-							myFg.style.width = myBg.getAttribute("width");
-						});
-
-					const animate = () => {
-						if (audioEl.currentTime < audioDuration) {
-							const percent =
-								(audioDuration - audioEl.currentTime) / audioDuration;
-							fg.style.width = `${fullWidth * percent}px`;
-							animationFrame = requestAnimationFrame(animate);
-						} else {
-							cancelAnimationFrame(animationFrame);
-							audioEl.currentTime = 0;
-							fg.style.width = fullWidth;
-							audioEl.pause();
-						}
-					};
-
-					// start animating my progress
-					animationFrame = requestAnimationFrame(animate);
-				} else {
-					// pause me
-					audioEl.pause();
-					// stop animating my progress
-					if (animationFrame) cancelAnimationFrame(animationFrame);
+			group.addEventListener("click", () => onClick(group));
+			group.addEventListener("keydown", (e) => {
+				if (e.key === "Enter" || e.key === " ") {
+					e.preventDefault();
+					onClick(e.target);
 				}
 			});
 		});
+	};
+	const onClick = (group) => {
+		const id = group.id
+			.split("-")
+			.slice(0, step ? -2 : -1)
+			.join("-");
+		const audioEl = document.querySelector(`audio#${id}`);
+		const bg = group.querySelector('rect[id^="bg"]');
+		const fg = group.querySelector('rect[id^="fg"]');
+		const fullWidth = bg.getAttribute("width");
+
+		if (!audioEl) return;
+
+		if (audioEl.paused) {
+			// play me
+			audioEl.play();
+			if (animationFrame) cancelAnimationFrame(animationFrame);
+			let audioDuration = audioEl.duration;
+
+			// pause + restart everyone else
+			artistsWithAudio
+				.filter((d) => d.id !== id)
+				.forEach((d) => {
+					const audioEl = document.querySelector(`audio#${d.id}`);
+					if (audioEl) {
+						audioEl.pause();
+						audioEl.currentTime = 0;
+					}
+					const myFg = document
+						.querySelector(`g#${d.id}-audio${step ? `-${startingStep}` : ""}`)
+						.querySelector('rect[id^="fg"]');
+					const myBg = document
+						.querySelector(`g#${d.id}-audio${step ? `-${startingStep}` : ""}`)
+						.querySelector('rect[id^="fg"]');
+					myFg.style.width = myBg.getAttribute("width");
+				});
+
+			const animate = () => {
+				if (audioEl.currentTime < audioDuration) {
+					const percent = (audioDuration - audioEl.currentTime) / audioDuration;
+					fg.style.width = `${fullWidth * percent}px`;
+					animationFrame = requestAnimationFrame(animate);
+				} else {
+					cancelAnimationFrame(animationFrame);
+					audioEl.currentTime = 0;
+					fg.style.width = fullWidth;
+					audioEl.pause();
+				}
+			};
+
+			// start animating my progress
+			animationFrame = requestAnimationFrame(animate);
+		} else {
+			// pause me
+			audioEl.pause();
+			// stop animating my progress
+			if (animationFrame) cancelAnimationFrame(animationFrame);
+		}
 	};
 
 	$: step, stepChange();

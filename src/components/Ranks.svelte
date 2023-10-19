@@ -71,12 +71,11 @@
 </script>
 
 <div class="table-wrapper" class:slide={$activeSlide === 0}>
-	<h4>Genres, ranked by streams on Spotify</h4>
-
 	{#if legend}
 		<Legend />
 	{/if}
 	<table class:full={numColumns > 1}>
+		<caption>Genres, ranked by streams on Spotify</caption>
 		<thead>
 			<tr>
 				{#each data as { date }}
@@ -123,6 +122,9 @@
 	}
 	table.full {
 		max-width: 40rem;
+	}
+	caption {
+		font-weight: 700;
 	}
 	thead {
 		border-bottom: 2px solid var(--color-gray-800);

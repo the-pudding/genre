@@ -9,16 +9,10 @@
 	$: data = $activeSlide === 18 ? table1 : table2;
 </script>
 
-<div
-	class="table-wrapper {$activeSlide == 28
-		? 'taxonomy-table'
-		: ''} {$activeSlide == 18 ? 'latest-table' : ''}"
->
-	<table class:top-border={!title}>
+<div class:latest={$activeSlide === 18} class:race={$activeSlide === 27}>
+	<table>
 		{#if title}
-			<tr>
-				<th colspan="2"><h4>{@html title}</h4></th>
-			</tr>
+			<caption>{@html title}</caption>
 		{/if}
 
 		{#each data as row}
@@ -39,49 +33,51 @@
 	.table-wrapper {
 		width: 100%;
 	}
-	.top-border {
-		border-top: 1px solid black;
-	}
-	.top-border tr:first-child td {
-		padding-top: 0.5rem;
-	}
 	table {
 		width: 100%;
 		max-width: 35rem;
 		table-layout: auto;
+		font-family: var(--sans);
+		color: black;
 	}
-	th {
-		font-size: 1.2rem;
+	caption {
+		font-family: var(--sans);
+		font-weight: 700;
+		font-size: 1.125rem;
+		margin-bottom: 0.5rem;
 	}
 	td {
-		padding: 2px 0;
+		padding: 0.3rem 0;
 		padding-left: 1rem;
 	}
-
 	td:first-of-type {
-		font-family: var(--sans);
-		font-weight: 500;
 		text-align: right;
-		color: var(--color-gray-700);
 		white-space: nowrap;
 	}
 	td:last-of-type {
-		font-family: var(--serif);
-		font-weight: 700;
 		text-align: left;
 		width: 100%;
 	}
-
-	.latest-table td {
-		font-size: 14px;
-		letter-spacing: -0.04em;
+	.latest td:first-of-type {
+		color: var(--color-gray-700);
+		font-weight: 500;
 	}
-
-	.latest-table td:first-of-type {
-		font-size: 15px;
-		color: black;
+	.latest td:last-of-type {
+		font-family: var(--serif);
+		font-weight: 700;
 	}
-
+	.race td:first-of-type {
+		font-weight: 700;
+	}
+	.race td:last-of-type {
+		font-weight: 400;
+	}
+	tr:first-of-type {
+		border-top: 1px solid var(--color-gray-600);
+	}
+	tr:first-child td {
+		padding-top: 0.5rem;
+	}
 	tr {
 		border-bottom: 1px dashed var(--color-gray-600);
 	}
@@ -92,14 +88,17 @@
 
 	@media (max-width: 600px) {
 		td {
+			padding: 2px 0;
 			line-height: 0.9;
 		}
-		.taxonomy-table td,
-		.latest-table td {
+		.race td,
+		.latest td {
 			line-height: 1.2;
 		}
-		.latest-table td {
+		.latest td {
 			line-height: 1;
+			font-size: 14px;
+			letter-spacing: -0.04em;
 		}
 	}
 </style>
