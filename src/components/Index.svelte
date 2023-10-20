@@ -95,6 +95,9 @@
 		line-height: 120%;
 		letter-spacing: -0.02em;
 	}
+	:global(h1) {
+		padding-right: 2px;
+	}
 	:global(.slide a) {
 		pointer-events: auto;
 	}

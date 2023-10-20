@@ -27,12 +27,12 @@
 		if ($activeSlide === 22 || $activeSlide === 24) {
 			const pics = document.querySelectorAll("svg > a");
 			pics.forEach((pic) => {
-				// pic.addEventListener("mouseenter", (e) => {
-				// 	e.target.style.transform = "translate(-5px, -5px)";
-				// });
-				// pic.addEventListener("mouseleave", (e) => {
-				// 	e.target.style.transform = "translate(0, 0)";
-				// });
+				pic.addEventListener("mouseenter", (e) => {
+					e.target.style.opacity = 0.75;
+				});
+				pic.addEventListener("mouseleave", (e) => {
+					e.target.style.opacity = 1;
+				});
 			});
 		}
 	});
@@ -70,7 +70,7 @@
 		max-width: none;
 	}
 	.articles {
-		pointer-events: none;
+		pointer-events: auto;
 	}
 
 	@media (max-width: 600px) {

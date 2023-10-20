@@ -63,6 +63,7 @@
 		/>
 	{/if}
 	<video
+		playslinine
 		bind:this={videoEl}
 		bind:currentTime
 		bind:duration
