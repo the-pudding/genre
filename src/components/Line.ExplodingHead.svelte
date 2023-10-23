@@ -17,7 +17,7 @@
 
 			setTimeout(() => {
 				exited = true;
-			}, 3000);
+			}, 1500);
 		}, delay);
 	});
 </script>

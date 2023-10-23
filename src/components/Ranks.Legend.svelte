@@ -1,11 +1,12 @@
 <script>
 	const items = [
-		// { color: "var(--color-gray-600)", label: "Global Genres" },
-		{ color: "var(--color-english)", label: "English-speaking or European" },
+		
+		{ color: "var(--color-english)", label: "English-speaking or European Origin" },
 		{
 			color: "var(--color-nonenglish)",
-			label: "Latin America, Africa, and Asia"
-		}
+			label: "Latin American, African, and Asian Origin"
+		},
+		{ color: "var(--color-gray-600)", label: "No Geographic Origin" },
 	];
 </script>
 
