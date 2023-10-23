@@ -7,7 +7,9 @@
 	import { activeSlide } from "$stores/misc.js";
 	import copy from "$data/copy.json";
 	import { onMount } from "svelte";
+	import viewport from "$stores/viewport.js";
 
+	$: mobile = $viewport.width < 600;
 	$: currentSvg =
 		$activeSlide === 6
 			? regions
@@ -22,19 +24,25 @@
 			: null;
 	$: title = copy.slides.find((d) => +d.slide === $activeSlide)?.title;
 	$: bottom = $activeSlide === 30;
+	$: $viewport.width, interactivePics();
 
+	const interactivePics = () => {
+		const pics = document.querySelectorAll("svg > a");
+		const handleEnter = (e) => (e.target.style.opacity = 0.75);
+		const handleLeave = (e) => (e.target.style.opacity = 1);
+
+		pics.forEach((pic) => {
+			if (mobile) {
+				pic.removeEventListener("mouseenter", handleEnter);
+				pic.removeEventListener("mouseleave", handleLeave);
+			} else {
+				pic.addEventListener("mouseenter", handleEnter);
+				pic.addEventListener("mouseleave", handleLeave);
+			}
+		});
+	};
 	onMount(() => {
-		if ($activeSlide === 22 || $activeSlide === 24) {
-			const pics = document.querySelectorAll("svg > a");
-			pics.forEach((pic) => {
-				pic.addEventListener("mouseenter", (e) => {
-					e.target.style.opacity = 0.75;
-				});
-				pic.addEventListener("mouseleave", (e) => {
-					e.target.style.opacity = 1;
-				});
-			});
-		}
+		if ($activeSlide === 22 || $activeSlide === 24) interactivePics();
 	});
 </script>
 
@@ -66,7 +74,6 @@
 	h4 {
 		width: 43rem;
 	}
-
 	.bottom h4 {
 		padding: 1rem;
 	}
@@ -80,6 +87,9 @@
 	@media (max-width: 600px) {
 		.latin {
 			max-width: 300px;
+		}
+		.articles {
+			pointer-events: none;
 		}
 	}
 </style>
