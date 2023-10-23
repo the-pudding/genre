@@ -5,15 +5,15 @@
 
 	$: explore = $activeSlide === 35;
 	$: src =
-		$activeSlide === 29 ? "assets/img/birds.png" : "assets/img/explore.png";
+		$activeSlide === 29 ? "assets/img/fish.jpg" : "assets/img/explore.jpg";
 	$: alt =
 		$activeSlide === 29
-			? "Birds"
+			? "Fish"
 			: "A screenshot of the Google Sheet with the genre data";
 </script>
 
 <div class="img-wrapper" class:explore>
-	{#if explore}<h4>Explore the data</h4>{/if}
+	{#if explore}<h4>Explore the data from 2016-2023</h4>{/if}
 	<img {src} {alt} />
 </div>
 

@@ -71,6 +71,7 @@
 		loop
 		on:ended={onEnded}
 		class:has-captions={hasCC}
+		poster="assets/img/{id}.jpg"
 	>
 		{#if hasCC}
 			<track kind="captions" src={`assets/captions/${id}.vtt`} srclang="en" />

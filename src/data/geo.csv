@@ -1,5 +1,16 @@
 rank,genre,country,region
-,hurban,,latin
+,latin,latin,latin
+,hurban,latin,latin
+,regional mexican,mexico,latin
+,deep melodic house,us,west/english
+,juggalo,us,west/english
+,classic funk rock,us,west/english
+,trap francais,France,west/english
+,vapor trap,us/england,west/english
+,christmas,us/england,west/english
+,indie cafe pop,global,global
+,nuevo regional mexicano,mexico,latin
+,francoton,france,west/english
 1,pop,🇺🇸 United States of America 1870,west/english
 2,rap,🇺🇸 United States of America 1870,west/english
 3,rock,🇺🇸 United States of America 1870,west/english

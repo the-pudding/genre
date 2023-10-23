@@ -39,6 +39,7 @@
 	--1s: 1ms;
 }
 
+
 /* dark theme */
 /* this is a starting place for dark mode - test before deploying */
 
@@ -144,4 +145,15 @@ h4 {
 
 .bottom h4 {
 	width: calc(100% - 2rem);
+}
+
+.sub a {
+	color: white;
+}
+
+
+@media (max-width: 600px) {
+	h2 {
+		line-height: 1.1;
+	}
 }
