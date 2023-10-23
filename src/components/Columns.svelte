@@ -28,8 +28,6 @@
 			];
 		}, []);
 
-	$: console.log(data.map((d) => d.genres.filter((g) => !g.region)));
-
 	$: mobile = $viewport.width < 600;
 	$: rightPadding = mobile ? 150 : 180;
 </script>

@@ -1,19 +1,31 @@
 <script>
+	import { activeSlide } from "$stores/misc.js";
+
 	const items = [
-		
-		{ color: "var(--color-english)", label: "English-speaking or European Origin" },
+		{
+			color: "var(--color-english)",
+			label: "English-speaking or European Origin"
+		},
 		{
 			color: "var(--color-nonenglish)",
 			label: "Latin American, African, and Asian Origin"
 		},
-		{ color: "var(--color-gray-600)", label: "No Geographic Origin" },
+		{ color: "var(--color-gray-700)", label: "No Geographic Origin" }
 	];
+
+	$: type = $activeSlide === 5 ? "table" : "bars";
+	$: displayItems = type === "table" ? items.slice(0, 2) : items;
 </script>
 
 <div class="legend">
-	{#each items as { color, label }}
+	{#each displayItems as { color, label }}
 		<div class="item">
-			<div class="square" style:background={color} />
+			<div
+				class="square"
+				style:background={type === "bars" && color === "var(--color-english)"
+					? "#B79E8F"
+					: color}
+			/>
 			<div class="label" style:color>{label}</div>
 		</div>
 	{/each}

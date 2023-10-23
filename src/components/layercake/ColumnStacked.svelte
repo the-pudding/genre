@@ -10,10 +10,10 @@
 	const formatLabel = timeFormat("%Y");
 
 	const colors = {
-		"west/english": "rgb(94, 36, 4, .8)",
-		latin: "var(--color-nonenglish)",
-		asia: "var(--color-nonenglish)",
-		africa: "var(--color-nonenglish)"
+		"west/english": "#B79E8F",
+		latin: "#BE3AA7",
+		asia: "#BE3AA7",
+		africa: "#BE3AA7"
 	};
 	$: annotation = copy.slides.find((d) => +d.slide === $activeSlide).annotation;
 </script>
@@ -23,7 +23,7 @@
 		<div class="column">
 			<span class="year">{formatLabel(new Date(date))}</span>
 			{#each genres as genre, j}
-				{@const color = colors[genre.region] || "#494949"}
+				{@const color = colors[genre.region] || "var(--color-gray-700)"}
 				{@const highlight = genre.genre === "filmi" && date === "8/9/2023"}
 				<div
 					class="block"
