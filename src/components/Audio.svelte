@@ -28,7 +28,6 @@
 	}
 
 	const toggle = () => {
-		audioEl.volume = 0.05;
 		if (paused) {
 			const toPause = Array.from(document.querySelectorAll("audio")).filter(
 				(d) => !d.paused
