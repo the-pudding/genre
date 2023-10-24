@@ -77,8 +77,15 @@
 
 	@media (max-width: 600px) {
 		td {
-			padding: 2px 0 2px 0.6rem;
+			padding: 5px 0 5px 0.6rem;
 			line-height: 0.9;
 		}
+
+		@media (max-height: 625px) {
+			caption {
+				font-size: 1rem;
+				line-height: 1.1;
+			}
+		}	
 	}
 </style>
