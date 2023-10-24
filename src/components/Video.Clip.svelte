@@ -17,7 +17,6 @@
 	let autoplay = true;
 	let paused = true;
 	let loaded = false;
-	let captioned = true;
 
 	const onMute = () => {
 		$videoMuted = !$videoMuted;
@@ -45,9 +44,13 @@
 				const videoBlob = this.response;
 				const videoUrl = URL.createObjectURL(videoBlob);
 				videoEl.src = videoUrl;
-				if (hasCC)
-					videoEl.textTracks[0].mode = captioned ? "showing" : "hidden";
 
+				if (hasCC) {
+					videoEl.addEventListener("canplay", () => {
+						turnCCOn();
+					});
+					videoEl.textTracks[0].mode = "showing";
+				}
 				loaded = true;
 			}
 		};
@@ -55,7 +58,7 @@
 	});
 
 	const turnCCOn = () => {
-		videoEl.textTracks.forEach((track) => {
+		Array.from(videoEl.textTracks).forEach((track) => {
 			track.mode = "showing";
 		});
 	};
@@ -69,6 +72,7 @@
 			style:height={`${progressH * 2}px`}
 		/>
 	{/if}
+
 	<video
 		playsinline
 		bind:this={videoEl}
@@ -84,7 +88,6 @@
 			<track kind="captions" src={`assets/captions/${id}.vtt`} srclang="en" />
 		{/if}
 	</video>
-	<!-- <button on:click={turnCCOn}>turn cc on</button> -->
 
 	{#if overlay}
 		<div class="gradient">
