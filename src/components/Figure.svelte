@@ -21,9 +21,13 @@
 	let mounted = false;
 	let offset;
 
+	const scroll = [
+		1, 2, 3, 4, 5, 7, 13, 18, 19, 22, 24, 27, 34, 25, 26, 31, 32, 33
+	];
 	const bleed = [
 		11, 12, 14, 15, 16, 17, 20, 21, 23, 25, 26, 28, 29, 30, 31, 32, 33
 	];
+
 	const ranks = [0, 1, 2, 3, 4, 5];
 	const table = [18, 27];
 	const svg = [6, 13, 22, 24, 30];
@@ -38,6 +42,7 @@
 	const footer = [36];
 
 	$: mobile = $viewport.width < 600;
+	$: animate = $activeSlide <= 5 && ($activeSlide !== 5 || $dir !== "left");
 	$: figcaption = copy.slides[$activeSlide].figcaption;
 	$: buffer = mobile ? 10 : 50;
 	$: $activeSlide, $viewport.width, getSlideHeight();
@@ -122,9 +127,11 @@
 
 <figure
 	style={`--offset: ${offset}px; --buffer: 2rem`}
+	class:scroll={scroll.includes($activeSlide)}
 	class:bleed={bleed.includes($activeSlide)}
 	class:visible={offset}
-	class:animate={$activeSlide === 0 || $activeSlide === 1}
+	class:animate
+	class:min-height={columns.includes($activeSlide)}
 >
 	{#if figcaption}
 		<figcaption class="sr-only" aria-live="polite">
@@ -183,8 +190,15 @@
 		transition: opacity calc(var(--1s) * 0.5) ease-in-out,
 			top calc(var(--1s) * 0.5) ease-in-out;
 	}
-	.bleed {
+	figure.bleed {
 		padding: 0;
 		width: 100%;
+	}
+	figure.scroll {
+		height: auto;
+		overflow: scroll;
+	}
+	figure.min-height {
+		min-height: 600px;
 	}
 </style>

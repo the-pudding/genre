@@ -48,10 +48,8 @@
 			});
 		}
 
-		document.addEventListener("visibilitychange", (event) => {
-			if (document.visibilityState == "visible") {
-				console.log("back!");
-			} else {
+		document.addEventListener("visibilitychange", () => {
+			if (document.visibilityState !== "visible") {
 				const audioToMute = Array.from(
 					document.querySelectorAll("audio")
 				).filter((d) => !d.paused);

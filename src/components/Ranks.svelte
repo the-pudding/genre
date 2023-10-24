@@ -15,7 +15,7 @@
 		"reggaeton",
 		"filmi",
 		"k-pop",
-		"pov:indie",
+		"pov: indie",
 		"musica mexicana",
 		"modern rock",
 		"alternative metal",
