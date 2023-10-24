@@ -4,7 +4,8 @@
 	const items = [
 		{
 			color: "var(--color-english)",
-			label: "Genre&rsquo;s artists primarily from European countries, US/Canada"
+			label:
+				"Genre&rsquo;s artists primarily from European countries, US/Canada"
 		},
 		{
 			color: "var(--color-nonenglish)",
@@ -15,7 +16,6 @@
 
 	$: type = $activeSlide === 5 ? "table" : "bars";
 	$: displayItems = type === "table" ? items.slice(0, 0) : items;
-	$: console.log($activeSlide)
 </script>
 
 <div class="legend">
@@ -45,7 +45,6 @@
 		margin-right: 1.25rem;
 		font-size: 14px;
 		margin-bottom: 5px;
-
 	}
 	.item:last-child {
 		margin-right: 0;
