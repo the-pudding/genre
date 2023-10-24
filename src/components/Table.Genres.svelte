@@ -31,10 +31,25 @@
 	.col:last-of-type {
 		margin-right: 0;
 	}
+	.annotation {
+		position: absolute;
+		top: 0;
+	}
 
 	@media (max-width: 600px) {
 		.table {
 			font-size: 14px;
+		}
+	}
+
+	@media (max-width: 446px) {
+		.col {
+			margin-right: 2px;
+			padding-left: 3rem;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
 		}
 	}
 </style>

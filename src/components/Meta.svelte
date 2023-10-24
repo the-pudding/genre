@@ -4,8 +4,6 @@
 	export let url = "https://pudding.cool";
 	export let keywords = "";
 	export let preloadFont = [];
-
-	$: console.log({ url });
 </script>
 
 <svelte:head>
