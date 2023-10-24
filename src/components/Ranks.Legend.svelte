@@ -4,13 +4,13 @@
 	const items = [
 		{
 			color: "var(--color-english)",
-			label: "English-speaking or European Origin"
+			label: "Genre&rsquo;s artists primarily from European countries, US/Canada"
 		},
 		{
 			color: "var(--color-nonenglish)",
-			label: "Latin American, African, and Asian Origin"
+			label: "from Latin American, African, and Asian countries"
 		},
-		{ color: "var(--color-gray-700)", label: "No Geographic Origin" }
+		{ color: "var(--color-gray-700)", label: "Both" }
 	];
 
 	$: type = $activeSlide === 5 ? "table" : "bars";
@@ -27,7 +27,7 @@
 					? "#B79E8F"
 					: color}
 			/>
-			<div class="label" style:color>{label}</div>
+			<div class="label" style:color>{@html label}</div>
 		</div>
 	{/each}
 </div>
@@ -44,6 +44,8 @@
 		align-items: center;
 		margin-right: 1.25rem;
 		font-size: 14px;
+		margin-bottom: 5px;
+
 	}
 	.item:last-child {
 		margin-right: 0;
@@ -55,6 +57,7 @@
 	}
 	.label {
 		font-weight: 600;
+		line-height: 1.2;
 	}
 
 	@media (max-width: 600px) {
