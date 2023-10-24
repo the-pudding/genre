@@ -107,8 +107,8 @@
 		color: black;
 		position: absolute;
 		right: 0;
-		top: 40px;
-		transform: translate(120%, 0);
+		top: 42px;
+		transform: translate(105%, 0);
 		letter-spacing: -0.04em;
 		line-height: 1.2;
 	}
@@ -132,6 +132,8 @@
 		}
 		.annotation {
 			font-size: 15px;
+			top: 40px;
+			transform: translate(120%, 0);
 		}
 	}
 </style>
