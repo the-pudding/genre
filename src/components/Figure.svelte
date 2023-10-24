@@ -4,7 +4,8 @@
 	import Tap from "$components/Tap.svelte";
 	import Svg from "$components/Svg.svelte";
 	import Ranks from "$components/Ranks.svelte";
-	import Table from "$components/Table.svelte";
+	import Genres from "$components/Table.Genres.svelte";
+	import Race from "$components/Table.Race.svelte";
 	import Line from "$components/Line.svelte";
 	import Mountain from "$components/Mountain.svelte";
 	import Bubbles from "$components/Bubbles.svelte";
@@ -29,7 +30,8 @@
 	];
 
 	const ranks = [0, 1, 2, 3, 4, 5];
-	const table = [18, 27];
+	const genreTable = [18];
+	const raceTable = [27];
 	const svg = [6, 13, 22, 24, 30];
 	const columns = [7];
 	const line = [8, 9, 10];
@@ -55,7 +57,8 @@
 
 	const lookup = {
 		ranks: ranks,
-		table: table,
+		genreTable: genreTable,
+		raceTable: raceTable,
 		svg: svg,
 		columns: columns,
 		line: line,
@@ -141,8 +144,10 @@
 
 	{#if ranks.includes($activeSlide)}
 		<Ranks />
-	{:else if table.includes($activeSlide)}
-		<Table />
+	{:else if genreTable.includes($activeSlide)}
+		<Genres />
+	{:else if raceTable.includes($activeSlide)}
+		<Race />
 	{:else if svg.includes($activeSlide)}
 		<Svg />
 	{:else if columns.includes($activeSlide)}

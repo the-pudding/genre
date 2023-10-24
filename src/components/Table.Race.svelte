@@ -1,15 +1,13 @@
 <script>
 	import copy from "$data/copy.json";
 	import { activeSlide } from "$stores/misc.js";
-	import table1 from "$data/table1.csv";
-	import table2 from "$data/table2.csv";
+	import data from "$data/table2.csv";
 
 	$: title = copy.slides.find((d) => +d.slide === $activeSlide).title;
 	$: footer = copy.slides.find((d) => +d.slide === $activeSlide).footer;
-	$: data = $activeSlide === 18 ? table1 : table2;
 </script>
 
-<div class:latest={$activeSlide === 18} class:race={$activeSlide === 27}>
+<div>
 	<table>
 		{#if title}
 			<caption>{@html title}</caption>
@@ -57,18 +55,10 @@
 		text-align: left;
 		width: 100%;
 	}
-	.latest td:first-of-type {
-		color: var(--color-gray-700);
-		font-weight: 500;
-	}
-	.latest td:last-of-type {
-		font-family: var(--serif);
+	td:first-of-type {
 		font-weight: 700;
 	}
-	.race td:first-of-type {
-		font-weight: 700;
-	}
-	.race td:last-of-type {
+	td:last-of-type {
 		font-weight: 400;
 	}
 	tr:first-of-type {
@@ -89,15 +79,6 @@
 		td {
 			padding: 2px 0 2px 0.6rem;
 			line-height: 0.9;
-		}
-		.race td,
-		.latest td {
-			line-height: 1.2;
-		}
-		.latest td {
-			line-height: 1;
-			font-size: 14px;
-			letter-spacing: -0.04em;
 		}
 	}
 </style>

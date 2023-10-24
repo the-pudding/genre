@@ -25,6 +25,7 @@
 	const onTap = ({ detail }) => {
 		if (detail === "right") sliderEl.next();
 		else sliderEl.prev();
+		window.scrollTo(0, 0);
 		$dir = detail;
 	};
 
@@ -65,8 +66,6 @@
 </script>
 
 <Chapters />
-
-<Figure />
 <article>
 	<Slider bind:this={sliderEl} bind:current={$activeSlide} duration="0">
 		{#each slides as slide, i}
@@ -80,6 +79,8 @@
 		{/each}
 	</Slider>
 </article>
+
+<Figure />
 
 <Tap
 	debug={false}

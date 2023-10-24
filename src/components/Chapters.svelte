@@ -32,6 +32,7 @@
 		width: 100%;
 		justify-content: space-between;
 		padding: 0 1rem;
+		/* z-index: 4; */
 	}
 	.chapter {
 		display: flex;
