@@ -64,7 +64,7 @@
 	};
 </script>
 
-<div class="wrapper" class:loaded>
+<div class="wrapper">
 	{#if !$mq.reducedMotion}
 		<div
 			class="progress"
@@ -82,7 +82,7 @@
 		loop
 		on:ended={onEnded}
 		class:has-captions={hasCC}
-		poster="assets/img/{id}.jpg"
+		poster="assets/posters/{id}.jpg"
 	>
 		{#if hasCC}
 			<track kind="captions" src={`assets/captions/${id}.vtt`} srclang="en" />
@@ -104,16 +104,12 @@
 
 <style>
 	.wrapper {
-		visibility: hidden;
 		display: flex;
 		flex-direction: column;
 		align-items: start;
 		width: fit-content;
 		margin: auto;
 		position: relative;
-	}
-	.wrapper.loaded {
-		visibility: visible;
 	}
 	video {
 		width: 600px;
