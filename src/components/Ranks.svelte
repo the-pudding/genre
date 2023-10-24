@@ -27,7 +27,7 @@
 		"norteno",
 		"corrido",
 		"latin pop",
-		"latin pop"
+		"pov: indie"
 	];
 	$: columns = $activeSlide < 2 ? ["4/23/2016"] : ["4/23/2016", "8/9/2023"];
 	$: numColumns = columns.length;
@@ -95,11 +95,17 @@
 						{@const color = highlightList.find(
 							(d) => d.genre === genre
 						)?.highlight}
+						{@const highlightTwo = 
+							($activeSlide === 5) && 
+								geo.find(
+									(d) => d.genre === genre
+									).region !== "west/english"
+							}
 						{@const highlight =
 							($activeSlide === 3 || $activeSlide === 4) &&
 							newToTop25.find((d) => d === genre)}
 						<td style:color>
-							<div class:highlight>
+							<div class:highlight class:highlightTwo>
 								{#if col === 0}
 									<span class="number">{row + 1}</span>
 								{/if}
@@ -152,8 +158,14 @@
 	}
 	.highlight {
 		width: fit-content;
-		text-decoration: underline;
+		background-color: rgba(91,74,228,.1);
 	}
+
+	.highlightTwo {
+		width: fit-content;
+		background-color: rgba(190,58,166,.1);
+	}
+
 	.number {
 		color: var(--color-gray-600);
 		font-size: 0.75rem;

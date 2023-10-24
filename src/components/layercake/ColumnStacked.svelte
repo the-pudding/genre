@@ -29,7 +29,7 @@
 					class="block"
 					style:background={color}
 					style="margin-top:{genre.rank % 10 === 1 && genre.rank > 2
-						? '7px'
+						? '1px'
 						: ''};"
 				>
 					{#if highlight}

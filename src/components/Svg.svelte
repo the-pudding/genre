@@ -86,9 +86,13 @@
 		pointer-events: auto;
 	}
 
+	.latin {
+		max-width: 400px;
+	}
+
 	@media (max-width: 600px) {
 		.latin {
-			max-width: 300px;
+			max-width: 400px;
 		}
 		.articles {
 			pointer-events: none;
