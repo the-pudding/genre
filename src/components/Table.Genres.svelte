@@ -27,6 +27,7 @@
 	}
 	.col {
 		margin-right: 0.5rem;
+		font-family: var(--sans);
 	}
 	.col:last-of-type {
 		margin-right: 0;
@@ -35,6 +36,11 @@
 	@media (max-width: 600px) {
 		.table {
 			font-size: 14px;
+			justify-content: flex-start;
+		}
+
+		.col {
+			max-width: calc(50% - .5rem);
 		}
 	}
 </style>

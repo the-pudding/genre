@@ -129,5 +129,13 @@
 		:global(.slide:last-of-type) {
 			margin-top: 0;
 		}
+
+		@media (max-height: 625px) {
+			p {
+				font-size: 1rem;
+			}
+		}	
 	}
+
+	
 </style>

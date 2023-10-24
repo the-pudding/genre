@@ -188,5 +188,27 @@
 		.links li {
 			padding: 2px 4px;
 		}
+
+		@media (max-height: 625px) {
+			footer {
+				padding-top: 1rem;
+			}
+			.story span {
+				margin-top: .5rem;
+				font-size: 14px;
+				margin-bottom: 1rem;
+			}
+
+			.links  li {
+				font-size: 12px;
+			}
+
+			.wordmark {
+				max-width: 8em;
+				margin-bottom: .5rem;
+				margin-top: .5rem;
+			}
+
+		}
 	}
 </style>
