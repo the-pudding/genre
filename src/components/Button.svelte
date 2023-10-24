@@ -1,27 +1,15 @@
 <script>
-	import variables from "$data/variables.json";
-
-	export let color = variables.color.audio;
+	export let color = "var(--color-audio)";
+	export let hover = "var(--color-audio-dark)";
 	export let onClick;
 	export let ariaLabel;
 	export let style;
-
-	const darkenColor = (color, amount) =>
-		"#" +
-		["1", "3", "5"]
-			.map((i) =>
-				Math.max(0, parseInt(color.substr(i, 2), 16) - amount)
-					.toString(16)
-					.padStart(2, "0")
-			)
-			.join("");
-	const hoverColor = darkenColor(color, 20);
 </script>
 
 <button
 	on:click={onClick}
 	aria-label={ariaLabel}
-	style={`--color: ${color}; --hover: ${hoverColor}; ${style}`}
+	style={`--color: ${color}; --hover: ${hover}; ${style}`}
 >
 	<slot />
 </button>

@@ -47,7 +47,7 @@
 		margin-bottom: 0.5rem;
 	}
 	td {
-		padding: 0.3rem 0 0.3rem 1rem;
+		padding: 0 0 0 1rem;
 	}
 	td:first-of-type {
 		text-align: right;
@@ -75,7 +75,7 @@
 		border-top: 1px solid var(--color-gray-600);
 	}
 	tr:first-child td {
-		padding-top: 0.5rem;
+		padding-top: 0.25rem;
 	}
 	tr {
 		border-bottom: 1px dashed var(--color-gray-600);

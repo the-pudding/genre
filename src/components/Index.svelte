@@ -6,7 +6,7 @@
 	import Figure from "$components/Figure.svelte";
 	import Audio from "$components/Audio.svelte";
 	import copy from "$data/copy.json";
-	import { activeSlide, dir } from "$stores/misc.js";
+	import { activeSlide, dir, videoMuted } from "$stores/misc.js";
 	import { onMount } from "svelte";
 
 	let sliderEl;
@@ -47,6 +47,22 @@
 				}
 			});
 		}
+
+		document.addEventListener("visibilitychange", (event) => {
+			if (document.visibilityState == "visible") {
+				console.log("back!");
+			} else {
+				const audioToMute = Array.from(
+					document.querySelectorAll("audio")
+				).filter((d) => !d.paused);
+				const videoToMute = Array.from(
+					document.querySelectorAll("video")
+				).filter((d) => !d.muted);
+				audioToMute.forEach((d) => d.pause());
+				videoToMute.forEach((d) => (d.muted = true));
+				if (videoToMute.length > 0) $videoMuted = true;
+			}
+		});
 	});
 </script>
 
@@ -100,6 +116,7 @@
 	}
 	:global(.slide a) {
 		pointer-events: auto;
+		white-space: nowrap;
 	}
 	:global(.slide:last-of-type) {
 		margin-top: 3rem;

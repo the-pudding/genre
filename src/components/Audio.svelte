@@ -27,13 +27,19 @@
 		paused = true;
 	}
 
+	const onPause = () => {
+		paused = true;
+	};
+
 	const toggle = () => {
 		if (paused) {
 			const toPause = Array.from(document.querySelectorAll("audio")).filter(
-				(d) => !d.paused
+				(d) => d.id !== id && !d.className.includes("inline")
 			);
-			toPause.forEach((d) => d.pause());
-
+			toPause.forEach((d) => {
+				d.pause();
+				d.currentTime = 0;
+			});
 			audioEl.play();
 		} else audioEl.pause();
 		paused = !paused;
@@ -46,12 +52,14 @@
 
 <Button
 	color={"#EFEFEF"}
+	hover={"#EFEFEF"}
 	onClick={toggle}
 	style={`position: relative; display: inline; padding: ${padding}; color: transparent`}
 >
 	<div class="ghost-words">{label.concat(" 🎵")}</div>
 	<div
 		class="progress"
+		class:playing={!paused}
 		class:curved={percentLeft === 100 || $mq.reducedMotion}
 		style:width={`${$mq.reducedMotion ? 100 : percentLeft}%`}
 	/>
@@ -59,12 +67,15 @@
 </Button>
 
 <audio
+	{id}
+	class:inline
 	src={url}
 	preload="auto"
 	bind:this={audioEl}
 	bind:duration
 	bind:currentTime
 	on:ended={onEnded}
+	on:pause={onPause}
 />
 
 <style>
@@ -77,6 +88,9 @@
 		border-radius: 10px 0 0 10px;
 		transition: border-radius calc(var(--1s) * 2) ease-in-out;
 		z-index: 1;
+	}
+	.playing {
+		background: var(--color-audio-dark);
 	}
 	.progress.curved {
 		transition: none;

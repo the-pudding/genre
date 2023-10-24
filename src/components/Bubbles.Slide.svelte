@@ -155,13 +155,12 @@
 						.querySelector('rect[id^="fg"]');
 					myFg.style.width = myBg.getAttribute("width");
 
-					if ($mq.reducedMotion) myFg.style.fill = "var(--color-audio)";
+					myFg.style.fill = "var(--color-audio)";
 				});
 
-			if ($mq.reducedMotion) {
-				fg.style.fill = "var(--color-audio-dark)";
-				return;
-			}
+			fg.style.fill = "var(--color-audio-dark)";
+
+			if ($mq.reducedMotion) return;
 
 			const animate = () => {
 				if (audioEl.currentTime < audioDuration) {
@@ -181,11 +180,9 @@
 		} else {
 			// pause me
 			audioEl.pause();
+			fg.style.fill = "var(--color-audio)";
 
-			if ($mq.reducedMotion) {
-				fg.style.fill = "var(--color-audio)";
-				return;
-			}
+			if ($mq.reducedMotion) return;
 
 			// stop animating my progress
 			if (animationFrame) cancelAnimationFrame(animationFrame);
@@ -256,7 +253,11 @@
 
 <style>
 	:global(svg g):focus {
-		outline: var(--color-emphasis) auto 5px;
+		outline: none;
+	}
+	:global(svg g:focus rect[id^="bg"]) {
+		stroke: var(--color-gray-400);
+		stroke-width: 5px;
 	}
 	@keyframes -global-bounce-in {
 		0% {

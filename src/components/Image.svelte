@@ -4,15 +4,15 @@
 	import copy from "$data/copy.json";
 
 	$: explore = $activeSlide === 35;
+	$: fish = $activeSlide === 29;
 	$: src =
 		$activeSlide === 29 ? "assets/img/fish.jpg" : "assets/img/explore.jpg";
-	$: alt =
-		$activeSlide === 29
-			? "Fish"
-			: "A screenshot of the Google Sheet with the genre data";
+	$: alt = fish
+		? "Fish"
+		: "A screenshot of the Google Sheet with the genre data";
 </script>
 
-<div class="img-wrapper" class:explore>
+<div class="img-wrapper" class:explore class:fish>
 	{#if explore}<h4>Explore the data from 2016-2023</h4>{/if}
 	<img {src} {alt} />
 </div>
@@ -27,21 +27,27 @@
 {/if}
 
 <style>
-	.img-wrapper {
+	.img-wrapper.explore {
 		width: 100%;
 		max-width: 40rem;
 		margin: auto;
-	}
-	.img-wrapper.explore {
-		width: 100%;
 		position: absolute;
 		aspect-ratio: 0.5;
 		overflow: visible;
 		top: 80px;
 		left: 1rem;
 	}
-	img {
+	.img-wrapper.fish {
+		height: 100%;
+		width: auto;
+	}
+	.explore img {
 		width: 100%;
+	}
+	.fish img {
+		height: 100%;
+		width: auto;
+		margin: auto;
 	}
 	strong {
 		font-size: 18px;

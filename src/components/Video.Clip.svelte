@@ -47,11 +47,18 @@
 				videoEl.src = videoUrl;
 				if (hasCC)
 					videoEl.textTracks[0].mode = captioned ? "showing" : "hidden";
+
 				loaded = true;
 			}
 		};
 		request.send();
 	});
+
+	const turnCCOn = () => {
+		videoEl.textTracks.forEach((track) => {
+			track.mode = "showing";
+		});
+	};
 </script>
 
 <div class="wrapper" class:loaded>
@@ -63,7 +70,7 @@
 		/>
 	{/if}
 	<video
-		playslinine
+		playsinline
 		bind:this={videoEl}
 		bind:currentTime
 		bind:duration
@@ -77,6 +84,7 @@
 			<track kind="captions" src={`assets/captions/${id}.vtt`} srclang="en" />
 		{/if}
 	</video>
+	<!-- <button on:click={turnCCOn}>turn cc on</button> -->
 
 	{#if overlay}
 		<div class="gradient">
@@ -160,6 +168,13 @@
 		display: block;
 		margin-top: 0.5rem;
 		line-height: 130%;
+	}
+	:global(.sub a) {
+		pointer-events: auto;
+		color: white;
+	}
+	:global(.sub a):hover {
+		color: var(--color-gray-300);
 	}
 
 	@media (max-width: 600px) {

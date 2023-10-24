@@ -29,7 +29,7 @@
 		}, []);
 
 	$: mobile = $viewport.width < 600;
-	$: rightPadding = mobile ? 150 : 180;
+	$: rightPadding = mobile ? 100 : 180;
 </script>
 
 <div class="chart-container">
