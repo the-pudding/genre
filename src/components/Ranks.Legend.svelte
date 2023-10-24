@@ -14,7 +14,8 @@
 	];
 
 	$: type = $activeSlide === 5 ? "table" : "bars";
-	$: displayItems = type === "table" ? items.slice(0, 2) : items;
+	$: displayItems = type === "table" ? items.slice(0, 0) : items;
+	$: console.log($activeSlide)
 </script>
 
 <div class="legend">

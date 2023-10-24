@@ -31,7 +31,7 @@ rank,genre,country,region
 18,k-pop,🇰🇷 South Korea 46,asia
 19,pov: indie,🇺🇸 United States of America 1870,west/english
 20,r&b,🇺🇸 United States of America 1870,west/english
-21,corrido,🇺🇸 United States of America 1870,west/english
+21,corrido,🇺🇸 United States of America 1870,latin
 22,edm,🇺🇸 United States of America 1870,west/english
 23,album rock,🇺🇸 United States of America 1870,west/english
 24,norteno,mexico,latin
@@ -40,8 +40,8 @@ rank,genre,country,region
 27,pop dance,$ global ,global
 28,hard rock,🇺🇸 United States of America 1870,west/english
 29,canadian pop,Canada 106,west/english
-30,sierreno,🇺🇸 United States of America 1870,west/english
-31,sad sierreno,🇺🇸 United States of America 1870,west/english
+30,sierreno,🇺🇸 United States of America 1870,latin
+31,sad sierreno,🇺🇸 United States of America 1870,latin
 32,mellow gold,🇺🇸 United States of America 1870,west/english
 33,melodic rap,🇺🇸 United States of America 1870,west/english
 34,nu metal,🇺🇸 United States of America 1870,west/english
@@ -52,7 +52,7 @@ rank,genre,country,region
 39,modern bollywood,🇮🇳 India 161,asia
 40,alternative rock,🇺🇸 United States of America 1870,west/english
 41,banda,mexico,latin
-42,corridos tumbados,🇺🇸 United States of America 1870,west/english
+42,corridos tumbados,🇺🇸 United States of America 1870,latin
 43,art pop,🇺🇸 United States of America 1870,west/english
 44,atl hip hop,🇺🇸 United States of America 1870,west/english
 45,sertanejo,brazil,latin
