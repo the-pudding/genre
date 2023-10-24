@@ -1,11 +1,12 @@
 <script>
+	import Icon from "$components/helpers/Icon.svelte";
 	import viewport from "$stores/viewport.js";
 	import data from "$data/table1.csv";
 	import _ from "lodash";
 
 	const shuffledData = _.shuffle(data);
 
-	$: numColumns = $viewport.width < 446 ? 1 : $viewport.width < 564 ? 2 : 3;
+	$: numColumns = $viewport.width < 446 ? 1 : $viewport.width < 682 ? 2 : 3;
 	$: columnLength = Math.floor(data.length / numColumns);
 	$: columns = _.range(numColumns).map((i) =>
 		shuffledData.slice(i * columnLength, (i + 1) * columnLength)
@@ -13,13 +14,18 @@
 </script>
 
 <div class="table">
-	{#each columns as col}
-		<div class="col">
+	{#each columns as col, i}
+		<div class="col" class:last={i + 1 === numColumns}>
 			{#each col as { genre }}
 				<div class="genre">{genre}</div>
 			{/each}
 		</div>
 	{/each}
+
+	<div class="annotation" class:visible={numColumns === 1}>
+		Keep scrolling
+		<span class="icon"><Icon name="arrow-down" /></span>
+	</div>
 </div>
 
 <style>
@@ -29,17 +35,29 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		font-weight: 500;
+		font-family: var(--sans);
 	}
 	.col {
 		margin-right: 0.5rem;
-		font-family: var(--sans);
 	}
-	.col:last-of-type {
-		margin-right: 0;
+	.last {
+		margin: 0;
 	}
 	.annotation {
+		visibility: hidden;
 		position: absolute;
-		top: 0;
+		top: 5%;
+		left: 50%;
+		font-size: 1.25rem;
+		display: flex;
+		align-items: center;
+	}
+	.visible {
+		visibility: visible;
+	}
+	.icon {
+		display: flex;
+		margin-left: 5px;
 	}
 
 	@media (max-width: 600px) {
