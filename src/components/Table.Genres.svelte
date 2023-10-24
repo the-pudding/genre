@@ -1,16 +1,21 @@
 <script>
+	import viewport from "$stores/viewport.js";
 	import data from "$data/table1.csv";
 	import _ from "lodash";
 
-	const columns = 3;
-	const columnLength = Math.floor(data.length / 4);
 	const shuffledData = _.shuffle(data);
+
+	$: numColumns = $viewport.width < 446 ? 1 : $viewport.width < 564 ? 2 : 3;
+	$: columnLength = Math.floor(data.length / numColumns);
+	$: columns = _.range(numColumns).map((i) =>
+		shuffledData.slice(i * columnLength, (i + 1) * columnLength)
+	);
 </script>
 
 <div class="table">
-	{#each _.range(columns) as col}
+	{#each columns as col}
 		<div class="col">
-			{#each shuffledData.slice(col * columnLength, (col + 1) * columnLength) as { genre }}
+			{#each col as { genre }}
 				<div class="genre">{genre}</div>
 			{/each}
 		</div>
@@ -22,7 +27,7 @@
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		font-weight: 500;
 	}
 	.col {
@@ -44,18 +49,16 @@
 		}
 
 		.col {
-			max-width: calc(50% - .5rem);
+			max-width: calc(50% - 0.25rem);
 		}
 	}
 
 	@media (max-width: 446px) {
 		.col {
-			margin-right: 2px;
-			padding-left: 3rem;
-			width: 100%;
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
+			margin: 0;
+		}
+		.col:first-of-type {
+			margin-right: 0.5rem;
 		}
 	}
 </style>
