@@ -39,6 +39,7 @@
 	"browserslist": "> 0.5%, last 4 versions, not ie <= 11, not ie_mob <= 11",
 	"dependencies": {
 		"d3-cloud": "^1.2.7",
-		"feather-icons": "^4.29.1"
+		"feather-icons": "^4.29.1",
+		"svelte-gestures": "^1.5.2"
 	}
 }

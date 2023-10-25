@@ -1,4 +1,5 @@
 <script>
+	import { swipe, tap } from 'svelte-gestures';
 	import { ChevronLeft, ChevronRight } from "lucide-svelte";
 	import { createEventDispatcher } from "svelte";
 
@@ -16,6 +17,7 @@
 
 	const dispatch = createEventDispatcher();
 	let innerHeight;
+	let innerWidth;
 
 	$: getW = (dir) =>
 		Array.isArray(size) ? size[directions.indexOf(dir)] : full ? "100%" : size;
@@ -34,14 +36,36 @@
 	$: visibleArrows = directions.filter((d) =>
 		typeof showArrows === "boolean" ? showArrows : showArrows.includes(d)
 	);
+
+	function handler(event) {
+		if(event.type == "swipe"){
+			if(event.detail.direction == "right") {
+				dispatch("tap", "left");
+			}
+			else {
+				dispatch("tap", "right");
+			}
+		}
+		else {
+			console.log(event.srcElement.getAttribute("aria-label"))
+			let direction = event.srcElement.getAttribute("aria-label")
+			dispatch("tap", direction);
+		}
+	}
+
+	// on:click={dispatch("tap", dir)}
+
 </script>
 
-<svelte:window on:keydown={onKeyDown} bind:innerHeight />
+<svelte:window on:keydown={onKeyDown} bind:innerHeight bind:innerWidth />
 
 <section class:debug style="height: {innerHeight}px;">
 	{#each directions as dir}
 		<button
-			on:click={dispatch("tap", dir)}
+			use:swipe={{ minSwipeDistance: 10}}
+			on:swipe={handler}
+			use:tap
+			on:tap={handler}
 			style="width: {getW(dir)}; height: {getH(dir)};"
 			aria-label={dir}
 			class="{dir} {arrowPosition}"
