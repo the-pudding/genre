@@ -17,6 +17,7 @@
 			...t,
 			text: t.text
 				.replaceAll("##-##", "<span class='punctuation'>-</span>")
+				.replaceAll("##—##", "<span class='punctuation'>—</span>")
 				.replaceAll("##;##", "<span class='punctuation'>;</span>")
 				.replaceAll("##:##", "<span class='punctuation'>:</span>")
 		}))
@@ -134,8 +135,6 @@
 			p {
 				font-size: 1rem;
 			}
-		}	
+		}
 	}
-
-	
 </style>
