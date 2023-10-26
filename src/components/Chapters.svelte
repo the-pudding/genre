@@ -6,7 +6,7 @@
 	const chapters = _.groupBy(copy.slides, "section");
 </script>
 
-<div class="chapters">
+<div class="chapters" class:visible={$activeSlide > 2}>
 	{#each Object.keys(chapters) as chapter}
 		{@const chapterActive = copy.slides[$activeSlide].section === chapter}
 		<div class="chapter" class:active={chapterActive}>
@@ -32,7 +32,11 @@
 		width: 100%;
 		justify-content: space-between;
 		padding: 0 1rem;
-		/* z-index: 4; */
+		opacity: 0;
+		transition: opacity calc(var(--1s) * 0.5);
+	}
+	.chapters.visible {
+		opacity: 1;
 	}
 	.chapter {
 		display: flex;
